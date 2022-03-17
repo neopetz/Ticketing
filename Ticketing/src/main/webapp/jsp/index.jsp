@@ -7,6 +7,7 @@
 <title>Shuttle Express</title>
 </head>
 <body>
-	<a>Bus Ticketing System</a>
+	<h1>GOOD LUCK GROUP 3 !!</h1>
+	<p>Bus Ticketing System</p>
 </body>
 </html>
