@@ -11,16 +11,16 @@ import org.ph.iwanttranseat.java.model.DriverModel;
 
 public class DriverDAO {
 	private static final String INSERT_DRIVER_SQL = "INSERT INTO drivers (driverFirstname, driverLastname, driverStatus) VALUES"
-			+ " ( ?, ?, ?);";
+			+ " (?, ?, ?);";
 	private static final String SELECT_ALL_DRIVERS = "select * from drivers;";
-	private static final String UPDATE_DRIVER = "update employee set driverFirstname = ?, driverLastname= ?, driverStatus =? where id = ?;";
+	private static final String UPDATE_DRIVER = "update employee set driverFirstname = ?, driverLastname= ?, driverStatus = ? where id = ?;";
 
 	// Adding new Driver
 	public void insertDriver(DriverModel driver) {
 		System.out.println(INSERT_DRIVER_SQL);
 
 		try (Connection connection = JDBCUtils.getConnection();
-				PreparedStatement preparedStatement = connection.prepareStatement(INSERT_DRIVER_SQL)) {
+			PreparedStatement preparedStatement = connection.prepareStatement(INSERT_DRIVER_SQL)) {
 			preparedStatement.setString(1, driver.getDriverFirstname());
 			preparedStatement.setString(2, driver.getDriverLastname());
 			preparedStatement.setString(3, driver.getDriverStatus());
@@ -34,9 +34,8 @@ public class DriverDAO {
 	//Select All Drivers
 			public List<DriverModel> selectAllDrivers(){
 			List<DriverModel> drivers = new ArrayList<>();
+			
 			try (Connection connection = JDBCUtils.getConnection();
-
-					
 				PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_DRIVERS);) {
 				System.out.println(preparedStatement);
 				
