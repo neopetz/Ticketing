@@ -4,6 +4,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<!-- For mobile responsiveness -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>iWantTranseat</title>
 <!-- Bootstrap 4 CSS -->
 <link rel="stylesheet"
@@ -12,6 +14,14 @@
 	crossorigin="anonymous">
 <!-- Google Icons -->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+	rel="stylesheet">
+<!-- Google Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Alex Brush -->
+<link
+	href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap"
+	rel="stylesheet">
+
 </head>
 <body>
