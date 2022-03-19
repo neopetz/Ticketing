@@ -6,6 +6,8 @@
 <meta charset="ISO-8859-1">
 <!-- For mobile responsiveness -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="true">
 <title>iWantTranseat</title>
 <!-- Bootstrap 4 CSS -->
 <link rel="stylesheet"
@@ -22,6 +24,7 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap"
 	rel="stylesheet">
+
 
 </head>
 <body>
