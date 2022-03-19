@@ -27,7 +27,7 @@
 					style="font-size: 36px;"> home</span></a></li>
 			<li class="nav-item"><a
 				class="nav-link d-flex align-items-center justify-content-end h5"
-				href="#">Booking<span
+				href="${pageContext.request.contextPath}/jsp/booking_details.jsp">Booking<span
 					class="material-icons d-md-inline d-lg-none ml-4"
 					style="font-size: 36px;"> book_online</span>
 			</a></li>
