@@ -24,6 +24,8 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap"
 	rel="stylesheet">
+<!-- Fontawesome -->
+<script src="https://kit.fontawesome.com/f86155eccc.js" crossorigin="anonymous"></script>
 
 
 </head>
