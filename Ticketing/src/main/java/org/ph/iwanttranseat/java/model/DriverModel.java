@@ -16,7 +16,9 @@ public class DriverModel {
 	}
 
 	public DriverModel(String driverFirstname, String driverLastname, String driverStatus) {
-
+		this.driverFirstname = driverFirstname;
+		this.driverLastname = driverLastname;
+		this.driverStatus = driverStatus;
 	}
 
 	public int getId() {

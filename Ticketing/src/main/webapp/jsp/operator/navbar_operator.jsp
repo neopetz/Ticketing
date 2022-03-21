@@ -8,7 +8,7 @@
 	<a style="font-family: 'Alex Brush', cursive;"
 		class="d-flex align-items-center navbar-brand ml-3 mt-3 mb-3" href="#">
 		<img class="rounded-circle d-block d-lg-none"
-		src="../../assets/LOGO.png" width="120" height="120"
+		src="${pageContext.request.contextPath}/assets/LOGO.png" width="120" height="120"
 		class="d-inline-block align-top" alt="">
 		<h1 class="d-none d-md-block d-lg-none display-3">&nbsp;
 			iWantTranseat</h1>
@@ -75,8 +75,7 @@
 <!-- Navbar brand of PC/Desktops -->
 <a style="color: #637CE6; font-family: 'Alex Brush', cursive;"
 	class="d-flex align-items-center navbar-brand ml-3 mt-3 mb-3" href="#">
-	<img class="rounded-circle d-none d-lg-block"
-	src="../../assets/LOGO.png" width="120" height="120"
-	class="d-inline-block align-top" alt="">
-	<h1 class="d-none d-lg-block display-3">&nbsp; iWantTranseat</h1>
+	<img class="d-none d-lg-block img-fluid"
+	src="${pageContext.request.contextPath}/assets/FULL_LOGO.jpg"
+	class="d-inline-block align-top" alt="logo">
 </a>
