@@ -4,15 +4,13 @@ import java.time.LocalDate;
 
 public class PassengerModel {
 
-	private String passengerFirstname = "";
-	private String passengerLastname = "";
-	private String passengerGender = "";
-	private String passengerUsername = "";
-	private String passengerEmail = "";
-	private String passengerPhoneNumber = "";
-	private String passengerContactEmail = "";
+	private String passengerFirstname;
+	private String passengerLastname;
+	private String passengerEmail;
+	private String passengerPhoneNumber;
+	private String passengerAge;
+	private String passengerPassword;
 	private LocalDate passengerBirthDate;
-	
 	
 	public String getPassengerFirstname() {
 		return passengerFirstname;
@@ -26,18 +24,6 @@ public class PassengerModel {
 	public void setPassengerLastname(String passengerLastname) {
 		this.passengerLastname = passengerLastname;
 	}
-	public String getPassengerGender() {
-		return passengerGender;
-	}
-	public void setPassengerGender(String passengerGender) {
-		this.passengerGender = passengerGender;
-	}
-	public String getPassengerUsername() {
-		return passengerUsername;
-	}
-	public void setPassengerUsername(String passengerUsername) {
-		this.passengerUsername = passengerUsername;
-	}
 	public String getPassengerEmail() {
 		return passengerEmail;
 	}
@@ -50,11 +36,17 @@ public class PassengerModel {
 	public void setPassengerPhoneNumber(String passengerPhoneNumber) {
 		this.passengerPhoneNumber = passengerPhoneNumber;
 	}
-	public String getPassengerContactEmail() {
-		return passengerContactEmail;
+	public String getPassengerAge() {
+		return passengerAge;
 	}
-	public void setPassengerContactEmail(String passengerContactEmail) {
-		this.passengerContactEmail = passengerContactEmail;
+	public void setPassengerAge(String passengerAge) {
+		this.passengerAge = passengerAge;
+	}
+	public String getPassengerPassword() {
+		return passengerPassword;
+	}
+	public void setPassengerPassword(String passengerPassword) {
+		this.passengerPassword = passengerPassword;
 	}
 	public LocalDate getPassengerBirthDate() {
 		return passengerBirthDate;
@@ -63,4 +55,5 @@ public class PassengerModel {
 		this.passengerBirthDate = passengerBirthDate;
 	}
 	
+
 }

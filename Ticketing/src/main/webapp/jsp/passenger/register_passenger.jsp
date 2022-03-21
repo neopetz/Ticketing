@@ -93,7 +93,7 @@ placeholder {
 		</div>
 		<div class="container shadow p-3 mb-5 bg-white rounded" style="padding: 30px">
 
-			<form action="#" method="post">
+			<form action="<%=request.getContextPath()%>/PassengerVerify" method="post">
 
 				<input type="date" id="currentDate" hidden>
 
@@ -104,7 +104,7 @@ placeholder {
 				</div>
 				<div class="input-group input-group" style="margin-bottom: 2em">
 					<input type="date" id="birthday" name="birthday" onchange="ageCount()" class="input1 form-control" style="margin-right: 10px; width: 80px" required> 
-					<input type="text" id="age" name="age" placeholder="Age" class="input1 " style="margin-right: 10px; width: 70px;" disabled > 
+					<input type="text" id="age" name="age" placeholder="Age" class="input1 " style="margin-right: 10px; width: 70px;" readonly> 
 					<input type="number" placeholder="Contact Number" name="contact" class="input1 form-control" style="">
 				</div>
 				<div class="input-group input-group " id="floatingInput" style="margin-bottom: 2em">
@@ -112,21 +112,19 @@ placeholder {
 					<input type="password" placeholder="Password" name="password" class="input1 form-control" required>
 				</div>
 
-				<center>
-					<button class="btn btn-outline-primary btn-sm" style="margin-right: 20px;" onclick="sendVerify()">Get Verification</button>
-					<input type="text" placeholder="Enter 6 digit verification code" name="verify" class="input1">
+<!-- 				<center>
+					<button type="submit" name="action" value="verify" class="btn btn-outline-primary btn-sm" style="margin-right: 20px;">Get Verification</button>
+					<input type="text" placeholder="Enter 6 digit verification code" class="input1">
 				</center>
 				<center>
-					<p style="font-family: 'Century Gothic'">Didn't Received the code ? <a href="#">Resend</a>
-					</p>
-				</center>
-
-				<div class="input-group input-group " id="floatingInput"
-					style="margin-top: 3em">
-					<button type="submit" class="btn btn-primary btn-l btn2  btn-block">SUBMIT</button>
+					<p style="font-family: 'Century Gothic'">Didn't Received the code ? <a href="#">Resend</a></p>
+				</center>  -->
+				<div class="input-group input-group " id="floatingInput" style="margin-top: 3em">
+					<button type="submit" name="action" value="register" class="btn btn-primary btn-l btn2  btn-block">SUBMIT</button>
 				</div>
+				</form>
 		</div>
-		</form>
+		
 	</div>
 	<jsp:include page="/jsp/footer.jsp"></jsp:include>
 
@@ -144,6 +142,7 @@ function ageCount() {
     
     document.getElementById('age').value = age;
     }
+    
     
 </script>
 </html>

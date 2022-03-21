@@ -29,8 +29,10 @@ public class NotificationAPI {
 
 
 
-	public void sendEmail(String message, String subject, String to) {
-
+	public boolean sendEmail(String message, String subject, String to) {
+		
+		boolean status = false;
+		
 		String host="smtp.gmail.com";
 		Properties properties = System.getProperties();
 		System.out.println("PROPERTIES "+properties);
@@ -41,7 +43,7 @@ public class NotificationAPI {
 		Session session=Session.getInstance(properties, new Authenticator() {
 			@Override
 			protected PasswordAuthentication getPasswordAuthentication() {				
-				return new PasswordAuthentication("iWantTranseat@gmail.com", "09292246010");
+				return new PasswordAuthentication("iWantTranseat@gmail.com", "09050758558");
 			}
 			
 			
@@ -57,11 +59,13 @@ public class NotificationAPI {
 		m.setSubject(subject);
 		m.setText(message);
 		Transport.send(m);
-		
+		status = true;
 		System.out.println("Sent success...................");
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+		return status;
 
 	}
 }
