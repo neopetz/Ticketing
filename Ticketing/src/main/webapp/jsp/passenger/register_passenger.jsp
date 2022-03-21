@@ -89,7 +89,7 @@ placeholder {
 			<div class="input-group input-group" style="margin-bottom: 2em">
 				<input type="date" id="birthday" name="birthday"
 					onchange="ageCount()" class="input1 form-control"
-					style="margin-right: 10px; width: 80px" required> <input
+					style="margin-right: 10px; width: 80px" required min="1900-01-01"> <input
 					type="text" id="age" name="age" placeholder="Age"
 					class="input1 disabled" style="margin-right: 10px; width: 70px;"
 					readonly> <input type="tel"
