@@ -5,6 +5,95 @@
 <jsp:include page="navbar.jsp"></jsp:include>
 <link href="${pageContext.request.contextPath}/css/carousel.css">
 
+<style>
+.input {
+	font-family: 'Century Gothic';
+}
+
+.bg1 {
+	background-color: #637ce6;
+	background-image: linear-gradient(10deg, #637ce6 0%, #1c285c 100%);
+	padding: 5px;
+	border-radius: 30px 30px 30px 30px;
+}
+
+.bg2 {
+	background-color: #637ce6;
+	background-image: linear-gradient(10deg, #637ce6 0%, #1c285c 100%);
+	padding: 5px;
+	border-radius: 40px 1px 40px 1px;
+	padding: 15px;
+	font-size: 15px;
+}
+
+.select {
+	width: 100%;
+	border-radius: 30px 30px 30px 30px;
+	font-size: 13px;
+	font-family: Century Gothic;
+}
+</style>
+
+<div class="container">
+	<div class="row" style="align-items: left";>
+		<div class="col-md-4">
+			<div class="form-row">
+				<img src="${pageContext.request.contextPath}/assets/FULL_LOGO.jpg"
+					style="height: 110px; width: 830px;">
+			</div>
+		</div>
+
+		<div class="col-md-8" style="margin-top: 15px;">
+			<form action="">
+				<div class="form-row"
+					style="padding-top: 15px; padding-left: 8px; padding-right: 8px; border-radius: 50px;">
+					<div class="form-group col-md-3">
+						<div class="dropdown bg1">
+							<select required name="start_point"
+								class="select form-select btn btn-outline-light dropdown-toggle "
+								aria-labelledby="Default select example">
+								<option class="dropdown-item" disabled selected hidden value="">From</option>
+								<option class="dropdown-item">PHILIPPINES</option>
+								<option class="dropdown-item">INDONESIA</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group col-md-3">
+						<div class="dropdown bg1">
+
+							<select required name="end_point"
+								class="select form-select btn btn-outline-light dropdown-toggle "
+								aria-labelledby="Default select example">
+								<option class="dropdown-item" disabled selected hidden value="">To</option>
+								<option class="dropdown-item">JAPAN</option>
+								<option class="dropdown-item">RUSSIA</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group col-md-3">
+						<div class="drpdown bg1">
+							<input style="background-color: transparent; color: white"
+								name="departure_date" required type="date"
+								class="select btn-outline-light form-control input1"
+								id="departure_date">
+						</div>
+					</div>
+					<div class="form-group col-md-3" style="">
+						<div class="dropdown bg1">
+							<button class=" select btn btn-md btn-block btn-light" href="#"
+								style="font-size: 13px; width: 100%; color: black;">
+								<li class="fa fa-search"></li> Search
+							</button>
+						</div>
+
+					</div>
+				</div>
+			</form>
+
+		</div>
+	</div>
+</div>
+
 <main role="main">
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
 		<ol class="carousel-indicators">
@@ -14,39 +103,37 @@
 		</ol>
 		<div class="carousel-inner">
 			<div class="carousel-item active">
-				<img src="${pageContext.request.contextPath}/assets/mountain.jpg"
-					style="position: relative; width: 100%; height:100%;" />
+				<img src="cover/mountain.jpg"
+					style="position: absolute; width: 100% height:100%;">
 				<div class="container">
 					<div class="carousel-caption text-left">
-						<h1>Going for a Trip ?</h1>
-						<p>
-							<a class="btn btn-lg btn-primary"
-								href="${pageContext.request.contextPath}/jsp/booking_details.jsp">BOOK
-								A SEAT !</a>
+						<h1 style="font-family: 'Century Gothic'">Going for a Trip?</h1>
+						<p style="font-family: 'Century Gothic'">
+							<a class="bg2 btn btn-lg btn-info" href="#">BOOK A SEAT !</a>
 						</p>
 					</div>
 				</div>
 			</div>
 			<div class="carousel-item">
-				<img src="${pageContext.request.contextPath}/assets/van.jpg"
-					style="position: relative; width: 100%; height:100%;" />
+				<img src="cover/van.jpg"
+					style="position: absolute; width: 100% height:100%;">
 				<div class="container">
 					<div class="carousel-caption">
-						<h1>Going for a Trip ?</h1>
-						<p>
-							<a class="btn btn-lg btn-primary" href="${pageContext.request.contextPath}/jsp/booking_details.jsp">BOOK A SEAT !</a>
+						<h1 style="font-family: 'Century Gothic'">Going for a Trip?</h1>
+						<p style="font-family: 'Century Gothic'">
+							<a class="bg2 btn btn-lg btn-info" href="#">BOOK A SEAT !</a>
 						</p>
 					</div>
 				</div>
 			</div>
 			<div class="carousel-item">
-				<img src="${pageContext.request.contextPath}/assets/beach2.jpg"
-					style="position: relative; width: 100%; height:100%;" />
+				<img src="cover/beach2.jpg"
+					style="position: absolute; width: 100% height:100%;">
 				<div class="container">
 					<div class="carousel-caption">
-						<h1>Going for a Trip ?</h1>
-						<p>
-							<a class="btn btn-lg btn-primary" href="${pageContext.request.contextPath}/jsp/booking_details.jsp">BOOK A SEAT !</a>
+						<h1 style="font-family: 'Century Gothic'">Going for a Trip ?</h1>
+						<p style="font-family: 'Century Gothic'">
+							<a class="bg2 btn btn-lg btn-info" href="#">BOOK A SEAT !</a>
 						</p>
 					</div>
 				</div>
@@ -64,43 +151,47 @@
 		</button>
 	</div>
 
+
 	<!-- Marketing messaging and featurettes
   ================================================== -->
 	<!-- Wrap the rest of the page in another container to center all the content. -->
 
-	<div class="container marketing mt-5">
+	<div class="container marketing">
+
 		<!-- Three columns of text below the carousel -->
 		<div class="row">
 			<div class="col-lg-4">
+
 				<img
 					src="https://s1.rdbuz.com/Images/webplatform/rbdotcom/multiple_bus_service.svg"
-					height="90" />
+					height="90">
 				<h2>Multiple Bus Service</h2>
-				<p>Choose from various bus available, schedule and route</p>
+				<p>Choose from various bus available schedule</p>
+				<br>
 				<p>
-					<a class="btn btn-secondary" href="#">View details &raquo;</a>
+					<a class="btn btn-info" href="#">See the Schedule &raquo;</a>
 				</p>
 			</div>
 			<!-- /.col-lg-4 -->
 			<div class="col-lg-4">
 				<img
 					src="https://s1.rdbuz.com/Images/webplatform/rbdotcom/global_coverage.svg"
-					height="90" />
+					height="90">
 				<h2>Wide Area Coverage</h2>
 				<p>Get all your bus travel needs covered under one roof</p>
 				<p>
-					<a class="btn btn-secondary" href="#">View details &raquo;</a>
+					<a class="btn btn-info" href="#">Check the Route &raquo;</a>
 				</p>
 			</div>
 			<!-- /.col-lg-4 -->
 			<div class="col-lg-4">
 				<img
 					src="https://s1.rdbuz.com/Images/webplatform/rbdotcom/customer_support.svg"
-					height="90" />
+					height="90">
 				<h2>Realtime</h2>
 				<p>Realtime Booking and Tracking your location via Profile</p>
 				<p>
-					<a class="btn btn-secondary" href="#">View details &raquo;</a>
+					<a class="btn btn-info" href="#">Book now &raquo;</a>
 				</p>
 			</div>
 			<!-- /.col-lg-4 -->
@@ -109,12 +200,12 @@
 
 		<!-- START THE FEATURETTES -->
 
-		<hr class="featurette-divider" />
+		<hr class="featurette-divider">
 
 		<div class="row featurette">
 			<div class="col-md-7">
 				<h2 class="featurette-heading">
-					First featurette heading. <span class="text-muted">It' ll
+					First featurette heading. <span class="text-muted">It'll
 						blow your mind.</span>
 				</h2>
 				<p class="lead">Some great placeholder content for the first
@@ -126,14 +217,14 @@
 					width="500" height="500" xmlns="http://www.w3.org/2000/svg"
 					role="img" aria-label="Placeholder: 500x500"
 					preserveAspectRatio="xMidYMid slice" focusable="false">
-							<title>Placeholder</title>
-							<rect width="100%" height="100%" fill="#eee" />
-							<text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
-						</svg>
+					<title>Placeholder</title><rect width="100%" height="100%"
+						fill="#eee" />
+					<text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+
 			</div>
 		</div>
 
-		<hr class="featurette-divider" />
+		<hr class="featurette-divider">
 
 		<div class="row featurette">
 			<div class="col-md-7 order-md-2">
@@ -151,14 +242,14 @@
 					width="500" height="500" xmlns="http://www.w3.org/2000/svg"
 					role="img" aria-label="Placeholder: 500x500"
 					preserveAspectRatio="xMidYMid slice" focusable="false">
-							<title>Placeholder</title>
-							<rect width="100%" height="100%" fill="#eee" />
-							<text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
-						</svg>
+					<title>Placeholder</title><rect width="100%" height="100%"
+						fill="#eee" />
+					<text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+
 			</div>
 		</div>
 
-		<hr class="featurette-divider" />
+		<hr class="featurette-divider">
 
 		<div class="row featurette">
 			<div class="col-md-7">
@@ -176,18 +267,49 @@
 					width="500" height="500" xmlns="http://www.w3.org/2000/svg"
 					role="img" aria-label="Placeholder: 500x500"
 					preserveAspectRatio="xMidYMid slice" focusable="false">
-							<title>Placeholder</title>
-							<rect width="100%" height="100%" fill="#eee" />
-							<text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
-						</svg>
+					<title>Placeholder</title><rect width="100%" height="100%"
+						fill="#eee" />
+					<text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+
 			</div>
 		</div>
 
-		<hr class="featurette-divider" />
+		<hr class="featurette-divider">
 
 		<!-- /END THE FEATURETTES -->
+
 	</div>
 	<!-- /.container -->
+
+
+	<!-- FOOTER -->
+	<footer class="container">
+		<p class="float-right">
+			<a href="#">Back to top</a>
+		</p>
+		<p>
+			&copy; 2017-2021 Company, Inc. &middot; <a href="#">Privacy</a>
+			&middot; <a href="#">Terms</a>
+		</p>
+	</footer>
 </main>
 
 <jsp:include page="footer.jsp"></jsp:include>
+
+<script>
+	var today = new Date();
+	var dd = today.getDate() + 3; // + 3 for 3 days validation
+	var mm = today.getMonth() + 1; //January is 0!
+	var yyyy = today.getFullYear();
+
+	if (dd < 10) {
+		dd = "0" + dd;
+	}
+
+	if (mm < 10) {
+		mm = "0" + mm;
+	}
+
+	today = yyyy + "-" + mm + "-" + dd;
+	document.getElementById("departure_date").setAttribute("min", today);
+</script>
