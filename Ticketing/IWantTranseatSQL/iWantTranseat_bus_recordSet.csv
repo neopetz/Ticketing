@@ -1,0 +1,8 @@
+id,bus_name,bus_type,bus_seats,bus_number,plate_number,date_created,date_modified,is_deleted
+1,Ferrari,Luxury,10,12,FRR-456,"2022-03-19 00:00:00",NULL,0
+2,Santrans,Regular,40,23,STS-898,"2022-03-19 00:00:00",NULL,0
+3,Genesis,Regular,43,21,GGS-986,"2022-03-19 00:00:00",NULL,0
+4,"Joy Bus","First Class",30,96,JBS-888,"2022-03-19 00:00:00",NULL,0
+5,qwe,qwe,34,78,QWE-456,"2022-03-19 00:00:00",NULL,0
+6,QWE,QWE,23,34,QWE-343,"2022-03-19 00:00:00",NULL,1
+7,qwe,qwe,25,57,RTY-897,"2022-03-19 00:00:00",NULL,1
