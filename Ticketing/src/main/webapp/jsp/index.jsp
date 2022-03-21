@@ -156,10 +156,10 @@
   ================================================== -->
 	<!-- Wrap the rest of the page in another container to center all the content. -->
 
-	<div class="container marketing">
+	<div class="container marketing mt-4">
 
 		<!-- Three columns of text below the carousel -->
-		<div class="row">
+		<div class="row text-center">
 			<div class="col-lg-4">
 
 				<img
@@ -280,18 +280,6 @@
 
 	</div>
 	<!-- /.container -->
-
-
-	<!-- FOOTER -->
-	<footer class="container">
-		<p class="float-right">
-			<a href="#">Back to top</a>
-		</p>
-		<p>
-			&copy; 2017-2021 Company, Inc. &middot; <a href="#">Privacy</a>
-			&middot; <a href="#">Terms</a>
-		</p>
-	</footer>
 </main>
 
 <jsp:include page="footer.jsp"></jsp:include>
