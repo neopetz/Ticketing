@@ -2,6 +2,8 @@
 	pageEncoding="ISO-8859-1"%>
 <nav style="background-color: #0f52ba;"
 	class="navbar navbar-expand-lg navbar-dark">
+	
+	<span></span>
 
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 		data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03"

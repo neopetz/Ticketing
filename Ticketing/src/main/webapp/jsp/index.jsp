@@ -103,8 +103,8 @@
 		</ol>
 		<div class="carousel-inner">
 			<div class="carousel-item active">
-				<img src="cover/mountain.jpg"
-					style="position: absolute; width: 100% height:100%;">
+				<img class="img-fluid vw-100" src="${pageContext.request.contextPath}/assets/beach2.jpg"
+					style="position: relative; width: 100% height:100%;">
 				<div class="container">
 					<div class="carousel-caption text-left">
 						<h1 style="font-family: 'Century Gothic'">Going for a Trip?</h1>
@@ -115,8 +115,8 @@
 				</div>
 			</div>
 			<div class="carousel-item">
-				<img src="cover/van.jpg"
-					style="position: absolute; width: 100% height:100%;">
+				<img class="img-fluid vw-100" src="${pageContext.request.contextPath}/assets/mountain.jpg"
+					style="position: relative;">
 				<div class="container">
 					<div class="carousel-caption">
 						<h1 style="font-family: 'Century Gothic'">Going for a Trip?</h1>
@@ -127,8 +127,8 @@
 				</div>
 			</div>
 			<div class="carousel-item">
-				<img src="cover/beach2.jpg"
-					style="position: absolute; width: 100% height:100%;">
+				<img class="img-fluid vw-100" src="${pageContext.request.contextPath}/assets/van.jpg"
+					style="position: relative;">
 				<div class="container">
 					<div class="carousel-caption">
 						<h1 style="font-family: 'Century Gothic'">Going for a Trip ?</h1>
@@ -156,10 +156,10 @@
   ================================================== -->
 	<!-- Wrap the rest of the page in another container to center all the content. -->
 
-	<div class="container marketing">
+	<div class="container marketing mt-4">
 
 		<!-- Three columns of text below the carousel -->
-		<div class="row">
+		<div class="row text-center">
 			<div class="col-lg-4">
 
 				<img
@@ -280,18 +280,6 @@
 
 	</div>
 	<!-- /.container -->
-
-
-	<!-- FOOTER -->
-	<footer class="container">
-		<p class="float-right">
-			<a href="#">Back to top</a>
-		</p>
-		<p>
-			&copy; 2017-2021 Company, Inc. &middot; <a href="#">Privacy</a>
-			&middot; <a href="#">Terms</a>
-		</p>
-	</footer>
 </main>
 
 <jsp:include page="footer.jsp"></jsp:include>
