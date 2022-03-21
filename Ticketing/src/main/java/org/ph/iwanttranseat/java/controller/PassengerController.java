@@ -59,7 +59,7 @@ public class PassengerController extends HttpServlet {
 	            int result = passengerDAO.registerPassenger(passengerModel);
 	            if (result == 1) {
 //	                request.setAttribute("NOTIFICATION", "User Registered Successfully!");
-	                RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/passenger/index_passenger.jsp");
+	                RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/login.jsp");
 	                dispatcher.forward(request, response);
 	    			session.invalidate();
 	            }

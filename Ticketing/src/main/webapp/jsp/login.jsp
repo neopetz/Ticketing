@@ -80,31 +80,24 @@ input {
 		<div class="container shadow p-3 mb-5 bg-white rounded"
 			style="padding: 30px">
 
-			<form action="#" method="post">
+			<form action="<%=request.getContextPath()%>/LoginController" method="post">
 
 				<input type="date" id="currentDate" hidden>
 
-				<div class="input-group input-group " id="floatingInput"
-					style="margin-bottom: 2em">
-					<input type="email" placeholder="Email Adress"
-						class="input1 form-control">
+				<div class="input-group input-group " id="floatingInput" style="margin-bottom: 2em">
+					<input type="email" name="email" placeholder="Email Adress" class="input1 form-control">
 				</div>
+				
 				<div class="input-group input-group" style="margin-bottom: 2em">
-					<input type="password" placeholder="Password"
-						class="input1 form-control"
-						style="margin-right: 10px; width: 80px">
+					<input type="password" name="password" placeholder="Password" class="input1 form-control" style="margin-right: 10px; width: 80px">
+				</div>
+
+				<div class="input-group input-group " id="floatingInput" style="margin-top: 3em">
+					<button type="submit" class="btn btn-primary btn-lg btn2  btn-block">Login</button>
 				</div>
 
 
-				<div class="input-group input-group " id="floatingInput"
-					style="margin-top: 3em">
-					<button type="submit"
-						class="btn btn-primary btn-lg btn2  btn-block">Login</button>
-				</div>
-
-
-				<div class="input-group input-group " id="floatingInput"
-					style="margin-top: 3em">
+				<div class="input-group input-group " id="floatingInput" style="margin-top: 3em">
 					<p style="font-family: 'Century Gothic'">
 						No account yet ?<a href="#">Register here !</a>
 					</p>

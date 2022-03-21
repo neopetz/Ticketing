@@ -27,7 +27,7 @@ public class PassengerDAO {
             preparedStatement.setString(5, passenger.getPassengerAge());
             preparedStatement.setString(6, passenger.getPassengerPassword());
             preparedStatement.setDate(7, JDBCUtils.getSQLDate(passenger.getPassengerBirthDate()));
-            preparedStatement.setBoolean(8, true);
+            preparedStatement.setBoolean(8, false);
             preparedStatement.setDate(9, JDBCUtils.getSQLDate(LocalDate.now()));
   
 
