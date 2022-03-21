@@ -63,7 +63,7 @@ placeholder {
 
 <jsp:include page="navbar.jsp"></jsp:include>
 
-<div class="container col-md-5 col-md-offset-3"
+<div class="container col-md-5 col-md-offset-3 mt-5"
 	style="overflow: auto; margin-top: 5m;">
 	<div class="divheader shadow rounded text-center">
 		<h6 style="color: white; font-family: 'Century Gothic'">Passenger
