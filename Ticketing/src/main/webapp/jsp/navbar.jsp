@@ -5,8 +5,9 @@
 
 	<a style="font-family: 'Alex Brush', cursive;"
 		class="d-flex align-items-center navbar-brand ml-3 mt-3 mb-3" href="#">
-		<img class="rounded-circle d-block d-lg-none" src="../assets/LOGO.png"
-		width="120" height="120" class="d-inline-block align-top" alt="">
+		<img class="rounded-circle d-block d-lg-none"
+		src="${pageContext.request.contextPath}/assets/LOGO.png" width="120"
+		height="120" class="d-inline-block align-top" alt="">
 		<h1 class="d-none d-md-block d-lg-none display-3">&nbsp;
 			iWantTranseat</h1>
 	</a>
@@ -22,12 +23,12 @@
 		<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 			<li class="nav-item"><a
 				class="nav-link d-flex align-items-center justify-content-end h5"
-				href="#"> Home<span
+				href="${pageContext.request.contextPath}/jsp/index.jsp"> Home<span
 					class="material-icons d-md-inline d-lg-none ml-4"
 					style="font-size: 36px;"> home</span></a></li>
 			<li class="nav-item"><a
 				class="nav-link d-flex align-items-center justify-content-end h5"
-				href="#">Booking<span
+				href="${pageContext.request.contextPath}/jsp/booking_details.jsp">Booking<span
 					class="material-icons d-md-inline d-lg-none ml-4"
 					style="font-size: 36px;"> book_online</span>
 			</a></li>
@@ -36,23 +37,24 @@
 		<ul class="navbar-nav float-lg-right">
 			<li class="nav-item"><a
 				class="nav-link d-flex align-items-center justify-content-end h5"
-				href="#">Login <span
+				href="${pageContext.request.contextPath}/jsp/login.jsp">Login <span
 					class="material-icons d-md-inline d-lg-none ml-4"
 					style="font-size: 36px;"> login</span>
 			</a></li>
 			<li class="nav-item"><a
 				class="nav-link d-flex align-items-center justify-content-end h5"
-				href="#">Register <span
-					class="material-icons d-md-inline d-lg-none ml-4"
+				href="${pageContext.request.contextPath}/jsp/register.jsp">Register
+					<span class="material-icons d-md-inline d-lg-none ml-4"
 					style="font-size: 36px;"> app_registration</span>
 			</a></li>
 		</ul>
 	</div>
 </nav>
 
+<!-- Navbar for PC and Desktop -->
 <a style="color: #637CE6; font-family: 'Alex Brush', cursive;"
 	class="d-flex align-items-center navbar-brand ml-3 mt-3 mb-3" href="#">
-	<img class="rounded-circle d-none d-lg-block" src="../assets/LOGO.png"
-	width="120" height="120" class="d-inline-block align-top" alt="">
-	<h1 class="d-none d-lg-block display-3">&nbsp; iWantTranseat</h1>
+	<img class="d-none d-lg-block img-fluid"
+	src="${pageContext.request.contextPath}/assets/FULL_LOGO.jpg"
+	class="d-inline-block align-top" alt="logo">
 </a>

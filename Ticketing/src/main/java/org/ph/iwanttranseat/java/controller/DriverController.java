@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.ph.iwanttranseat.java.dao.DriverDAO;
 import org.ph.iwanttranseat.java.model.DriverModel;
 
-@WebServlet("/")
+@WebServlet("/DriverControllre")
 public class DriverController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private DriverDAO driverDao;
