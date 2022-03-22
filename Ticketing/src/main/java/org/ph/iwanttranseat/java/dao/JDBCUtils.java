@@ -12,9 +12,9 @@ public class JDBCUtils {
 	private static String jdbcURL = "jdbc:mysql://localhost:3306/ticketing?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false";
     private static String dbUname = "root";
 //    private static String dbPword = "Root";
-//    private static String dbPword = "101822";
-//    private static String dbPword = "nmj6y2e563fdaa";
-    private static String dbPword = "Fujitsu.2022";
+//    private static String dbPword = "101822"; 		//EDWARD
+//    private static String dbPword = "nmj6y2e563fdaa"; //JOHN RAY
+    private static String dbPword = "Fujitsu.2022"; 	//JAYSON
     
     public static Connection getConnection() {
         Connection connection = null;
