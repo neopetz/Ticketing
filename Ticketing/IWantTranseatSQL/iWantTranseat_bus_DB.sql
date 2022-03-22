@@ -72,3 +72,14 @@ CREATE TABLE `conductor` (
 SELECT * FROM `conductor`;
 SELECT * FROM `conductor` WHERE `is_deleted` <> 1;
 
+
+/* Conductor and Driver Table*/
+CREATE TABLE `bus_personnel` (
+`id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+`firstname` VARCHAR(20) NOT NULL,
+`lastname` VARCHAR(20) NOT NULL,
+`position` VARCHAR(20) NOT NULL,
+`status` VARCHAR(20) NOT NULL,
+`isDeleted` BOOLEAN
+);
+
