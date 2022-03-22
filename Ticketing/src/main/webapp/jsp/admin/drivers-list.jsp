@@ -20,7 +20,7 @@
 			<hr>
 			<div class="container text-left">
 
-				<a href="<%=request.getContextPath()%>/add" class="btn btn-success">Add
+				<a href="<%=request.getContextPath()%>/addDriver" class="btn btn-success">Add
 					Driver</a>
 			</div>
 			<br>
@@ -41,9 +41,9 @@
 							<td><c:out value="${driver.driverLastname}" /></td>
 							<td><c:out value="${driver.driverStatus}" /></td>
 
-							<td><a href="edit?id=<c:out value='${driver.id}' />">Edit</a>
+							<td><a href="editDriver?id=<c:out value='${driver.id}' />">Edit</a>
 								&nbsp;&nbsp;&nbsp;&nbsp; <a
-								href="delete?id=<c:out value='${driver.id}' />">Delete</a></td>
+								href="deleteDriver?id=<c:out value='${driver.id}' />">Delete</a></td>
 						</tr>
 					</c:forEach>
 					<!-- } -->
