@@ -14,7 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.ph.iwanttranseat.java.dao.DriverDAO;
 import org.ph.iwanttranseat.java.model.DriverModel;
 
-@WebServlet("/DriverControllre")
+@WebServlet(urlPatterns = { "/addDriver", "/insertDriver", "/editDriver", "/updateDriver", "/listOfDriver", "/deleteDriver"})
+
 public class DriverController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private DriverDAO driverDao;
@@ -33,15 +34,18 @@ public class DriverController extends HttpServlet {
 			throws ServletException, IOException {
 
 		String action = request.getServletPath();
-
+		System.out.println(action);
 		switch (action) {
-		case "/add":
+		case "/addDriver":
 			showForm(request, response);
 			break;
-		case "/insert":
+		case "/insertDriver":
 			insertDriver(request, response);
 			break;
-		case "/update":
+		case "/editDriver":
+			showEditForm(request, response);
+			break;
+		case "/updateDriver":
 			try {
 				updateDriver(request, response);
 			} catch (SQLException e) {
@@ -49,7 +53,18 @@ public class DriverController extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
-		case "/list":
+		case "/deleteDriver":
+			try {
+				deleteDriver(request, response);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			break;
+		case "/listOfDriver":
 			selectAllDrivers(request, response);
 			break;
 
@@ -60,6 +75,28 @@ public class DriverController extends HttpServlet {
 
 		}
 
+	}
+
+	private void deleteDriver(HttpServletRequest request, HttpServletResponse response) throws IOException, SQLException {
+		int id = Integer.parseInt(request.getParameter("id"));
+		Boolean isDeleted  = true;
+		
+		
+		DriverModel deletedDriver = new DriverModel(id, isDeleted);
+		
+		driverDao.deletedDriver(deletedDriver);
+		response.sendRedirect("listOfDriver");
+		
+	}
+
+	private void showEditForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		int driverID = Integer.parseInt(request.getParameter("id"));
+		
+		DriverModel driver = driverDao.selectDriverByID(driverID);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/admin/add-driver-form.jsp");
+		request.setAttribute("driver", driver);
+		dispatcher.forward(request, response);
+		
 	}
 
 	private void showForm(HttpServletRequest request, HttpServletResponse response)
@@ -78,26 +115,25 @@ public class DriverController extends HttpServlet {
 
 	private void updateDriver(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException {
+		
 		int id = Integer.parseInt(request.getParameter("id"));
-
 		String driverFirstname = request.getParameter("driverFirstname");
 		String driverLastname = request.getParameter("driverLastname");
 		String driverStatus = request.getParameter("driverStatus");
-
 		DriverModel updatedDriver = new DriverModel(id, driverFirstname, driverLastname, driverStatus);
-
+		
 		driverDao.updateDriver(updatedDriver);
-		response.sendRedirect("list");
+		response.sendRedirect("listOfDriver");
 	}
 
 	private void insertDriver(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		String driverFirstname = request.getParameter("driverFirstname");
 		String driverLastname = request.getParameter("driverLastname");
 		String driverStatus = request.getParameter("driverStatus");
-
-		DriverModel driver = new DriverModel(driverFirstname, driverLastname, driverStatus);
+		Boolean isDeleted = false;
+		DriverModel driver = new DriverModel(driverFirstname, driverLastname, driverStatus, isDeleted);
 		driverDao.insertDriver(driver);
-		response.sendRedirect("list");
+		response.sendRedirect("listOfDriver");
 
 	}
 

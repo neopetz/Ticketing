@@ -30,7 +30,7 @@
 			</a></li>
 			<li class="nav-item"><a
 				class="nav-link d-flex align-items-center justify-content-end h5"
-				href="${pageContext.request.contextPath}/jsp/register.jsp">Register
+				href="${pageContext.request.contextPath}/jsp/passenger/register_passenger.jsp">Register
 					<span class="material-icons d-md-inline d-lg-none ml-4"
 					style="font-size: 36px;"> app_registration</span>
 			</a></li>
