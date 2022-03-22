@@ -56,7 +56,10 @@
                         margin-left: 70px
                     }
                     body{
-                        background-color: #CC1111;
+                        background-color: #80FFDB;
+                        background-image: url(/images/BEACH1.jpg);
+                        background-size:cover;
+                        opacity: 80%;
                     }
                 
                     
@@ -65,11 +68,100 @@
                     }
                     #bookpassenger{
                         background-image: url(/images/logo.png);
+                        background-size: cover;
+                    }
+                    #table_panel{
+                        margin-top: 70px;
+                        opacity: 50%;
+                    }
+                    #drivertable{
+                        font-size: 25px;
+                        font-family: Times New Roman;
                     }
                 
   </style>
+<body>
+
+
+
+
+<div class="col-md-10" id="table_panel">
+    <table class="table table-bordered table-dark">
+        <thead>
+           <tr>
+              <strong id="drivertable">Driver</strong> 
+           </tr>
+          <tr>
+            
+            <th scope="col">ID</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email Address</th>
+            <th scope="col">Contact Number</th>
+            <th scope="col">Status</th>
+          </tr>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </thead>
+        <table class="table table-bordered table-dark">
+            <thead>
+                <tr>
+                    <strong id="drivertable">Conductor</strong> 
+                 </tr>
+                <tr>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Email Address</th>
+                <th scope="col">Contact Number</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
   <div>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <a class="navbar-brand"><img src="/images/llogo.png"></a>
         <a class="navbar-brand" href="#">iWantTranseat</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -112,7 +204,7 @@
 
       
       <div class="col-sm-20">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-bottom">
             <a href="#" class="navbar-brand">
                 <img src="/Ticketing/src/main/webapp/assets/LOGO.png" alt="" class="logo">
             </a>
