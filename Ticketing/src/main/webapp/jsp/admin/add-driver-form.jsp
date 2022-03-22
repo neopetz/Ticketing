@@ -13,15 +13,17 @@
 
 </head>
 <body>
-	
+
 	<div class="container col-md-5">
 		<div class="card">
 			<div class="card-body">
-				<c:if test="${employee != null}">
-					<form action="update" method="post">
+				<c:if test="${driver != null}">
+					<form action="<%=request.getContextPath()%>/updateDriver"
+						method="post">
 				</c:if>
-				<c:if test="${employee == null}">
-					<form action="insert" method="post">
+				<c:if test="${driver == null}">
+					<form action="<%=request.getContextPath()%>/insertDriver"
+						method="post">
 				</c:if>
 
 				<caption>
@@ -31,30 +33,34 @@
               </c:if>
 						<c:if test="${driver == null}">
                Add New Driver
-              </c:if>
+               	<input type="hidden" name="isDeleted" value="false">
+						</c:if>
 					</h2>
 				</caption>
 
 				<c:if test="${driver != null}">
 					<input type="hidden" name="id"
-						value="<c:out value='${drivers.id}' />" />
+						value="<c:out value='${driver.id}' />" />			
 				</c:if>
-		
+
+
 				<fieldset class="form-group">
 					<label>First Name</label> <input type="text"
-						value="<c:out value='${drivers.driverFirstname}' />"
+						value="<c:out value='${driver.driverFirstname}' />"
 						class="form-control" name="driverFirstname" required="required"
 						minlength="5">
 				</fieldset>
 
 				<fieldset class="form-group">
 					<label>Last Name</label> <input type="text"
-						value="<c:out value='${drivers.driverLastname}' />"
+						value="<c:out value='${driver.driverLastname}' />"
 						class="form-control" name="driverLastname" minlength="5">
 				</fieldset>
 
 				<fieldset class="form-group">
-					<label> Status</label> <select class="form-control" name="driverStatus">
+					<label> Status</label> <select class="form-control"
+						value="<c:out value='${driver.driverStatus}' />"
+						name="driverStatus">
 						<option value="Available">Available</option>
 						<option value="Travelling">Travelling</option>
 						<option value="Resigned">Resigned</option>
@@ -67,6 +73,4 @@
 			</div>
 		</div>
 	</div>
-
-	
 </html>

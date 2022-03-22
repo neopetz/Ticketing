@@ -1,11 +1,11 @@
 package org.ph.iwanttranseat.java.model;
 
-//table name in database is `drivers`
 public class DriverModel {
 	private int id;
 	private String driverFirstname;
 	private String driverLastname;
 	private String driverStatus;
+	private boolean isDeleted;
 	
 	public DriverModel(int id, String driverFirstname, String driverLastname, String driverStatus) {
 		super();
@@ -19,6 +19,21 @@ public class DriverModel {
 		this.driverFirstname = driverFirstname;
 		this.driverLastname = driverLastname;
 		this.driverStatus = driverStatus;
+	}
+
+	public DriverModel(String driverFirstname, String driverLastname, String driverStatus, Boolean isDeleted) {
+		this.driverFirstname = driverFirstname;
+		this.driverLastname = driverLastname;
+		this.driverStatus = driverStatus;
+		this.isDeleted = isDeleted;
+	}
+
+
+
+
+	public DriverModel(int id, Boolean isDeleted) {
+		this.id = id;
+		this.isDeleted = isDeleted;
 	}
 
 	public int getId() {
@@ -51,6 +66,14 @@ public class DriverModel {
 
 	public void setDriverStatus(String driverStatus) {
 		this.driverStatus = driverStatus;
+	}
+
+	public boolean isDeleted() {
+		return isDeleted;
+	}
+
+	public void setDeleted(boolean isDeleted) {
+		this.isDeleted = isDeleted;
 	}
 
 	
