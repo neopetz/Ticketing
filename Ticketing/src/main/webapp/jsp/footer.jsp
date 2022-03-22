@@ -26,95 +26,19 @@
 	integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
 	crossorigin="anonymous"></script>
 
+    		
+ <!-- Footer -->
+<footer class="page-footer bg-dark text-center">
 
-<footer class="page-footer font-small white">
+		<div class="bg-primary">
+			<div class="container">
+				<div class=" row py-2 d-flex  align-items-center">
 
-	<!-- Footer Links -->
-	<div class="conatiner bg-info link">
-		<div class="container text-center text-md-left">
-			<div class="row">
-				<div class="col-md-3 mx-auto">
-				<!-- Links -->
-				<h5 class="font-weight-bold text-uppercase mt-3 mb-4">About</h5>
-
-				<ul class="list-unstyled">
-					<li><a href="#myContent" class="text-dark" data-toggle="collapse">Our Story</a></li>
-					<p class="collapse text-monospace mt-2" id="myContent">
-					The story of IWantSeat.
-					</p>
-					<li><a href="#myContent" class="text-dark" data-toggle="collapse">Terminal Directory</a></li>
-					<p class="collapse text-monospace mt-2" id="myContent">
-					The Terminal directory.
-					</p>
-					
-					<li><a href="#myContent" class="text-dark" data-toggle="collapse">Route Map</a></li>
-					<p class="collapse text-monospace mt-2" id="myContent">
-					The Route Map of the bus.
-					</p>
-					<li><a href="#myContent" class="text-dark" data-toggle="collapse">Careers</a></li>
-					<p class="collapse text-monospace mt-2" id="myContent">
-					The Careers of the IwantSeat.
-					</p>
-
-				</ul>
-
-			</div>
-		
-
-			<hr class="clearfix w-100 d-md-none">
-			<div class="col-md-3 mx-auto">
-				<!-- Links -->
-				<h5 class="font-weight-bold text-uppercase mt-3 mb-4">Guidelines</h5>
-
-				<ul class="list-unstyled">
-					<li><a href="#myContent" class="text-dark" data-toggle="collapse">Discount/Policies</a></li>
-					<p class="collapse text-monospace mt-2" id="myContent">
-					Discount Policies is input her.
-					</p>
-					<li><a href="#myContent" class="text-dark" data-toggle="collapse">Terms Condition</a></li>
-					<p class="collapse text-monospace mt-2" id="myContent">
-					Terms and Condition here.
-					</p>
-				</ul>
-
-			</div>
-			<hr class="clearfix w-100 d-md-none ">
-			<div class="col-md-3 mx-auto">
-				<!-- Links -->
-				<h5 class="font-weight-bold text-uppercase mt-3 mb-4 ">Contact</h5>
-				<ul class="list-unstyled text-dark">
-					<li> <i class='fas'>&#xf87b;</i> <a>+63 99951245</a></li>
-					<li> <i class="material-icons">&#xe568;</i> <a>Taguig Manila Ph.</a></li>
-					<li> <i class="material-icons">&#xe158;</i> <a>IWanTranSeat.Com</a></li>
-				</ul>
-
-			</div>
-			<hr class="clearfix w-100 d-md-none">
-			<div class="col-md-3 mx-auto">
-				<!-- Links -->
-				<h5 class="font-weight-bold text-uppercase mt-3 mb-4">Offer</h5>
-				<ul class="list-unstyled">
-					  <li><a href="#myContent" class="text-dark" data-toggle="collapse">Premier Card</a></li>
-      					<p class="collapse text-monospace mt-2" id="myContent">
-      					This is available in paymnet.  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat quo,
-        				eos molestiae, dolorum consequatur provident perferendis in
-        				consequuntur, eveniet dolorem architecto totam accusamus esse pariatur
-        				libero praesentium enim odio ea!
-      					
-      					</p>
-				</ul>
-			</div>
-		</div>
-	</div>
-	
-	<!-- Copyright --> 
-	<div class= "container- Fluid bg-dark text-center mb-4">
-			<div class="row py-2 d-flex align-items-center">
-			<div class="col-md-12 align-item-center">
-	<a class="btn btn-primary" style="background-color: #3b5998;" href="https://www.facebook.com/" role="button">
+			<div class="col-md-12 text-float left">
+				<p class="text-white"> Get the link here:</p>
+					<a class="btn btn-primary" style="background-color: #3b5998;" href="https://web.facebook.com/I-Want-Transeat-109083635070422/" role="button">
   		<i class="fab fa-facebook-f"></i></a>
-		
-			
+
 			<a class="btn btn-primary " style="background-color: #55acee;" href="https://www.twitter.com/" role="button"
   				><i class="fab fa-twitter"></i></a>
 					
@@ -126,22 +50,79 @@
   								><i class="fab fa-google"></i
 									></a>
 				</div>
-         </div>   
-         <div class="location text-center text-white">
-         <a>2022 Brgy.109 Biyahe Walang Hanggan </a> 
-	 <!-- FOOTER -->
-  <footer class="container">
-    <p class="float-right"><a href="#">Back to top</a></p>
-    <p>&copy; 2022 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-  </footer>
- 
-</footer>
-<!-- Footer -->
+			</div>
+		</div>
+	</div>
 
-</body>
-</html>
+  <div class="container text-center text-md-left mt-3">
+    <div class="row">
+      <div class="col-md-3 mx-auto mb-2">
+
+        <h6 class="text-uppercase font-weight-bold text-primary">OFFER</h6>
+		<hr class="bg-white mb-4 mt-0 d-inline-block maxx-auto" style="width: 25px; height:2px">
+		<p class="mt-2 text-white">We offer Online Reservation for booking and also online payment via Gcash. 
+		Just Visit our Site. Reserve Now?
+		 </p>
+       		</div>
+       		
+      <div class="col-md-2 mx-auto mb-2">
+       	<h6 class="text-uppercase font-weight-bold text-primary">About</h6>
+			<hr class="bg-white mb-4 mt-0 d-inline-block maxx-auto " style="width: 85px; height:2px">
+       		
+       		<ul class="list-unstyled ">
+          <li class=" my-2" ><a href="#myContent" class="text-white" data-toggle="collapse">Our Story</a></li>
+          <p class="collapse text-white mt-2" id="myContent">
+          Doing this project is not easy. Please appreciate what the group done. Thank you?
+          </p>
+          <li class="my-2" ><a href="#myContent" class="text-white" data-toggle="collapse">Terminal Directory</a></li>
+            <p class="collapse text-white mt-2" id="myContent">
+           The terminal directory is base on the owner.
+            </p>
+          <li class=" my-2" ><a href="#myContent" class="text-white" data-toggle="collapse">Route Map</a></li>
+               <p class="collapse text-white mt-2" id="myContent">
+           The route map of the bus is point to point.
+            </p>
+          <li class="my-2" ><a href="#myContent" class="text-white" data-toggle="collapse">Career</a></li>
+               <p class="collapse text-white mt-2" id="myContent">
+           The career of the Iwantranseat is to earn money hehe.
+             
+            </p> 
+        </ul>
+			</div>
+		
+		<div class="col-md-2 mx-auto mb-2">
+       		<h6 class="text-uppercase font-weight-bold text-primary">Guideline</h6>
+				<hr class="bg-white mb-4 mt-0 d-inline-block maxx-auto" style="width: 110px; height:2px">
+       		
+       		<ul class="list-unstyled">
+          		<li class=" my-2"><a href="#myContent" class="text-white" data-toggle="collapse">Discount/Policies</a></li>
+                 <p class="collapse text-white mt-2" id="myContent">
+         		 To claim a discount be sure you have valid id that you are student, senior or pwd.
+           		 </p>
+          <li class="my-2"><a href="#myContent" class="text-white" data-toggle="collapse">Terms Condition</a></li>
+                 <p class="collapse text-white mt-2" id="myContent">
+           		The terms and condition is defend in the company.
+           		  
+            </p>
+        </ul>
+      </div>
+      
+      	<div class="col-md-3 mx-auto mb-2">
+      		<h6 class="text-uppercase font-weight-bold text-primary">Contacts</h6>
+				<hr class="bg-white mb-4 mt-0 d-inline-block maxx-auto" style="width: 75px; height:2px">
+       		
+       		<ul class="list-unstyled text-white">
+          		<li class=" my-2"><i class='fas'>&#xf87b;</i><a>+63 99951245</a></li>
+          		<li class=" my-2"><i class="material-icons">&#xe568;</i> <a>Taguig Manila Ph.</a></li>
+          		<li class=" my-2"><i class="material-icons">&#xe158;</i> <a>IWanTranSeat.Inc</a></li>
+        	</ul>
+      </div> 
+     	 </div>
+     		 </div>
+    
+  <div class="footer-copyright text-center py-1 text-white">
+    <p>&copy; 2022 IwanTranSeat.Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a>
+    <p class="float-center "><a href="#" class="text-primary">Back to top</a></p>
+</div>
+</footer>
 	
-	
-	
-</body>
-</html>
