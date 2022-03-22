@@ -19,9 +19,14 @@
                                 minlength="8" maxlength="20">
                         </div>
                         <div class="form-group">
-                            <label for="password">New Password</label>
-                            <input type="password" class="form-control" id="password" name="new_password" required
+                            <label for="new_password">New Password</label>
+                            <input type="password" class="form-control" id="new_password" name="new_password" required
                                 minlength="8" maxlength="20">
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm_new_password">Confirm New Password</label>
+                            <input type="password" class="form-control" id="confirm_new_password"
+                                name="confirm_new_password" required minlength="8" maxlength="20">
                         </div>
                     </div>
                     <div class="modal-footer d-flex justify-content-between">
