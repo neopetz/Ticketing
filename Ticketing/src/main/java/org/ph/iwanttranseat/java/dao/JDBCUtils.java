@@ -4,7 +4,9 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Time;
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 public class JDBCUtils {
 	private static String jdbcURL = "jdbc:mysql://localhost:3306/ticketing?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false";
@@ -46,8 +48,11 @@ public class JDBCUtils {
     public static Date getSQLDate(LocalDate date) {
         return java.sql.Date.valueOf(date);
     }
-
+    public static Time getSQLTime(LocalTime time) {
+        return java.sql.Time.valueOf(time);
+    }
     public static LocalDate getUtilDate(Date sqlDate) {
         return sqlDate.toLocalDate();
     }
+ 
 }
