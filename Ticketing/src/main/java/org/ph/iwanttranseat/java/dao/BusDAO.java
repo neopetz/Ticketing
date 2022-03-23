@@ -14,16 +14,14 @@ public class BusDAO {
 	
 	private static final String INSERT_BUS_DATA = "INSERT INTO `iwanttranseat_db`.`bus` (bus_name, bus_type, bus_seats, "
 			+ "bus_number, plate_number, date_created, is_deleted) VALUES (?,?,?,?,?,?,?);";
-	private static final String SELECT_BUS = "SELECT * FROM `iwanttranseat_db`.`bus` WHERE is_deleted <> 1;";
-	private static final String VIEW_BUS = "SELECT * FROM `iwanttranseat_db`.`bus` WHERE is_deleted <> 1;";
-	private static final String UPDATE_BUS = "UPDATE `iwanttranseat_db`.`bus` SET `bus_name` = ?, `bus_type`= ?, "
-			+ "`bus_seats` = ?, `bus_number` = ?, `plate_number` = ?, `date_modified` = ? WHERE (`id` = ?);";
+	private static final String SELECT_BUS = "SELECT * FROM `iwanttranseat_db`.`bus` WHERE `is_deleted` <> 1;";
+	private static final String VIEW_BUS = "SELECT * FROM `iwanttranseat_db`.`bus` WHERE `id` = ?";
+	private static final String UPDATE_BUS = "UPDATE `iwanttranseat_db`.`bus` SET `bus_name` =?, `bus_type` =?, `bus_seats` =?, "
+			+ "`bus_number` =?, `plate_number` =? WHERE `id` = ?;";
 	private static final String DELETE_BUS = "UPDATE `iwanttranseat_db`.`bus` SET `is_deleted` = ? WHERE (`id` = ?);";
 
 //	Adding BUS details:
 	public void insertBus(BusModel busModel) {
-		System.out.println(INSERT_BUS_DATA);
-		
 		try (Connection connection = JDBCUtils.getConnection();
 			PreparedStatement preparedStatement = connection.prepareStatement(INSERT_BUS_DATA)) {
 			preparedStatement.setString(1, busModel.getBusName());
@@ -42,7 +40,7 @@ public class BusDAO {
 	
 //	Select Bus Details
 	public BusModel selectBus(int id) {
-		BusModel busModel = null;
+		   BusModel busModel = null;
 	        // Step 1: Establishing a Connection
 	        try (Connection connection = JDBCUtils.getConnection();
 	            // Step 2:Create a statement using connection object
@@ -60,8 +58,8 @@ public class BusDAO {
 	                String busNumber = rs.getString("bus_number");
 	                String plateNumber = rs.getString("plate_number");
 	                LocalDate dateCreated = rs.getDate("date_created").toLocalDate();
-	                LocalDate dateModified = rs.getDate("date_modified").toLocalDate();
-	                busModel = new BusModel(busId, busName, busType, busSeats, busNumber, plateNumber, dateCreated, dateModified);
+	                System.out.println(busId+" "+busName +" "+busType+" "+ busSeats+" "+busNumber+" "+plateNumber+" "+dateCreated);
+	                busModel = new BusModel(busId, busName, busType, busSeats, busNumber, plateNumber, dateCreated);
 	            }
 	        } catch (SQLException exception) {
 	        	JDBCUtils.printSQLException(exception);
@@ -75,10 +73,7 @@ public class BusDAO {
 			
 		   try (Connection connection = JDBCUtils.getConnection();
 				PreparedStatement preparedStatement = connection.prepareStatement(SELECT_BUS);) {
-				System.out.println(preparedStatement);
-				
 				ResultSet rs = preparedStatement.executeQuery();
-				System.out.println("list");
 				while (rs.next()) {
 					int id = rs.getInt("id");
 					String busName = rs.getString("bus_name");
@@ -87,9 +82,7 @@ public class BusDAO {
 					String busNumber = rs.getString("bus_number");
 					String plateNumber = rs.getString("plate_number");
 					LocalDate dateCreated = rs.getDate("date_created").toLocalDate();
-					LocalDate dateModified = rs.getDate("date_modified").toLocalDate();
-					System.out.println(" "+busType+" "+busSeats+" "+busNumber+" "+plateNumber+" "+dateCreated+" "+dateModified);
-					busList.add(new BusModel(id, busName, busType, busSeats, busNumber, plateNumber, dateCreated, dateModified));
+					busList.add(new BusModel(id, busName, busType, busSeats, busNumber, plateNumber, dateCreated));
 				}
 		   } catch (SQLException exception) {
 			   JDBCUtils.printSQLException(exception);
@@ -107,7 +100,7 @@ public class BusDAO {
 					statement.setString(3, busModel.getBusSeats());
 					statement.setString(4, busModel.getBusNumber());
 					statement.setString(5, busModel.getPlateNumber());
-					statement.setDate(6, JDBCUtils.getSQLDate(busModel.getDateModified()));
+					statement.setInt(6, busModel.getId());
 					rowUpdated = statement.executeUpdate() > 0;
 				}
 				return rowUpdated;
@@ -119,6 +112,7 @@ public class BusDAO {
 		try (Connection connection = JDBCUtils.getConnection();
 				PreparedStatement statement = connection.prepareStatement(DELETE_BUS);) {
 					statement.setBoolean(1, busModel.isDeleted());
+					statement.setInt(2, busModel.getId());
 					rowUpdated = statement.executeUpdate() > 0;
 				}
 				return rowUpdated;
