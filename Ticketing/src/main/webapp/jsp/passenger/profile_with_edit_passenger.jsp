@@ -3,12 +3,8 @@
 	<div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<div class="modal-header text-white"
-					style="background-image: linear-gradient(10deg, #637ce6 0%, #1c285c 100%);">
+				<div class="modal-header bg-dark text-white">
 					<h5 class="modal-title" id="profileModalLabel">Profile</h5>
-					<button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
 				</div>
 				<form action="">
 					<div class="modal-body">
