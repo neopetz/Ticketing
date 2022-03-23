@@ -4,12 +4,8 @@
         aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header text-white"
-                    style="background-image: linear-gradient(10deg, #637ce6 0%, #1c285c 100%);">
+                <div class="modal-header bg-dark text-white">
                     <h5 class="modal-title" id="changePasswordModalLabel">Change Password</h5>
-                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
                 </div>
                 <form action="">
                     <div class="modal-body">
@@ -19,9 +15,14 @@
                                 minlength="8" maxlength="20">
                         </div>
                         <div class="form-group">
-                            <label for="password">New Password</label>
-                            <input type="password" class="form-control" id="password" name="new_password" required
+                            <label for="new_password">New Password</label>
+                            <input type="password" class="form-control" id="new_password" name="new_password" required
                                 minlength="8" maxlength="20">
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm_new_password">Confirm New Password</label>
+                            <input type="password" class="form-control" id="confirm_new_password"
+                                name="confirm_new_password" required minlength="8" maxlength="20">
                         </div>
                     </div>
                     <div class="modal-footer d-flex justify-content-between">
