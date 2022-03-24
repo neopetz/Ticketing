@@ -14,7 +14,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.ph.iwanttranseat.java.dao.ScheduleDAO;
-import org.ph.iwanttranseat.java.model.DriverModel;
 import org.ph.iwanttranseat.java.model.ScheduleModel;
 
 
@@ -92,7 +91,6 @@ public class ScheduleController extends HttpServlet {
 		String travel_to = req.getParameter("travel_to");
 		LocalDate travel_date = LocalDate.parse(req.getParameter("travel_date"));
 		LocalTime departure = LocalTime.parse(req.getParameter("departure"));
-		// DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-mm-dd");
 		LocalTime arrival = LocalTime.parse(req.getParameter("arrival"));
 		int fare = Integer.parseInt(req.getParameter("fare"));
 		System.out.print("\n\n" + travel_date);
@@ -112,13 +110,6 @@ public class ScheduleController extends HttpServlet {
 		dispatcher.forward(req, resp);
 
 	}
-
-//	private void deleteSchedule(HttpServletRequest req, HttpServletResponse resp) throws SQLException, IOException {
-//		int id = Integer.parseInt(req.getParameter("id"));
-//		scheduleDAO.deletedSchedule();
-//		resp.sendRedirect("listSchedule");
-//
-//	}
 	
 	private void deleteSchedule(HttpServletRequest request, HttpServletResponse response) throws IOException, SQLException {
 		int id = Integer.parseInt(request.getParameter("id"));
@@ -137,7 +128,6 @@ public class ScheduleController extends HttpServlet {
 		String travel_to = req.getParameter("travel_to");
 		LocalDate travel_date = LocalDate.parse(req.getParameter("travel_date"));
 		LocalTime departure = LocalTime.parse(req.getParameter("departure"));
-		// DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-mm-dd");
 		LocalTime arrival = LocalTime.parse(req.getParameter("arrival"));
 		int fare = Integer.parseInt(req.getParameter("fare"));
 

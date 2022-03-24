@@ -109,13 +109,6 @@ public class OperatorController extends HttpServlet {
 		dispatcher.forward(req, resp);
 
 	}
-
-//	private void deleteSchedule(HttpServletRequest req, HttpServletResponse resp) throws SQLException, IOException {
-//		int id = Integer.parseInt(req.getParameter("id"));
-//		scheduleDAO.deletedSchedule();
-//		resp.sendRedirect("listSchedule");
-//
-//	}
 	
 	private void deleteOperator(HttpServletRequest request, HttpServletResponse response) throws IOException, SQLException {
 		int id = Integer.parseInt(request.getParameter("id"));

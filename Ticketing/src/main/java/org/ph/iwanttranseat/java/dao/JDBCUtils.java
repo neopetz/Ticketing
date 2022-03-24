@@ -9,7 +9,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 public class JDBCUtils {
-	private static String jdbcURL = "jdbc:mysql://localhost:3306/ticketing?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false";
+	private static String jdbcURL = "jdbc:mysql://localhost:3306/iwanttranseat_db?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false";
     private static String dbUname = "root";
 //    private static String dbPword = "Root";
 //    private static String dbPword = "101822"; 		//EDWARD

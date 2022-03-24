@@ -11,7 +11,7 @@ import org.ph.iwanttranseat.java.model.OperatorModel;
 
 public class OperatorDAO {
 	
-	private static final String INSERT_OPERATOR_SQL="INSERT INTO operator" + " (operator_firstname, operator_lastname, operator_username, operator_password) VALUES" + " ( ?, ?, ?, ?);";
+	private static final String INSERT_OPERATOR_SQL="INSERT INTO `operator` (operator_firstname, operator_lastname, operator_username, operator_password) VALUES ( ?, ?, ?, ?);";
 	private static final String UPDATE_OPERATOR = "update operator set operator_firstname = ?, operator_lastname = ?, operator_username = ?, operator_password = ? where id = ?;";
 	private static final String SELECT_OPERATOR_BY_ID = "SELECT * FROM operator WHERE id =?";;
 	private static final String SELECT_ALL_OPERATOR = "select id, operator_firstname, operator_lastname, operator_username, operator_password from operator WHERE isDeleted = FALSE";
