@@ -12,7 +12,7 @@ import org.ph.iwanttranseat.java.model.PassengerModel;
 public class PassengerDAO {
 	
 	public int registerPassenger(PassengerModel passenger) throws ClassNotFoundException {
-        String INSERT_USERS_SQL = "INSERT INTO users" +
+        String INSERT_USERS_SQL = "INSERT INTO passenger" +
             "  (firstname, lastname, email, phone_number, age, password, birth_date, isDeleted, date_created) VALUES " +
             " (?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
