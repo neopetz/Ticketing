@@ -59,16 +59,47 @@
 				<fieldset class="form-group">
 					<label> Position</label> <select class="form-control"
 						value="<c:out value='${busPersonnel.position}' />" name="position">
-						<option value="Driver">Driver</option>
-						<option value="Conductor">Conductor</option>
+						<c:if test="${busPersonnel != null}">
+							<c:if test="${busPersonnel.position == 'Driver'}">
+								<option selected value="Driver">Driver</option>
+								<option value="Conductor">Conductor</option>
+							</c:if>
+							<c:if test="${busPersonnel.position == 'Conductor'}">
+								<option selected value="Conductor">Conductor</option>
+								<option value="Driver">Driver</option>
+							</c:if>
+						</c:if>
+						<c:if test="${busPersonnel == null}">
+							<option value="Driver">Driver</option>
+							<option value="Conductor">Conductor</option>
+						</c:if>
 					</select>
 				</fieldset>
 				<fieldset class="form-group">
 					<label> Status</label> <select class="form-control"
 						value="<c:out value='${busPersonnel.status}' />" name="status">
-						<option value="Available">Available</option>
-						<option value="Travelling">Travelling</option>
-						<option value="Resigned">Resigned</option>
+						<c:if test="${busPersonnel != null}">
+							<c:if test="${busPersonnel.status == 'Available'}">
+								<option selected value="Available">Available</option>
+								<option value="Travelling">Travelling</option>
+								<option value="Resigned">Resigned</option>
+							</c:if>
+							<c:if test="${busPersonnel.status == 'Travelling'}">
+								<option selected value="Travelling">Travelling</option>
+								<option value="Available">Available</option>
+								<option value="Resigned">Resigned</option>
+							</c:if>
+							<c:if test="${busPersonnel.status == 'Resigned'}">
+								<option selected value="Resigned">Resigned</option>
+								<option value="Available">Available</option>
+								<option value="Travelling">Travelling</option>
+							</c:if>
+						</c:if>
+						<c:if test="${busPersonnel == null }">
+							<option value="Available">Available</option>
+							<option value="Travelling">Travelling</option>
+							<option value="Resigned">Resigned</option>
+						</c:if>
 					</select>
 				</fieldset>
 

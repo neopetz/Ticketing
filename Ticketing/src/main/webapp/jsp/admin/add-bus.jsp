@@ -62,9 +62,21 @@
 				<fieldset class="form-group">
 					<br>
 						<select class="form-control" name="bus_type" required>
-							<option value=" " selected disabled hidden>Select Bus Type</option>
-							<option value="Regular Air-Conditioned">Regular Air-Conditioned</option>
-							<option value="First Class">First Class</option>
+							<c:if test="${busDetails != null}">
+								<c:if test="${busDetails.busType == 'Regular Air-Conditioned' }">
+									<option selected value="Regular Air-Conditioned">Regular Air-Conditioned</option>
+									<option value="First Class">First Class</option>
+								</c:if>
+								<c:if test="${busDetails.busType == 'First Class' }">
+									<option value="Regular Air-Conditioned">Regular Air-Conditioned</option>
+									<option selected value="First Class">First Class</option>
+								</c:if>
+							</c:if>
+							<c:if test="${busDetails == null}">
+								<option value=" " selected disabled>Select Bus Type</option>
+								<option value="Regular Air-Conditioned">Regular Air-Conditioned</option>
+								<option value="First Class">First Class</option>
+							</c:if>
 						</select>
 				</fieldset>
 
