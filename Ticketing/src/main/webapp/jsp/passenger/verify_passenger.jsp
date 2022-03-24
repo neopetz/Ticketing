@@ -106,7 +106,6 @@ placeholder {
 		</p>
 
 </form>
-
 		</div>
 		
 	</div>

@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.ph.iwanttranseat.java.API.HashMD5;
 import org.ph.iwanttranseat.java.dao.LoginDAO;
 import org.ph.iwanttranseat.java.model.LoginBean;
 
@@ -20,9 +21,11 @@ public class LoginController extends HttpServlet {
 	
     private static final long serialVersionUID = 1L;
     private LoginDAO loginDao;
+    private HashMD5 hashMD5;
 
     public void init() {
         loginDao = new LoginDAO();
+         hashMD5 = new HashMD5();
     }
 
 
@@ -38,7 +41,7 @@ public class LoginController extends HttpServlet {
     private void authenticate(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
        
     	String email = request.getParameter("email");
-        String password = request.getParameter("password");
+        String password = hashMD5.getMd5(request.getParameter("password"));
         
         LoginBean loginBean = new LoginBean();
         loginBean.setEmail(email);

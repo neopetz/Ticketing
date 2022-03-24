@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.ph.iwanttranseat.java.API.HashMD5;
 import org.ph.iwanttranseat.java.API.NotificationAPI;
 
 @WebServlet("/PassengerVerify")
@@ -30,14 +31,17 @@ public class PassengerVerify extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		
+		HashMD5 hashMD5 = new HashMD5();
+		
 		String passengerFirstname = request.getParameter("firstname");
 		String passengerLastname = request.getParameter("lastname");
 		String passengerEmail = request.getParameter("email");
 		String passengerPhoneNumber = request.getParameter("contact");
 		String passengerAge = request.getParameter("age");
-		String passengerPassword = request.getParameter("password");
+		String passengerPassword = hashMD5.getMd5(request.getParameter("password"));
 		String passengerBirthDate = request.getParameter("birthday");
+		
 
 		Random rnd = new Random();
 		int number = rnd.nextInt(999999);
