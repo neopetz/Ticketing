@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class BusModel {
 
-	private int id = 0;
+	private int id;
 	private String busName;
 	private String busType;
 	private String busSeats;
@@ -15,21 +15,21 @@ public class BusModel {
 	private boolean isDeleted;
 	
 //	Delete Bus Details Constructor from Bus Controller
-	public BusModel(boolean isDeleted) {
+	public BusModel(int id, boolean isDeleted) {
 		super();
+		this.id = id;
 		this.isDeleted = isDeleted;
 	}
 	
 //	Update Bus Details Constructor from Bus Controller
-	public BusModel(String busName, String busType, String busSeats, String busNumber, String plateNumber,
-			LocalDate dateModified) {
+	public BusModel(int id, String busName, String busType, String busSeats, String busNumber, String plateNumber) {
 		super();
+		this.id = id;
 		this.busName = busName;
 		this.busType = busType;
 		this.busSeats = busSeats;
 		this.busNumber = busNumber;
 		this.plateNumber = plateNumber;
-		this.dateModified = dateModified;
 	}
 
 //	Insert Bus Details Constructor from Bus Controller
@@ -45,8 +45,9 @@ public class BusModel {
 		this.isDeleted = isDeleted;
 	}
 
+//	for Bus List Array in BusDAO
 	public BusModel(int id, String busName, String busType, String busSeats, String busNumber, String plateNumber,
-			LocalDate dateCreated, LocalDate dateModified) {
+			LocalDate dateCreated) {
 		super();
 		this.id = id;
 		this.busName = busName;
@@ -55,7 +56,6 @@ public class BusModel {
 		this.busNumber = busNumber;
 		this.plateNumber = plateNumber;
 		this.dateCreated = dateCreated;
-		this.dateModified = dateModified;
 	}
 
 	public int getId() {
