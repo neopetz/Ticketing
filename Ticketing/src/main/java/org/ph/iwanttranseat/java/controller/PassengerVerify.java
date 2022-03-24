@@ -43,16 +43,6 @@ public class PassengerVerify extends HttpServlet {
 		int number = rnd.nextInt(999999);
 		String otpNumber = String.format("%06d", number);
 
-//		  PassengerModel passengerModel = new PassengerModel();
-
-//		  passengerModel.setPassengerFirstname(passengerFirstname);
-//		  passengerModel.setPassengerLastname(passengerLastname);
-//		  passengerModel.setPassengerEmail(passengerEmail);
-//		  passengerModel.setPassengerPhoneNumber(passengerPhoneNumber);
-//		  passengerModel.setPassengerAge(Integer.parseInt(passengerAge));
-//		  passengerModel.setPassengerPassword(passengerPassword);
-//		  passengerModel.setPassengerBirthDate(passengerBirthDate);
-
 		NotificationAPI notificationAPI = new NotificationAPI();
 
 		String message = "Hi " + passengerFirstname + " " + passengerLastname + "\n\n\nYour OTP number is : "+ otpNumber;

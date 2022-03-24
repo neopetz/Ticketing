@@ -12,7 +12,7 @@
 <body>
 	<header>
 		<nav class="navbar navbar-expand-md navbar-dark"
-			style="background-color: tomato">
+			style="background-color: #1e90ff; height: 6em;" >
 			<div>
 				<a href="https://www.google.com" class="navbar-brand"> iWantTranSeatPH</a>
 			</div>
@@ -29,6 +29,7 @@
 			</ul>
 		</nav>
 	</header>
+	<br><br>
 	<div class="container col-md-5">
 		<div class="card">
 			<div class="card-body">

@@ -15,7 +15,7 @@
 <body>
 	<header>
 		<nav class="navbar navbar-expand-md navbar-dark"
-			style="background-color: tomato">
+			style="background-color: #1e90ff; height: 6em;">
 			<div>
 				<a href="https://www.google.com" class="navbar-brand"> BUS DETAILS </a>
 			</div>

@@ -27,8 +27,6 @@ public class NotificationAPI {
 		this.to = to;
 	}
 
-
-
 	public boolean sendEmail(String message, String subject, String to) {
 		
 		boolean status = false;
@@ -45,9 +43,7 @@ public class NotificationAPI {
 			protected PasswordAuthentication getPasswordAuthentication() {				
 				return new PasswordAuthentication("iWantTranseat@gmail.com", "09050758558");
 			}
-			
-			
-			
+	
 		});
 		
 		session.setDebug(true);
