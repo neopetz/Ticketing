@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Admin</title>
   </head>
   <style>
                     .divheader {
@@ -67,7 +67,7 @@
                         font-size: 10px;
                     }
                     #bookpassenger{
-                        background-image: url(/images/logo.png);
+                        background-image: url(/images/llogo.png);
                         background-size: cover;
                     }
                     #table_panel{
@@ -78,6 +78,11 @@
                         font-size: 25px;
                         font-family: Times New Roman;
                     }
+                    .row{
+                        margin-top: 20px;
+                        margin-left: 10px;
+                        margin-right: 10px;
+                    }
                 
   </style>
 <body>
@@ -85,79 +90,350 @@
 
 
 
-<div class="col-md-10" id="table_panel">
-    <table class="table table-bordered table-dark">
-        <thead>
-           <tr>
-              <strong id="drivertable">Driver</strong> 
-           </tr>
-          <tr>
+
+
+
+    <div class="container">
+        <div class="main col-20">
+            <div class="row first-row">
+                <div class="md-col-12">
+                    <div class="modal fade" id="profile">
+                        <div class="modal-dialog modal-xl">
+                            <div class="modal-content">
             
-            <th scope="col">ID</th>
-            <th scope="col">First Name</th>
-            <th scope="col">Last Name</th>
-            <th scope="col">Email Address</th>
-            <th scope="col">Contact Number</th>
-            <th scope="col">Status</th>
-          </tr>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-          </tbody>
-        </thead>
-        <table class="table table-bordered table-dark">
-            <thead>
-                <tr>
-                    <strong id="drivertable">Conductor</strong> 
-                 </tr>
-                <tr>
-              <tr>
-                <th scope="col">ID</th>
-                <th scope="col">First Name</th>
-                <th scope="col">Last Name</th>
-                <th scope="col">Email Address</th>
-                <th scope="col">Contact Number</th>
-                <th scope="col">Status</th>
-              </tr>
-            </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
+                            <div class="col-sm-10">
+                                <table class="table table-bordered table-dark">
+                                    <thead>
+                                    <tr>
+                                        <strong id="drivertable">Bus Details</strong> 
+                                    </tr>
+                                    <tr>
+                                        
+                                        <th scope="col">Bus ID</th>
+                                        <th scope="col">Bus Number</th>
+                                        <th scope="col">Plate Number</th>
+                                        <th scope="col">Email Address</th>
+                                        <th scope="col">Contact Number</th>
+                                        <th scope="col">Status</th>
+                                    </tr>
+                                    <tbody>
+                                        <tr>
+                                        <th scope="row"></th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        </tr>
+                                        <tr>
+                                        <th scope="row"></th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        </tr>
+                                        <tr>
+                                        <th scope="row"></th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        </tr>
+                                    </tbody>
+                                    </thead>
+                                <table class="table table-bordered table-dark">
+                                    <thead>
+                                    <tr>
+                                        <strong id="drivertable">Operator</strong> 
+                                    </tr>
+                                    <tr>
+                                        
+                                        <th scope="col">ID</th>
+                                        <th scope="col">First Name</th>
+                                        <th scope="col">Last Name</th>
+                                        <th scope="col">Email Address</th>
+                                        <th scope="col">Contact Number</th>
+                                        <th scope="col">Status</th>
+                                    </tr>
+                                    <tbody>
+                                        <tr>
+                                        <th scope="row"></th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        </tr>
+                                        <tr>
+                                        <th scope="row"></th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        </tr>
+                                        <tr>
+                                        <th scope="row"></th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        </tr>
+                                    </tbody>
+                                    </thead>
+                                <table class="table table-bordered table-dark">
+                                    <thead>
+                                    <tr>
+                                        <strong id="drivertable">Driver</strong> 
+                                    </tr>
+                                    <tr>
+                                        
+                                        <th scope="col">ID</th>
+                                        <th scope="col">First Name</th>
+                                        <th scope="col">Last Name</th>
+                                        <th scope="col">Email Address</th>
+                                        <th scope="col">Contact Number</th>
+                                        <th scope="col">Status</th>
+                                    </tr>
+                                    <tbody>
+                                        <tr>
+                                        <th scope="row"></th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        </tr>
+                                        <tr>
+                                        <th scope="row"></th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        </tr>
+                                        <tr>
+                                        <th scope="row"></th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        </tr>
+                                    </tbody>
+                                    </thead>
+                                    <table class="table table-bordered table-dark">
+                                        <thead>
+                                            <tr>
+                                                <strong id="drivertable">Conductor</strong> 
+                                            </tr>
+                                            <tr>
+                                        <tr>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">First Name</th>
+                                            <th scope="col">Last Name</th>
+                                            <th scope="col">Email Address</th>
+                                            <th scope="col">Contact Number</th>
+                                            <th scope="col">Status</th>
+                                        </tr>
+                                        </thead>
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row"></th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"></th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"></th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+
+
+
+    <div class="container">
+        <div class="main col-20">
+            <div class="row first-row">
+                <div class="md-col-12">
+                    <div class="modal fade" id="schedule">
+                        <div class="modal-dialog modal-xl">
+                            <div class="modal-content">
+            
+                            <div class="col-sm-10">
+                                <table class="table table-bordered table-dark">
+                                    <thead>
+                                    <tr>
+                                        <strong id="drivertable">Bus Details</strong> 
+                                    </tr>
+                                    <tr>
+                                        
+                                        <th scope="col">Bus ID</th>
+                                        <th scope="col">Bus Number</th>
+                                        <th scope="col">Plate Number</th>
+                                        <th scope="col">Email Address</th>
+                                        <th scope="col">Contact Number</th>
+                                        <th scope="col">Status</th>
+                                    </tr>
+                                    <tbody>
+                                        <tr>
+                                        <th scope="row"></th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        </tr>
+                                        <tr>
+                                        <th scope="row"></th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        </tr>
+                                        <tr>
+                                        <th scope="row"></th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        </tr>
+                                    </tbody>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+                                            <div class="row second-row">
+                                                <div class="col-4">
+                                                    <section id="recently-commented">
+                                                        <div class="card">
+                                                            <div class="card-header">
+                                                                Driver Status
+                                                            </div>
+                                                            <ul class="list-group list-group-flush">
+                                                                <div class="row g-0">
+                                                                    
+                                                                    <div class="col">
+
+
+
+                                                                    </div>
+                                                                    <div class="col-md-9">
+                                                                        <div class="card-body">
+                                                                           
+                                                                            <p class="card-text">
+
+
+                                                                              
+                                                                                        
+                                                                                  
+
+
+                                                                            </p>
+                                                                                
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </ul>
+                                                        </div>
+
+                                                    </section>
+
+                                                </div>
+                                            
+                                            <div class="col-5">
+                                                <section id="notes-form">
+                                                    <div class="card">
+                                                        <div class="card-header">
+                                                            Latest Schedule
+                                                        </div>
+                                                    <div class="card-body px-4">
+                                                            <!--<form>
+                                                               <div class="mb-3">
+                                                                    <label class="form-label">Your Note</label>
+                                                                    <textarea class="form-control" rows="10"></textarea>
+                                                                </div>
+                                                                <button type="submit" class="btn btn-primary">Save</button>>--> 
+                                                            </form>
+                                                    </div>
+                                                    </div>
+                                                </section>
+                                            </div>
+                                            <div class="col">
+                                                <section id="active-user">
+                                                    <div class="card">
+                                                        <div class="card-header">
+                                                           Available Busses
+                                                        </div>
+                                                        <div class="card-body text-center">
+                                                            <div class="img-container mb-4">
+                                                                
+                                                            </div>
+                                                        
+                                                        </div>
+                                                    </div>
+                                                </section>
+                                            </div>
+                                        </div>
+                                        </div>
+                                        </div> 
+                                        </div>
+
+                                        <div class="col">
+                                            <section id="active-user">
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                       Available Busses
+                                                    </div>
+                                                    <div class="card-body text-center">
+                                                        <div class="img-container mb-4">
+                                                            
+                                                        </div>
+                                                    
+                                                    </div>
+                                                </div>
+                                            </section>
+                                        </div>
+                            
 
 
   <div>
@@ -193,6 +469,7 @@
               </li>
           </ul>
           <form class="d-flex">
+              
             <input class="form-control mr-2" type="search" placeholder="Search by Email" aria-label="Search">
             <button class="btn btn-outline-primary" type="submit">Search</button>
           </form>
@@ -221,7 +498,7 @@
                   
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">
+                    <a class="nav-link active" aria-current="page" href="#" data-target="#schedule" data-toggle="modal">
                         <button type="button" class="btn btn-outline-primary">Schedule   
                         <svg xmlns="http://www.w3.org/2000/svg" width="100" height="25" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
                             <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
@@ -249,23 +526,14 @@
                     </button>
                     </a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link active" href="#">
-                    <button type="button" class="btn btn-outline-primary"> Profile
-                    <svg xmlns="http://www.w3.org/2000/svg" width="120" height="25" fill="currentColor" class="bi bi-person-square" viewBox="0 0 16 16">
-                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-                        <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1v-1c0-1-1-4-6-4s-6 3-6 4v1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12z"/>
-                      </svg>
-                      </button>
-                   </a>
-                </li>
+                
                <li class="nav-item">
-                  <a class="nav-link active" href="#" data-target="#passenger_registration" data-toggle="modal">
-                    <button type="button" class="btn btn-outline-primary">Book Passenger
-                    <svg xmlns="http://www.w3.org/2000/svg" width="55" height="25" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
-                        <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-                        <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
-                      </svg>
+                  <a class="nav-link active" href="#" data-target="#profile" data-toggle="modal">
+                    <button type="button" class="btn btn-outline-primary">Profile
+                        <svg xmlns="http://www.w3.org/2000/svg" width="120" height="25" fill="currentColor" class="bi bi-person-square" viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1v-1c0-1-1-4-6-4s-6 3-6 4v1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12z"/>
+                          </svg>
                       </button>
                   </a>
                 </li>
