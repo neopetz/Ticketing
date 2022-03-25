@@ -75,7 +75,7 @@ body{
 				<input type="date" id="currentDate" hidden>
 
 				<div class="input-group input-group " id="floatingInput" style="margin-bottom: 2em">
-					<input type="text" pattern="[A-Za-z]{1,20}" placeholder="Firstname" name="firstname"
+					<input type="text" pattern="[a-zA-Z][a-zA-Z ]{1,20}" placeholder="Firstname" name="firstname"
 						class="input1 form-control" title="Input letters only" style="margin-right: 30px;"
 						maxlength="20" required> <input type="text" pattern="[A-Za-z]{1,20}" title="Input letters only"
 						placeholder="Lastname" name="lastname" class="input1 form-control" required maxlength="20">
