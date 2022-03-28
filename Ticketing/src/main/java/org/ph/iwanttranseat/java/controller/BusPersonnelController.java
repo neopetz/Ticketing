@@ -96,12 +96,12 @@ public class BusPersonnelController extends HttpServlet {
 	private void updateBusPersonnel(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException {
 		
-		int id = Integer.parseInt(request.getParameter("id"));
+		int busPersonnel_id = Integer.parseInt(request.getParameter("busPersonnel_id"));
 		String firstname = request.getParameter("firstname");
 		String lastname = request.getParameter("lastname");
 		String position = request.getParameter("position");
 		String status = request.getParameter("status");
-		BusPersonnelModel updatedBusPersonnel = new BusPersonnelModel(id, firstname, lastname, position, status);
+		BusPersonnelModel updatedBusPersonnel = new BusPersonnelModel(busPersonnel_id, firstname, lastname, position, status);
 		
 		busPersonnelDao.updateBusPersonnel(updatedBusPersonnel);
 		response.sendRedirect("listOfBusPersonnel");

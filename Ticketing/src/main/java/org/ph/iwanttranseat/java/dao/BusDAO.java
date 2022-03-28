@@ -15,10 +15,10 @@ public class BusDAO {
 	private static final String INSERT_BUS_DATA = "INSERT INTO `iwanttranseat_db`.`bus` (bus_name, bus_type, bus_seats, "
 			+ "bus_number, plate_number, date_created, is_deleted) VALUES (?,?,?,?,?,?,?);";
 	private static final String SELECT_BUS = "SELECT * FROM `iwanttranseat_db`.`bus` WHERE `is_deleted` <> 1;";
-	private static final String VIEW_BUS = "SELECT * FROM `iwanttranseat_db`.`bus` WHERE `id` = ?";
+	private static final String VIEW_BUS = "SELECT * FROM `iwanttranseat_db`.`bus` WHERE `busId` = ?";
 	private static final String UPDATE_BUS = "UPDATE `iwanttranseat_db`.`bus` SET `bus_name` =?, `bus_type` =?, `bus_seats` =?, "
-			+ "`bus_number` =?, `plate_number` =? WHERE `id` = ?;";
-	private static final String DELETE_BUS = "UPDATE `iwanttranseat_db`.`bus` SET `is_deleted` = ? WHERE (`id` = ?);";
+			+ "`bus_number` =?, `plate_number` =? WHERE `busId` = ?;";
+	private static final String DELETE_BUS = "UPDATE `iwanttranseat_db`.`bus` SET `is_deleted` = ? WHERE (`busId` = ?);";
 
 //	Adding BUS details:
 	public void insertBus(BusModel busModel) {
@@ -51,7 +51,7 @@ public class BusDAO {
 	            ResultSet rs = preparedStatement.executeQuery();
 	            // Step 4: Process the ResultSet object.
 	            while (rs.next()) {
-	                int busId = rs.getInt("id");
+	                int busId = rs.getInt("busId");
 	                String busName = rs.getString("bus_name");
 	                String busType = rs.getString("bus_type");
 	                String busSeats = rs.getString("bus_seats");
@@ -75,14 +75,14 @@ public class BusDAO {
 				PreparedStatement preparedStatement = connection.prepareStatement(SELECT_BUS);) {
 				ResultSet rs = preparedStatement.executeQuery();
 				while (rs.next()) {
-					int id = rs.getInt("id");
+					int busId = rs.getInt("busId");
 					String busName = rs.getString("bus_name");
 					String busType = rs.getString("bus_type");
 					String busSeats = rs.getString("bus_seats");
 					String busNumber = rs.getString("bus_number");
 					String plateNumber = rs.getString("plate_number");
 					LocalDate dateCreated = rs.getDate("date_created").toLocalDate();
-					busList.add(new BusModel(id, busName, busType, busSeats, busNumber, plateNumber, dateCreated));
+					busList.add(new BusModel(busId, busName, busType, busSeats, busNumber, plateNumber, dateCreated));
 				}
 		   } catch (SQLException exception) {
 			   JDBCUtils.printSQLException(exception);
@@ -100,7 +100,7 @@ public class BusDAO {
 					statement.setString(3, busModel.getBusSeats());
 					statement.setString(4, busModel.getBusNumber());
 					statement.setString(5, busModel.getPlateNumber());
-					statement.setInt(6, busModel.getId());
+					statement.setInt(6, busModel.getBusId());
 					rowUpdated = statement.executeUpdate() > 0;
 				}
 				return rowUpdated;
@@ -112,9 +112,35 @@ public class BusDAO {
 		try (Connection connection = JDBCUtils.getConnection();
 				PreparedStatement statement = connection.prepareStatement(DELETE_BUS);) {
 					statement.setBoolean(1, busModel.isDeleted());
-					statement.setInt(2, busModel.getId());
+					statement.setInt(2, busModel.getBusId());
 					rowUpdated = statement.executeUpdate() > 0;
 				}
 				return rowUpdated;
+	}
+	
+	
+	// populate "select bus"
+	private static final String SELECT_TRAVELBUS = "SELECT busId, CONCAT(bus_name, ' | ', bus_type, ' | Capacity:', bus_seats, ' seats | Plate no.: ', plate_number) "
+			+ "AS travel_bus FROM bus WHERE is_deleted <> 1 ORDER BY busId;";
+
+	public static List<BusModel> selectTravelBus() {
+		List<BusModel> travelBus = new ArrayList<>();
+		try (Connection connection = JDBCUtils.getConnection();
+				PreparedStatement preparedStatement = connection.prepareStatement(SELECT_TRAVELBUS)) {
+			System.out.println(preparedStatement);
+			
+			ResultSet rs = preparedStatement.executeQuery();
+
+			while (rs.next()) {
+				int busId = rs.getInt("busId");
+				String bus = rs.getString("travel_bus");
+				System.out.println(bus);
+				travelBus.add(new BusModel(busId, bus));
+
+			}
+		} catch (SQLException exception) {
+			JDBCUtils.printSQLException(exception);
+		}
+		return travelBus;
 	}
 }

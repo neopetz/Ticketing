@@ -48,7 +48,7 @@
 				</caption>
 
 				<c:if test="${busDetails != null}">
-					<input type="hidden" name="id" value="<c:out value='${busDetails.id}' />" />
+					<input type="hidden" name="id" value="<c:out value='${busDetails.busId}' />" />
 				</c:if>
 
 				<fieldset class="form-group">
