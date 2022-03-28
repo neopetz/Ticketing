@@ -27,6 +27,8 @@
 <!-- Fontawesome -->
 <script src="https://kit.fontawesome.com/f86155eccc.js" crossorigin="anonymous"></script>
 
+<!-- DataTables CSS -->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.11.5/r-2.2.9/datatables.min.css"/>
 
 </head>
 <body>
