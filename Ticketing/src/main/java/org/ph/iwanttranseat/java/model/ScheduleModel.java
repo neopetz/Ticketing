@@ -5,7 +5,7 @@ import java.time.LocalTime;
 
 public class ScheduleModel {
 	
-	private int id;
+	private int schedule_id;
 	private String travel_from;
 	private String travel_to;
 	private LocalDate travel_date;
@@ -14,10 +14,19 @@ public class ScheduleModel {
 	private int fare;
 	private boolean isDeleted;
 	
+	private String travel_schedule;
 	
-	public ScheduleModel(int id, String travel_from, String travel_to, LocalDate travel_date, LocalTime departure, LocalTime arrival, int fare) {
+	
+	
+	public ScheduleModel(int schedule_id, String travel_schedule) {
 		super();
-		this.id = id;
+		this.setSchedule_id(schedule_id);
+		this.setTravel_schedule(travel_schedule);
+	}
+
+	public ScheduleModel(int schedule_id, String travel_from, String travel_to, LocalDate travel_date, LocalTime departure, LocalTime arrival, int fare) {
+		super();
+		this.setSchedule_id(schedule_id);
 		this.travel_from = travel_from;
 		this.travel_to = travel_to;
 		this.travel_date = travel_date;
@@ -40,18 +49,12 @@ public class ScheduleModel {
 		
 	}
 	
-	public ScheduleModel(int id, boolean isDeleted) {
-		this.id = id;
-		this.isDeleted = isDeleted;
+	public ScheduleModel(int schedule_id, boolean isDeleted) {
+		this.setSchedule_id(schedule_id);
+		this.setDeleted(isDeleted);
 	}
 	
-	public int getId() {
-		return id;
-	}
 
-	public void setId(int id) {
-		this.id = id;
-	}
 
 	public String getTravel_from() {
 		return travel_from;
@@ -89,7 +92,31 @@ public class ScheduleModel {
 	public void setFare(int fare) {
 		this.fare = fare;
 	}
-	
-	
+
+	public boolean isDeleted() {
+		return isDeleted;
+	}
+
+	public void setDeleted(boolean isDeleted) {
+		this.isDeleted = isDeleted;
+	}
+
+	public String getTravel_schedule() {
+		return travel_schedule;
+	}
+
+	public void setTravel_schedule(String travel_schedule) {
+		this.travel_schedule = travel_schedule;
+	}
+
+	public int getSchedule_id() {
+		return schedule_id;
+	}
+
+	public void setSchedule_id(int schedule_id) {
+		this.schedule_id = schedule_id;
+	}
+
+
 	
 }
