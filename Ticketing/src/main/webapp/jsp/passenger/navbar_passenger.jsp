@@ -23,13 +23,13 @@
 			<ul class="navbar-nav float-right d-none d-md-none d-lg-block">
 				<li class="nav-item dropdown"><a class="nav-link dropdown-toggle h5" href="#" id="navbarDropdown"
 						role="button" data-toggle="dropdown" aria-expanded="false">
-						Fullname </a>
+						<%= session.getAttribute("email") %> </a>
 					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 						<a class="dropdown-item" data-toggle="modal" data-target="#profileModal">Profile</a>
 						<a class="dropdown-item" data-toggle="modal" data-target="#changePasswordModal">Change
 							Password</a>
 						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="#">Logout</a>
+						<a class="dropdown-item" href="${pageContext.request.contextPath}/jsp/index.jsp">Logout</a>
 					</div>
 				</li>
 			</ul>
@@ -47,7 +47,8 @@
 						Password <span class="material-icons d-md-inline d-lg-none ml-4" style="font-size: 36px;">
 							lock</span>
 					</a></li>
-				<li class="nav-item"><a class="nav-link d-flex align-items-center justify-content-end h5">Logout
+				<li class="nav-item"><a class="nav-link d-flex align-items-center justify-content-end h5"
+						href="${pageContext.request.contextPath}/jsp/index.jsp">Logout
 						<span class="material-icons d-md-inline d-lg-none ml-4" style="font-size: 36px;"> logout</span>
 					</a></li>
 			</ul>

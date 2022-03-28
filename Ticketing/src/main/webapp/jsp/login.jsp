@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 	<jsp:include page="header.jsp"></jsp:include>
 	<jsp:include page="navbar.jsp"></jsp:include>
 	
@@ -9,7 +10,7 @@
 			<h6 style="color: white; font-family: 'Century Gothic'">Passenger Login</h6>
 		</div>
 		<div class="container shadow p-3 mb-5 bg-white rounded" style="padding: 30px">
-
+			
 			<form action="<%=request.getContextPath()%>/LoginController" method="post">
 
 				<input type="date" id="currentDate" hidden>
@@ -22,6 +23,16 @@
 					<input type="password" name="password" placeholder="Password" class="input1 form-control"
 						style="margin-right: 10px; width: 80px">
 				</div>
+				
+				<c:if test="${NOTIFICATION != null }">
+					<div class="alert alert-warning alert-dismissible fade show" role="alert">
+						<p class="text-left">${NOTIFICATION}</p>
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						    <span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+				</c:if>
+				
 				<!-- Submit Button -->
 				<div class="input-group input-group " id="floatingInput" style="margin-top: 3em">
 					<button type="submit" class="btn btn-primary btn-lg btn2  btn-block">Login</button>
