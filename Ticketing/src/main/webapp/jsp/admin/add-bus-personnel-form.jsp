@@ -38,8 +38,8 @@
 					</h2>
 				</caption>
 
-				<input type="hidden" name="id"
-					value="<c:out value='${busPersonnel.id}' />" />
+				<input type="hidden" name="busPersonnel_id"
+					value="<c:out value='${busPersonnel.busPersonnel_id}' />" />
 
 
 
