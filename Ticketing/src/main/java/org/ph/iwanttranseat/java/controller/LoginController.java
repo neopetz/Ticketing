@@ -14,52 +14,53 @@ import org.ph.iwanttranseat.java.API.HashMD5;
 import org.ph.iwanttranseat.java.dao.LoginDAO;
 import org.ph.iwanttranseat.java.model.LoginBean;
 
-
-
 @WebServlet("/LoginController")
 public class LoginController extends HttpServlet {
-	
-    private static final long serialVersionUID = 1L;
-    private LoginDAO loginDao;
-    private HashMD5 hashMD5;
 
-    public void init() {
-        loginDao = new LoginDAO();
-         hashMD5 = new HashMD5();
-    }
+	private static final long serialVersionUID = 1L;
+	private LoginDAO loginDao;
+	private HashMD5 hashMD5;
 
+	public void init() {
+		loginDao = new LoginDAO();
+		hashMD5 = new HashMD5();
+	}
 
-
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		response.sendRedirect("jsp/login.jsp");
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		authenticate(request, response);
 	}
-	
-    private void authenticate(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-       
-    	String email = request.getParameter("email");
-        String password = hashMD5.getMd5(request.getParameter("password"));
-        
-        LoginBean loginBean = new LoginBean();
-        loginBean.setEmail(email);
-        loginBean.setPassword(password);
 
-        try {
-            if (loginDao.validate(loginBean)) {
-                RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/index.jsp");
-                dispatcher.forward(request, response);
-            } else {
-                HttpSession session = request.getSession();
-                session.setAttribute("email", email);
-                response.sendRedirect("jsp/login.jsp");
-            }
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
+	private void authenticate(HttpServletRequest request, HttpServletResponse response)
+			throws IOException, ServletException {
 
-    }
+		String email = request.getParameter("email");
+		String password = hashMD5.getMd5(request.getParameter("password"));
+
+		LoginBean loginBean = new LoginBean();
+		loginBean.setEmail(email);
+		loginBean.setPassword(password);
+
+		try {
+			if (loginDao.validate(loginBean)) {
+				RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/passenger/index_passenger.jsp");
+				HttpSession session = request.getSession();
+				session.setAttribute("email", email);
+				dispatcher.forward(request, response);
+			} else {
+				request.setAttribute("NOTIFICATION", "Invalid Username or Password");
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/login.jsp");
+				dispatcher.forward(request, response);
+			}
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+
+	}
 
 }
