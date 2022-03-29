@@ -25,7 +25,7 @@
 
 </div><br><br>
 <div class="sidebar">
-<h5>Hello Admin</h5>
+<h5>Hello <%= session.getAttribute("username") %></h5>
 	    <hr />
   <a href="#news" ><i class="fa-solid fa-house"></i> Dashboard</a>
   <a href="<%=request.getContextPath()%>/busList" ><i class="fa-solid fa-bus"></i> Bus</a>

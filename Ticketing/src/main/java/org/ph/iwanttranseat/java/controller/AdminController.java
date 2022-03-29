@@ -44,7 +44,7 @@ public class AdminController extends HttpServlet {
 		
 		try {
 			if (adminDAO.validate(adminModel)) {
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/admin/index_admin.jsp");
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/sidebar.jsp");
 				HttpSession session = request.getSession();
 				session.setAttribute("username", username);
 				dispatcher.forward(request, response);
