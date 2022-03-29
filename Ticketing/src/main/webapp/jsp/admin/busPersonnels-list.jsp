@@ -40,9 +40,9 @@
 							<td><c:out value="${busPersonnel.status}" /></td>
 
 							<td><a
-								href="editBusPersonnel?id=<c:out value='${busPersonnel.id}' />">Edit</a>
+								href="editBusPersonnel?id=<c:out value='${busPersonnel.busPersonnel_id}' />">Edit</a>
 								&nbsp;&nbsp;&nbsp;&nbsp; <a
-								href="deleteBusPersonnel?id=<c:out value='${busPersonnel.id}' />">Delete</a></td>
+								href="deleteBusPersonnel?id=<c:out value='${busPersonnel.busPersonnel_id}' />">Delete</a></td>
 						</tr>
 					</c:forEach>
 					<!-- } -->

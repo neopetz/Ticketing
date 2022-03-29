@@ -64,5 +64,13 @@ CREATE TABLE `bus`(
     `is_deleted` BOOLEAN
 );
 
+/* AdminDetails Table */
+CREATE TABLE `admin`(
+	`admin_id` INT PRIMARY KEY AUTO_INCREMENT,
+	`username` VARCHAR (20),
+	`password` VARCHAR (40)
+);
+
+
 SELECT * FROM `bus`;
 SELECT * FROM `bus` WHERE `is_deleted` <> 1;

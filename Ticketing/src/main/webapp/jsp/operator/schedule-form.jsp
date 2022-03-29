@@ -55,7 +55,7 @@
     </caption>
 
     <c:if test="${schedule != null}">
-     <input type="hidden" name="id" value="<c:out value='${schedule.id}' />" />
+     <input type="hidden" name="id" value="<c:out value='${schedule.schedule_id}' />" />
     </c:if>
 
     <fieldset class="form-group">

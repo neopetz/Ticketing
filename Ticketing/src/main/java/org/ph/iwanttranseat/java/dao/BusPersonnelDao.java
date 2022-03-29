@@ -8,16 +8,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.ph.iwanttranseat.java.model.BusPersonnelModel;
+import org.ph.iwanttranseat.java.model.ConductorModel;
+import org.ph.iwanttranseat.java.model.DriverModel;
 
 public class BusPersonnelDao {
 
-	private static final String SELECT_BUSPERSONNEL_DRIVERS = "SELECT id, firstname, lastname, position, status FROM bus_personnel WHERE isDeleted = FALSE";
-	private static final String SELECT_BUSPERSONNEL_BY_ID = "SELECT * FROM bus_personnel WHERE id =?";
+	private static final String SELECT_BUSPERSONNEL_DRIVERS = "SELECT busPersonnel_id, firstname, lastname, position, status FROM bus_personnel WHERE isDeleted = FALSE";
+	private static final String SELECT_BUSPERSONNEL_BY_ID = "SELECT * FROM bus_personnel WHERE busPersonnel_id =?";
 	private static final String INSERT_BUSPERSONNEL_SQL = "INSERT INTO bus_personnel (firstname, lastname, position, status, isDeleted) VALUES"
 			+ " (?, ?, ?, ?, ?);";
 	private static final String UPDATE_BUSPERSONNEL = "UPDATE bus_personnel SET firstname = ?, lastname = ?, position = ?, status = ?"
-			+ "WHERE id = ?";
-	private static final String DELETE_BUSPERSONNEL = "UPDATE bus_personnel SET isDeleted = ? WHERE id = ?";
+			+ "WHERE busPersonnel_id = ?";
+	private static final String DELETE_BUSPERSONNEL = "UPDATE bus_personnel SET isDeleted = ? WHERE busPersonnel_id = ?";
 
 	// Select All Bus Personnels
 	public List<BusPersonnelModel> selectAllBusPersonnel() {
@@ -30,12 +32,12 @@ public class BusPersonnelDao {
 			ResultSet rs = preparedStatement.executeQuery();
 
 			while (rs.next()) {
-				int id = rs.getInt("id");
+				int busPersonnel_id = rs.getInt("busPersonnel_id");
 				String firstname = rs.getString("firstname");
 				String lastname = rs.getString("lastname");
 				String position = rs.getString("position");
 				String status = rs.getString("status");
-				busPersonnels.add(new BusPersonnelModel(id, firstname, lastname, position, status));
+				busPersonnels.add(new BusPersonnelModel(busPersonnel_id, firstname, lastname, position, status));
 			}
 		} catch (SQLException exception) {
 			JDBCUtils.printSQLException(exception);
@@ -44,15 +46,15 @@ public class BusPersonnelDao {
 	}
 
 	// Select a BusPersonnel by ID
-	public BusPersonnelModel selectBusPersonnelByID(int id) {
+	public BusPersonnelModel selectBusPersonnelByID(int busPersonnel_id) {
 		BusPersonnelModel busPersonnel = null;
 		try (Connection connection = JDBCUtils.getConnection();
 				PreparedStatement preparedStatement = connection.prepareStatement(SELECT_BUSPERSONNEL_BY_ID);) {
-			preparedStatement.setInt(1, id);
+			preparedStatement.setInt(1, busPersonnel_id);
 			ResultSet rs = preparedStatement.executeQuery();
 
 			while (rs.next()) {
-				int busPersonnelID = rs.getInt("id");
+				int busPersonnelID = rs.getInt("busPersonnel_id");
 				String firstname = rs.getString("firstname");
 				String lastname = rs.getString("lastname");
 				String position = rs.getString("position");
@@ -91,13 +93,13 @@ public class BusPersonnelDao {
 		boolean rowUpdated;
 		try (Connection connection = JDBCUtils.getConnection();
 				PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_BUSPERSONNEL);) {
-		
+
 			preparedStatement.setString(1, busPersonnel.getFirstname());
 			preparedStatement.setString(2, busPersonnel.getLastname());
 			preparedStatement.setString(3, busPersonnel.getPosition());
 			preparedStatement.setString(4, busPersonnel.getStatus());
-			preparedStatement.setInt(5, busPersonnel.getId());
-			
+			preparedStatement.setInt(5, busPersonnel.getBusPersonnel_id());
+
 			rowUpdated = preparedStatement.executeUpdate() > 0;
 		}
 		return rowUpdated;
@@ -107,9 +109,58 @@ public class BusPersonnelDao {
 		try (Connection connection = JDBCUtils.getConnection();
 				PreparedStatement statement = connection.prepareStatement(DELETE_BUSPERSONNEL);) {
 			statement.setBoolean(1, true);
-			statement.setInt(2, busPersonnel.getId());
+			statement.setInt(2, busPersonnel.getBusPersonnel_id());
 			statement.executeUpdate();
 		}
 	}
 
+	// populate "select driver"
+	private static final String SELECT_DRIVER = "SELECT busPersonnel_id, CONCAT(firstname, ' ',lastname) "
+			+ "AS driver FROM bus_personnel WHERE position = \"driver\" AND status = \"available\" AND isDeleted <> 1 ORDER BY busPersonnel_id;";
+
+	public static List<DriverModel> selectTravelDriver() {
+		List<DriverModel> travelDriver = new ArrayList<>();
+		try {
+			Connection connection = JDBCUtils.getConnection();
+			PreparedStatement preparedStatement = connection.prepareStatement(SELECT_DRIVER);
+			System.out.println(preparedStatement);
+			ResultSet rs = preparedStatement.executeQuery();
+			while (rs.next()) {
+
+				int busPersonnel_id = rs.getInt("busPersonnel_id");
+				String driver = rs.getString("driver");
+				System.out.println(driver);
+				travelDriver.add(new DriverModel(busPersonnel_id, driver));
+
+			}
+		} catch (SQLException exception) {
+			JDBCUtils.printSQLException(exception);
+		}
+		return travelDriver;
+	}
+	
+	// populate "select conductor"
+		private static final String SELECT_CONDUCTOR = "SELECT busPersonnel_id, CONCAT(firstname, ' ',lastname) "
+				+ "AS conductor FROM bus_personnel WHERE position = \"conductor\" AND status = \"available\" AND isDeleted <> 1 ORDER BY busPersonnel_id;";
+
+		public static List<ConductorModel> selectTravelConductor() {
+			List<ConductorModel> travelConductor = new ArrayList<>();
+			try {
+				Connection connection = JDBCUtils.getConnection();
+				PreparedStatement preparedStatement = connection.prepareStatement(SELECT_CONDUCTOR);
+				System.out.println(preparedStatement);
+				ResultSet rs = preparedStatement.executeQuery();
+				while (rs.next()) {
+
+					int busPersonnel_id = rs.getInt("busPersonnel_id");
+					String conductor = rs.getString("conductor");
+					System.out.println(conductor);
+					travelConductor.add(new ConductorModel(busPersonnel_id, conductor));
+
+				}
+			} catch (SQLException exception) {
+				JDBCUtils.printSQLException(exception);
+			}
+			return travelConductor;
+		}
 }

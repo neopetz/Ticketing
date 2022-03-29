@@ -1,0 +1,34 @@
+@charset "ISO-8859-1";
+.input {
+			font-family: 'Century Gothic';
+		}
+
+		.bg1 {
+			background-color: #637ce6;
+			background-image: linear-gradient(10deg, #637ce6 0%, #1c285c 100%);
+			padding: 5px;
+			border-radius: 30px 30px 30px 30px;
+		}
+
+		.bg2 {
+			background-color: #637ce6;
+			background-image: linear-gradient(10deg, #637ce6 0%, #1c285c 100%);
+			padding: 5px;
+			border-radius: 40px 1px 40px 1px;
+			padding: 15px;
+			font-size: 15px;
+		}
+
+		.select {
+			width: 100%;
+			border-radius: 30px 30px 30px 30px;
+			font-size: 13px;
+			font-family: Century Gothic;
+		}
+
+		.dropdown .select {
+			width: 100%;
+			border-radius: 30px 30px 30px 30px;
+			font-size: 13px;
+			font-family: Century Gothic;
+		}

@@ -63,7 +63,7 @@
 					<c:forEach var="busDetails" items="${busList}">
 
 						<tr>
-							<td><c:out value="${busDetails.id}" /></td>
+							<td><c:out value="${busDetails.busId}" /></td>
 							<td><c:out value="${busDetails.busName}" /></td>
 							<td><c:out value="${busDetails.busType}" /></td>
 							<td><c:out value="${busDetails.busSeats}" /></td>
@@ -72,9 +72,9 @@
 							<td><c:out value="${busDetails.dateCreated}" /></td>
 
 							<td>
-								<a href="editForm?id=<c:out value='${busDetails.id}' />">EDIT</a>
+								<a href="editForm?id=<c:out value='${busDetails.busId}' />">EDIT</a>
 								&nbsp;&nbsp;&nbsp;&nbsp; 
-								<a href="deleteBusDetails?id=<c:out value='${busDetails.id}' />">DELETE</a>
+								<a href="deleteBusDetails?id=<c:out value='${busDetails.busId}' />">DELETE</a>
 							</td>
 						</tr>
 					</c:forEach>

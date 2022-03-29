@@ -94,7 +94,7 @@ public class ScheduleController extends HttpServlet {
 		LocalTime arrival = LocalTime.parse(req.getParameter("arrival"));
 		int fare = Integer.parseInt(req.getParameter("fare"));
 		System.out.print("\n\n" + travel_date);
-		ScheduleModel updateschedule = new ScheduleModel(id, travel_from, travel_to, travel_date, departure, arrival,fare);
+		ScheduleModel updateschedule = new ScheduleModel(id, travel_from, travel_to, travel_date, departure, arrival, fare);
 
 		System.out.print(updateschedule);
 		scheduleDAO.updateSchedule(updateschedule);
