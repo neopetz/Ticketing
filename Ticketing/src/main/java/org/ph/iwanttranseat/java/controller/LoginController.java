@@ -47,14 +47,26 @@ public class LoginController extends HttpServlet {
 		loginBean.setPassword(password);
 
 		try {
-			if (loginDao.validate(loginBean)) {
+			if (loginDao.validateAdmin(loginBean)) {
+				RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/admin/index_admin.jsp");
+				HttpSession session = request.getSession();
+				session.setAttribute("email", email);
+				dispatcher.forward(request, response);
+			}
+			else if (loginDao.validateOperator(loginBean)) {
+				RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/operator/index_operator.jsp");
+				HttpSession session = request.getSession();
+				session.setAttribute("email", email);
+				dispatcher.forward(request, response);
+			}
+			else if (loginDao.validate(loginBean)) {
 				RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/passenger/index_passenger.jsp");
 				HttpSession session = request.getSession();
 				session.setAttribute("email", email);
 				dispatcher.forward(request, response);
 			} else {
 				request.setAttribute("NOTIFICATION", "Invalid Username or Password");
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/login.jsp");
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/index.jsp");
 				dispatcher.forward(request, response);
 			}
 		} catch (ClassNotFoundException e) {
