@@ -2,7 +2,7 @@ let prevFirstname = $('#firstname').val();
 let prevLastname = $('#lastname').val();
 let prevEmail = $('#email').val();
 let prevPhoneNumber = $('#phone_number').val();
-let prevBirthdate = $('#birthdate').val();
+let prevBirthdate = $('#birth_date').val();
 
 // When clicked remove disabled in inputs and change the displayed buttons
 $('#showEditFormBtn').on('click', function () {
@@ -14,7 +14,7 @@ $('#showEditFormBtn').on('click', function () {
 
 	$('#email').prop("disabled", false);
 	$('#phone_number').prop("disabled", false);
-	$('#birthdate').prop("disabled", false);
+	$('#birth_date').prop("disabled", false);
 	$('#showEditFormBtn').addClass("d-none");
 	$('#saveEditBtn').removeClass("d-none");
 	$('#cancelEditBtn').removeClass("d-none");
@@ -29,7 +29,7 @@ $('#cancelEditBtn').on('click', function () {
 	$('#lastname').val(prevLastname);
 	$('#email').val(prevEmail);
 	$('#phone_number').val(prevPhoneNumber);
-	$('#birthdate').val(prevBirthdate);
+	$('#birth_date').val(prevBirthdate);
 
 	$('#fullname_field').removeClass("d-none");
 	$('#firstname_field').addClass("d-none");
@@ -37,17 +37,17 @@ $('#cancelEditBtn').on('click', function () {
 
 	$('#email').prop("disabled", true);
 	$('#phone_number').prop("disabled", true);
-	$('#birthdate').prop("disabled", true);
+	$('#birth_date').prop("disabled", true);
 	$('#showEditFormBtn').removeClass("d-none");
 	$('#saveEditBtn').addClass("d-none");
 	$('#cancelEditBtn').addClass("d-none");
 	$('#closeModalBtn').removeClass("d-none");
 });
 
-// Automactically compute the age from the birthdate
+// Automactically compute the age from the birth_date
 function ageCount() {
 
-	var dobget = document.getElementById("birthdate").value;
+	var dobget = document.getElementById("birth_date").value;
 	var dob = new Date(dobget);
 
 	var month_diff = Date.now() - dob.getTime();
@@ -59,7 +59,7 @@ function ageCount() {
 }
 
 
-// Validation for birthdate
+// Validation for birth_date
 var today = new Date();
 var dd = today.getDate();
 var mm = today.getMonth() + 1; //January is 0!
@@ -74,7 +74,7 @@ if (mm < 10) {
 }
 
 today = yyyy + "-" + mm + "-" + dd;
-document.getElementById("birthdate").setAttribute("max", today);
+document.getElementById("birth_date").setAttribute("max", today);
 
 // Automatically add dash on Phone Number
 function addDash() {
