@@ -105,7 +105,7 @@ public class OperatorController extends HttpServlet {
 			throws SQLException, IOException, ServletException {
 		List<OperatorModel> listOperator = operatorDAO.selectAllOperator();
 		req.setAttribute("listoperator", listOperator);
-		RequestDispatcher dispatcher = req.getRequestDispatcher("jsp/operator/operator-list.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("jsp/admin/operator-list.jsp");
 		dispatcher.forward(req, resp);
 
 	}
@@ -137,7 +137,7 @@ public class OperatorController extends HttpServlet {
 	private void showFormOperator(HttpServletRequest req, HttpServletResponse resp)
 			throws SQLException, IOException, ServletException {
 		System.out.print("form");
-		RequestDispatcher dispatcher = req.getRequestDispatcher("jsp/operator/operator-form.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("jsp/admin/operator-form.jsp");
 		dispatcher.forward(req, resp);
 	}
 
@@ -146,7 +146,7 @@ public class OperatorController extends HttpServlet {
 		int operatorId = Integer.parseInt(req.getParameter("id"));
 
 		OperatorModel existingTodoOperator = operatorDAO.selectOperator(operatorId);
-		RequestDispatcher dispatcher = req.getRequestDispatcher("jsp/operator/operator-form.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("jsp/admin/operator-form.jsp");
 		req.setAttribute("operator", existingTodoOperator);
 		dispatcher.forward(req, resp);
 	}

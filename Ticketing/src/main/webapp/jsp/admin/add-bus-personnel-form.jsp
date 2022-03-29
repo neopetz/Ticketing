@@ -3,38 +3,36 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
-
+<title>iWantTranseat</title>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
-
 </head>
 
-</head>
+<jsp:include page="../sidebar.jsp"></jsp:include>
+
+
+
 <body>
-
-	<div class="container col-md-5">
+	<div class="col-md-3"></div>
+	<br>
+	<br>
+	<div class="container col-md-"
+		style="margin: auto; width: 500; border: 3px solid #1C285C; padding: 10px;">
 		<div class="card">
 			<div class="card-body">
 				<c:if test="${busPersonnel != null}">
-					<form action="<%=request.getContextPath()%>/updateBusPersonnel"
-						method="post">
+					<form action="<%=request.getContextPath()%>/updateBusPersonnel" method="post">
 				</c:if>
 				<c:if test="${busPersonnel == null}">
-					<form action="<%=request.getContextPath()%>/insertBusPersonnel"
-						method="post">
+					<form action="<%=request.getContextPath()%>/insertBusPersonnel"	method="post">
 				</c:if>
 
 				<caption>
 					<h2>
-						<c:if test="${busPersonnel != null}">
-               Edit 
-              </c:if>
-						<c:if test="${busPersonnel == null}">
-               Add New Bus Personnel
-               	<input type="hidden" name="isDeleted" value="false">
-						</c:if>
+						<c:if test="${busPersonnel != null}">Edit </c:if>
+						<c:if test="${busPersonnel == null}">Add New Bus Personnel<input type="hidden" name="isDeleted" value="false"></c:if>
 					</h2>
 				</caption>
 
@@ -103,10 +101,11 @@
 					</select>
 				</fieldset>
 
-
+				<button type="back" class="btn btn-danger"><a href="<%=request.getContextPath()%>/listOfBusPersonnel" style="color:white;"><i class="fa-solid fa-arrow-left"></i> BACK</a></button>
 				<button type="submit" class="btn btn-success">Save</button>
 				</form>
 			</div>
 		</div>
 	</div>
+	<div class="col-md-3"></div>
 </html>

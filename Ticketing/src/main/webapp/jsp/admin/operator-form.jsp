@@ -1,38 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
- pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
-<title>Operator</title>
-
-<link rel="stylesheet"
- href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
- integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
- crossorigin="anonymous">
-
+<title>iWantTranseat</title>
+	<link rel="stylesheet"
+		href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+		crossorigin="anonymous">
 </head>
 
-</head>
+<jsp:include page="../sidebar.jsp"></jsp:include>
+
+
 <body>
- <header>
-  <nav class="navbar navbar-expand-md navbar-dark"
-   style="background-color: tomato">
-   <div>
-    <a href="https://www.google.com" class="navbar-brand"> Operator</a>
-   </div>
-
-   <ul class="navbar-nav">
-    <li><a href="<%=request.getContextPath()%>/listOperator"
-     class="nav-link">Operator's List</a></li>
-   </ul>
-
-   <ul class="navbar-nav navbar-collapse justify-content-end">
-    <li><a href="<%=request.getContextPath()%>/logout"
-     class="nav-link">Logout</a></li>
-   </ul>
-  </nav>
- </header>
- <div class="container col-md-5">
+ 
+	<br><br>
+	<div class="col-md-3"></div>
+	<div class="container col-md-" style="margin: auto; width: 500; border: 3px solid #1C285C; padding: 10px;">	
   <div class="card">
    <div class="card-body">
     <c:if test="${operator != null}">
@@ -80,13 +65,13 @@
       value="<c:out value='${operator.operator_password}' />" class="form-control"
       name="operator_password" required="required">
     </fieldset>
-
+				<button type="back" class="btn btn-danger"><a href="<%=request.getContextPath()%>/listOperator" style="color:white;"><i class="fa-solid fa-arrow-left"></i> BACK</a></button>
     <button type="submit" class="btn btn-success">Save</button>
     </form>
    </div>
   </div>
  </div>
+	<div class="col-md-3"></div>
 
- <jsp:include page="/jsp/footer.jsp"></jsp:include>
 </body>
 </html>
