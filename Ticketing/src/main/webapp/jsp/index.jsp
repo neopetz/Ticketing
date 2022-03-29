@@ -4,7 +4,7 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/carousel.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/index-style.css">
 
-	<div class="container" >
+	<div class="container">
 		<div class="row" style="align-items: left" ;>
 			<div class="col-md-4">
 				<div class="form-row">
@@ -15,7 +15,7 @@
 
 			<div class="col-md-8" style="margin-top: 15px;">
 				<!-- Form -->
-			<!-- <form action="">
+				<!-- <form action="">
 					<div class="form-row"
 						style="padding-top: 15px; padding-left: 8px; padding-right: 8px; border-radius: 50px;">
 						<div class="form-group col-md-3">
@@ -77,7 +77,8 @@
 						<div class="carousel-caption text-left">
 							<h1 style="font-family: 'Century Gothic'">Going for a Trip?</h1>
 							<p style="font-family: 'Century Gothic'">
-								<a class="bg2 btn btn-lg btn-info" style="border-radius:40px 1px 40px 1px;"  href="#">BOOK A SEAT !</a>
+								<a class="bg2 btn btn-lg btn-info" style="border-radius:40px 1px 40px 1px;"
+									href="#">BOOK A SEAT !</a>
 							</p>
 						</div>
 					</div>
@@ -89,7 +90,8 @@
 						<div class="carousel-caption">
 							<h1 style="font-family: 'Century Gothic'">Going for a Trip?</h1>
 							<p style="font-family: 'Century Gothic'">
-								<a class="bg2 btn btn-lg btn-info" style="border-radius:40px 1px 40px 1px;" href="#">BOOK A SEAT !</a>
+								<a class="bg2 btn btn-lg btn-info" style="border-radius:40px 1px 40px 1px;"
+									href="#">BOOK A SEAT !</a>
 							</p>
 						</div>
 					</div>
@@ -101,7 +103,8 @@
 						<div class="carousel-caption">
 							<h1 style="font-family: 'Century Gothic'">Going for a Trip ?</h1>
 							<p style="font-family: 'Century Gothic'">
-								<a class="bg2 btn btn-lg btn-info" style="border-radius:40px 1px 40px 1px;"  href="#">BOOK A SEAT !</a>
+								<a class="bg2 btn btn-lg btn-info" style="border-radius:40px 1px 40px 1px;"
+									href="#">BOOK A SEAT !</a>
 							</p>
 						</div>
 					</div>
@@ -130,7 +133,7 @@
 					<img src="https://s1.rdbuz.com/Images/webplatform/rbdotcom/multiple_bus_service.svg" height="90">
 					<h2>Multiple Bus Service</h2>
 					<p>Choose from various bus available schedule</p>
-				
+
 					<p>
 						<a class="btn btn-primary" href="#" style="background-color:#1C285C;
     background-image: linear-gradient(10deg, #637ce6 0%, #1c285c 100%);">See the Schedule &raquo;</a>
@@ -163,68 +166,69 @@
 			<!-- START THE FEATURETTES -->
 
 			<hr class="featurette-divider">
-				<div class="row featurette">
+			<div class="row featurette">
 				<div class="col-md-7">
 					<h2 class="featurette-heading" style=" color:#1C285C ">
 						1. Do your research <span class="text-muted"></span>
 					</h2>
-					<p class="lead">Ticket prices vary from one bus company to the next. 
-					Be sure to do your research and compare companies and prices. 
-					iWantTranseat can help you do that as we have collected all the info you need 
-					and put it in one place, so comparing prices, schedules, and providers is a breeze. 
-					You can sort the results by price, departure time, and ticket types and compare what
-					 each bus company has to offer in a single search.</p>
+					<p class="lead">Ticket prices vary from one bus company to the next.
+						Be sure to do your research and compare companies and prices.
+						iWantTranseat can help you do that as we have collected all the info you need
+						and put it in one place, so comparing prices, schedules, and providers is a breeze.
+						You can sort the results by price, departure time, and ticket types and compare what
+						each bus company has to offer in a single search.</p>
 				</div>
 				<div class="col-md-5">
 					<img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-						height="500" src="${pageContext.request.contextPath}/assets/busresearch.jpg" role="img" aria-label="Placeholder: 500x500"
-						preserveAspectRatio="xMidYMid slice" focusable="false">
+						height="500" src="${pageContext.request.contextPath}/assets/busresearch.jpg" role="img"
+						aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false">
 
 				</div>
 			</div>
-			
+
 			<hr class="featurette-divider">
 
 			<div class="row featurette">
 				<div class="col-md-7 order-md-2">
-					<h2 class="featurette-heading"  style=" color:#1C285C ">
+					<h2 class="featurette-heading" style=" color:#1C285C ">
 						2. Travel during off-peak hours. <span class="text-muted"></span>
 					</h2>
 					<p class="lead">
-					There are often multiple daily departures, so if you can be flexible 
-					with your travel dates or schedule, choosing an overnight bus or 
-					traveling mid-week instead of the weekend will help you save on transportation costs..</p>
+						There are often multiple daily departures, so if you can be flexible
+						with your travel dates or schedule, choosing an overnight bus or
+						traveling mid-week instead of the weekend will help you save on transportation costs..</p>
 				</div>
 				<div class="col-md-5 order-md-1">
 					<img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-						height="500" src="${pageContext.request.contextPath}/assets/busweather.jpg" role="img" aria-label="Placeholder: 500x500"
-						preserveAspectRatio="xMidYMid slice" focusable="false">
-						
+						height="500" src="${pageContext.request.contextPath}/assets/busweather.jpg" role="img"
+						aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false">
+
 
 				</div>
 			</div>
 
 			<hr class="featurette-divider">
 
-		
+
 
 			<div class="row featurette">
 				<div class="col-md-7">
-					<h2 class="featurette-heading"  style=" color:#1C285C ">
+					<h2 class="featurette-heading" style=" color:#1C285C ">
 						3. Book Early <span class="text-muted"></span>
 					</h2>
-					<p class="lead">You can find the best bus tickets prices 
-					by booking in advance; the earlier you book your bus trip generally the cheaper your tickets will be!.</p>
+					<p class="lead">You can find the best bus tickets prices
+						by booking in advance; the earlier you book your bus trip generally the cheaper your tickets
+						will be!.</p>
 				</div>
 				<div class="col-md-5">
 					<img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-						height="500" src="${pageContext.request.contextPath}/assets/book early.jpg" role="img" aria-label="Placeholder: 500x500"
-						preserveAspectRatio="xMidYMid slice" focusable="false">
-						
+						height="500" src="${pageContext.request.contextPath}/assets/book early.jpg" role="img"
+						aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false">
+
 
 				</div>
 			</div>
-		
+
 			<hr class="featurette-divider">
 
 			<!-- /END THE FEATURETTES -->
@@ -234,5 +238,7 @@
 	</main>
 
 	<jsp:include page="footer.jsp"></jsp:include>
+
+	<jsp:include page="terms-and-condition_modal.jsp"></jsp:include>
 
 	<script src="${pageContext.request.contextPath}/js/index.js"></script>
