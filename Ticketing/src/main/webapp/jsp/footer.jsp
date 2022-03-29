@@ -102,7 +102,7 @@
           		<li class=" my-1"><a href="#myContent" class="text-white" data-toggle="collapse">Discount/Policies</a></li>
                  <p class="collapse text-white mt-2" id="myContent">        		
            		 </p>
-          <li class="my-1"><a href="#myContent" class="text-white" data-toggle="collapse">Terms Condition</a></li>
+          <li class="my-1"><a data-toggle="modal" data-target="#myModal" class="text-white" data-toggle="collapse">Terms Condition</a></li>
                  <p class="collapse text-white mt-2" id="myConte">
             </p>
         </ul>
