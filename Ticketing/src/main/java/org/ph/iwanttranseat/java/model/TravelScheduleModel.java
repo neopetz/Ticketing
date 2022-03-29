@@ -14,6 +14,17 @@ public class TravelScheduleModel {
 	String conductor;
 	int fare;
 	
+	
+	
+	public TravelScheduleModel(int travelId, int schedule_id, int bus_id, int driver_id, int conductor_id) {
+		super();
+		this.travelId = travelId;
+		this.schedule_id = schedule_id;
+		this.bus_id = bus_id;
+		this.driver_id = driver_id;
+		this.conductor_id = conductor_id;
+	}
+
 	public TravelScheduleModel(int travelId, String travel_schedule, String travel_bus, String driver, String conductor,
 			int fare) {
 		super();

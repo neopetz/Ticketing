@@ -15,7 +15,6 @@
 					<div class="col-md-6">
 						<div class="card">
 							<div class="card-body">
-								<input type="hidden" name="id" value="<c:out value='${travelSchedule.travelId}' />" />
 								<div class="card-body">
 									<div class="form-group">
 										Old Travel Schedule
@@ -45,11 +44,7 @@
 												class="form-control" readonly>
 										</fieldset>
 
-										<label for="exampleFormControlSelect1">Fare</label>
-										<fieldset class="form-group">
-											<input type="text" value="<c:out value='${travelSchedule.fare}' />"
-												class="form-control" readonly>
-										</fieldset>
+							
 
 										<input type="hidden" name="isDeleted" value="false">
 									</div>
@@ -61,43 +56,47 @@
 					<div class="col-md-6">
 						<div class="card">
 							<div class="card-body">
-								<input type="hidden" name="id" value="<c:out value='${travelSchedule.travelId}' />" />
+								
 								<div class="card-body">
-									<form action="insertTravelSchedule" method="post">
-
+									<form action="updateTravelSchedule" method="post">
+									
+										<input type="hidden" name="travelId" value="<c:out value='${travelSchedule.travelId}' />" />
 										<div class="form-group">
 											Edit Travel Schedule
 											<hr>
 
 											<label for="exampleFormControlSelect1">Schedule</label>
 											<select class="form-control" id="exampleFormControlSelect1"
-												name="travelSchedule">
+												name="travelSchedule2">
 												<c:forEach var="travelSchedule" items="${travelScheduleList}">
 													<option value="${travelSchedule.schedule_id}">${travelSchedule.travel_schedule}</option>
 												</c:forEach>
-											</select> <label for="exampleFormControlSelect1">Bus</label> <select
-												class="form-control" id="exampleFormControlSelect1" name="travelBus">
+											</select> 
+											
+											<label for="exampleFormControlSelect1">Bus</label> <select
+												class="form-control" id="exampleFormControlSelect1" name="travelBus2">
 												<c:forEach var="travelBus" items="${travelBusList}">
 													<option value="${travelBus.busId}">${travelBus.bus}</option>
 												</c:forEach>
-											</select> <label for="exampleFormControlSelect1">Driver</label> <select
-												class="form-control" id="exampleFormControlSelect1" name="travelDriver">
+											</select> 
+											
+											<label for="exampleFormControlSelect1">Driver</label> <select
+												class="form-control" id="exampleFormControlSelect1" name="travelDriver2">
 												<c:forEach var="travelDriver" items="${travelDriverList}">
 													<option value="${travelDriver.busPersonnel_id}">${travelDriver.personnel}
 													</option>
 												</c:forEach>
-											</select> <label for="exampleFormControlSelect1">Conductor</label> <select
-												class="form-control" id="exampleFormControlSelect1" name="travelBus">
+											</select> 
+											
+											<label for="exampleFormControlSelect1">Conductor</label> <select
+												class="form-control" id="exampleFormControlSelect1" name="travelBus2">
 												<c:forEach var="travelConductor" items="${travelConductorList}">
 													<option value="${travelConductor.busPersonnel_id}">${travelConductor.personnel}</option>
 												</c:forEach>
 											</select> 
 											
-											<fieldset class="form-group">
-												<label for="exampleFormControlSelect1">Fare</label>
-												<input type="text" value="<c:out value='${travelSchedule.fare}' />"
-													class="form-control">
-											</fieldset>
+
+							
 											
 											<input type="hidden" name="isDeleted" value="false">
 										</div>

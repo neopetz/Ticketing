@@ -13,7 +13,4 @@ public class ConductorModel extends BusPersonnelModel{
 		return conductor_id;
 	}
 
-
-	
-
 }
