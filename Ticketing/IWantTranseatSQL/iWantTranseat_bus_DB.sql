@@ -17,8 +17,8 @@ CREATE TABLE `operator` (
 	`id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 	`operator_firstname` VARCHAR(20) NOT NULL,
 	`operator_lastname` VARCHAR(20) NOT NULL,
-	`operator_username` VARCHAR(20) NOT NULL,
-	`operator_password` VARCHAR(20) NOT NULL,
+	`operator_username` VARCHAR(30) NOT NULL,
+	`operator_password` VARCHAR(40) NOT NULL,
 	`isDeleted` BOOLEAN DEFAULT false
 );
 
@@ -44,7 +44,7 @@ CREATE TABLE `passenger`(
 	`email` VARCHAR(30),
 	`phone_number` VARCHAR(20), 
 	`age` VARCHAR(3),
-	`password` VARCHAR(20),
+	`password` VARCHAR(40),
 	`birth_date` VARCHAR(10),
 	`isDeleted` BOOLEAN,
 	`date_created` DATE,
@@ -67,7 +67,7 @@ CREATE TABLE `bus`(
 /* AdminDetails Table */
 CREATE TABLE `admin`(
 	`admin_id` INT PRIMARY KEY AUTO_INCREMENT,
-	`username` VARCHAR (20),
+	`username` VARCHAR (30),
 	`password` VARCHAR (40)
 );
 

@@ -26,7 +26,7 @@
 						role="button" data-toggle="dropdown" aria-expanded="false">
 						<%= session.getAttribute("email") %> </a>
 					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" data-toggle="modal" data-target="#profileModal">Profile</a>
+						<a class="dropdown-item" href="<%=request.getContextPath()%>/profilePassenger?email=<%=session.getAttribute("email")%>">Profile</a>
 						<a class="dropdown-item" data-toggle="modal" data-target="#changePasswordModal">Change
 							Password</a>
 						<div class="dropdown-divider"></div>
@@ -40,7 +40,7 @@
 					<hr>
 				</li>
 				<li class="nav-item"><a class="nav-link d-flex align-items-center justify-content-end h5"
-						data-toggle="modal" data-target="#profileModal">Profile
+						href="<%=request.getContextPath()%>/profilePassenger?email=<%=session.getAttribute("email")%>">Profile
 						<span class="material-icons d-md-inline d-lg-none ml-4" style="font-size: 36px;"> person</span>
 					</a></li>
 				<li class="nav-item"><a class="nav-link d-flex align-items-center justify-content-end h5"

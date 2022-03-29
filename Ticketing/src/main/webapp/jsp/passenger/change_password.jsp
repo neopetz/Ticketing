@@ -5,11 +5,13 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div style="background-color: #637ce6;
-    background-image: linear-gradient(10deg, #637ce6 0%, #1c285c 100%);font-family:Century gothic;font-size:10px;" class="modal-header text-white">
+    background-image: linear-gradient(10deg, #637ce6 0%, #1c285c 100%);font-family:Century gothic;font-size:10px;"
+                    class="modal-header text-white">
                     <h5 class="modal-title" id="changePasswordModalLabel">Change Password</h5>
                 </div>
-                <form action="">
+                <form action="changePassword">
                     <div class="modal-body">
+                        <input type="hidden" name="email" value='<%= session.getAttribute("email") %>'>
                         <div class="form-group">
                             <label for="old_password">Old Password</label>
                             <input type="password" class="form-control" id="old_password" name="old_password" required
@@ -23,7 +25,7 @@
                         <div class="form-group">
                             <label for="confirm_new_password">Confirm New Password</label>
                             <input type="password" class="form-control" id="confirm_new_password"
-                                name="confirm_new_password" required minlength="8" maxlength="20">
+                                name="confirm_new_password" onchange="checkConfirmPassword()" required minlength="8" maxlength="20">
                         </div>
                     </div>
                     <div class="modal-footer d-flex justify-content-between">
@@ -35,3 +37,13 @@
             </div>
         </div>
     </div>
+    <script>
+        function checkConfirmPassword() {
+            let new_password = $('#new_password').val();
+            let confirm_new_password = $('#confirm_new_password').val();
+
+            if (new_password !== confirm_new_password) {
+                alert("New Password and Confirm Password not match");
+            }
+        }
+    </script>
