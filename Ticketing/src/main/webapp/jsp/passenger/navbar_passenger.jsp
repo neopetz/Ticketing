@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
-	<nav style="background-color: #0f52ba" class="navbar navbar-expand-lg navbar-dark">
+	<nav style="background-color: #637ce6;
+    background-image: linear-gradient(10deg, #637ce6 0%, #1c285c 100%);font-family:Century gothic;font-size:10px;" class="navbar navbar-expand-lg navbar-dark">
 
 		<span></span>
 
