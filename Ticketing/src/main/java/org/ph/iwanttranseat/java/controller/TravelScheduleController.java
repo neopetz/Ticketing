@@ -137,6 +137,12 @@ public class TravelScheduleController extends HttpServlet {
 			throws ServletException, IOException {
 		int travelId = Integer.parseInt(request.getParameter("travelId"));
 		TravelScheduleModel travelSchedule = travelScheduleDao.selectTravelScheduleById(travelId);
+		
+		chooseTravelSchedule(request, response);
+		chooseTravelBus(request, response);
+		chooseTravelDriver(request, response);
+		chooseTravelConductor(request, response);
+		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/operator/scheduling/edit_travel_schedule.jsp");
 		request.setAttribute("travelSchedule", travelSchedule);
 		dispatcher.forward(request, response);
