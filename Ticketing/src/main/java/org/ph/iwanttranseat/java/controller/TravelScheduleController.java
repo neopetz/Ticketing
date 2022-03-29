@@ -54,18 +54,21 @@ public class TravelScheduleController extends HttpServlet {
 			showEditForm(request, response);
 			break;
 		case "/updateTravelSchedule":
-			System.out.println("Wait Lang");
+			try {
+				updateTravelSchedule(request, response);
+			} catch (IOException | SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			break;
 		case "/deleteTravelSchedule":
 			try {
 				deleteTravelSchedule(request, response);
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (SQLException e) {
+			} catch (IOException | SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+		
 			break;
 
 		default:
@@ -159,5 +162,20 @@ public class TravelScheduleController extends HttpServlet {
 		response.sendRedirect("listOfTravelSchedules");
 		
 	}
+	
+
+	private void updateTravelSchedule(HttpServletRequest request, HttpServletResponse response) throws IOException, SQLException {
+	
+		int travelId = Integer.parseInt(request.getParameter("travelId"));
+		int schedule_id = Integer.parseInt(request.getParameter("travelSchedule2"));
+		int bus_id = Integer.parseInt(request.getParameter("travelBus2"));
+		int driver_id = Integer.parseInt(request.getParameter("travelDriver2"));
+		int conductor_id = Integer.parseInt(request.getParameter("travelBus2"));
+		TravelScheduleModel updatedTravelSchedule = new TravelScheduleModel(travelId, schedule_id, bus_id, driver_id, conductor_id);
+
+		travelScheduleDao.updateTravelSchedule(updatedTravelSchedule);
+		response.sendRedirect("listOfTravelSchedules");
+	}	
+
 
 }

@@ -11,5 +11,4 @@ public class DriverModel extends BusPersonnelModel {
 		return driver_id;
 	}
 
-
 }
