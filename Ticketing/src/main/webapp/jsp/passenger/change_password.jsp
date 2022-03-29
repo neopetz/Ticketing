@@ -4,7 +4,8 @@
         aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header bg-dark text-white">
+                <div style="background-color: #637ce6;
+    background-image: linear-gradient(10deg, #637ce6 0%, #1c285c 100%);font-family:Century gothic;font-size:10px;" class="modal-header text-white">
                     <h5 class="modal-title" id="changePasswordModalLabel">Change Password</h5>
                 </div>
                 <form action="">
