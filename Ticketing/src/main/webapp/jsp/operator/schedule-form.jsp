@@ -1,39 +1,32 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
- pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
-<title>User Management Application</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>iWantTranSeat</title>
 
-<link rel="stylesheet"
- href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
- integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
- crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
+<meta name="description" content="Bootstrap.">  
+<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">   
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"></style>
+<script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<link href="/css/datatable.min.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/datatable.min.css">
 
-</head>
+<jsp:include page="../sidebar.jsp"></jsp:include>
+
 
 </head>
 <body>
- <header>
-  <nav class="navbar navbar-expand-md navbar-dark"
-   style="background-color: tomato">
-   <div>
-    <a href="https://www.google.com" class="navbar-brand"> Schedule
-     App</a>
-   </div>
-
-   <ul class="navbar-nav">
-    <li><a href="<%=request.getContextPath()%>/listSchedule"
-     class="nav-link">Schedule's List</a></li>
-   </ul>
-
-   <ul class="navbar-nav navbar-collapse justify-content-end">
-    <li><a href="<%=request.getContextPath()%>/logout"
-     class="nav-link">Logout</a></li>
-   </ul>
-  </nav>
+ 
  </header>
- <div class="container col-md-5">
+ <br><br>
+	<div class="col-md-3"></div>
+	<div class="container col-md-" style="margin: auto; width: 500; border: 3px solid #1C285C; padding: 10px;">	
   <div class="card">
    <div class="card-body">
     <c:if test="${schedule != null}">
@@ -93,13 +86,12 @@
       value="<c:out value='${schedule.fare}' />" class="form-control"
       name="fare" required="required" minlength="3">
     </fieldset>
-
+				<button type="back" class="btn btn-danger"><a href="<%=request.getContextPath()%>/listSchedule" style="color:white;"><i class="fa-solid fa-arrow-left"></i> BACK</a></button>
     <button type="submit" class="btn btn-success">Save</button>
     </form>
    </div>
   </div>
  </div>
-
- <jsp:include page="/jsp/footer.jsp"></jsp:include>
+	<div class="col-md-3"></div>
 </body>
 </html>

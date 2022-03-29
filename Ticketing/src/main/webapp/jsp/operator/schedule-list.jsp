@@ -1,37 +1,29 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
- pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
-<title>User Management Application</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>iWantTranSeat</title>
 
-<link rel="stylesheet"
- href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
- integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
- crossorigin="anonymous">
-</head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
+<meta name="description" content="Bootstrap.">  
+<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">   
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"></style>
+<script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<link href="/css/datatable.min.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/datatable.min.css">
+
+<jsp:include page="../sidebar.jsp"></jsp:include>
+
 
 </head>
 <body>
- <header>
-  <nav class="navbar navbar-expand-md navbar-dark"
-   style="background-color: tomato">
-   <div>
-    <a href="https://www.google.com" class="navbar-brand"> Schedule
-     App</a>
-   </div>
 
-   <ul class="navbar-nav">
-    <li><a href="<%=request.getContextPath()%>/listSchedule"
-     class="nav-link">Schedule</a></li>
-   </ul>
-
-   <ul class="navbar-nav navbar-collapse justify-content-end">
-    <li><a href="<%=request.getContextPath()%>/logout"
-     class="nav-link">Logout</a></li>
-   </ul>
-  </nav>
- </header>
+ 
 
  <div class="row">
   <!-- <div class="alert alert-success" *ngIf='message'>{{message}}</div> -->
@@ -45,7 +37,7 @@
      class="btn btn-success">Add Schedule</a>
    </div>
    <br>
-   <table class="table table-bordered">
+			<table class="table table-striped reponsive" id="myTable" style="overflow-x: auto;">
     <thead>
      <tr>
 	      <th>Travel From</th>
@@ -84,6 +76,5 @@
   </div>
  </div>
 
- <jsp:include page="/jsp/footer.jsp"></jsp:include>
 </body>
 </html>

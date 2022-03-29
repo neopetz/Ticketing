@@ -1,0 +1,99 @@
+body {
+	margin: 0;
+	font-family: "Century Gothic", sans-serif;
+}
+
+.sidebar {
+	margin: 0;
+	padding: 30px;
+	width: 200px;
+	background-color: #1C285C;
+	position: fixed;
+	height: 100%;
+	overflow: auto;
+	text-align: left
+}
+
+.sidebar a {
+	display: block;
+	color: white;
+	padding: 10px;
+	text-decoration: none;
+	;
+}
+
+.sidebar a.active {
+	background-color: #1C285C;
+	color: white;
+}
+
+.sidebar a:hover:not(.active) {
+	background-color: #637CE6;
+	color: white;
+}
+
+div.content {
+	margin-left: 200px;
+	padding: 1px 16px;
+	height: 1000px;
+}
+
+@media screen and (max-width: 700px) {
+	.sidebar {
+		width: 100%;
+		height: auto;
+		position: relative;
+	}
+	.sidebar a {
+		float: left;
+	}
+	div.content {
+		margin-left: 0;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.sidebar a {
+		text-align: center;
+		float: none;
+	}
+}
+
+.topbar {
+	width: 100%;
+	position: fixed;
+	overflow: auto;
+	background-color: black;
+	z-index: 9999;
+	height: 40px;
+	color: black;
+}
+
+.footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	color: black;
+	text-align: center;
+}
+
+h5 {
+	color: white;
+	text-align: center;
+}
+
+#box1 {
+	width: 200px;
+	height: 200px;
+	margin: 10px;
+	padding: 10px;
+	background: #c00;
+	margin-left: 500px;
+}
+
+#box1 p {
+	white-space: pre;
+	font-size: smaller;
+	font-family: monospace;
+}

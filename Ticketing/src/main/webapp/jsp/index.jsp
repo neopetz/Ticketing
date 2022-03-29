@@ -15,7 +15,7 @@
 
 			<div class="col-md-8" style="margin-top: 15px;">
 				<!-- Form -->
-				<form action="">
+				<!-- <form action="">
 					<div class="form-row"
 						style="padding-top: 15px; padding-left: 8px; padding-right: 8px; border-radius: 50px;">
 						<div class="form-group col-md-3">
@@ -57,7 +57,7 @@
 							</div>
 						</div>
 					</div>
-				</form>
+				</form>  -->
 			</div>
 		</div>
 	</div>
@@ -77,7 +77,8 @@
 						<div class="carousel-caption text-left">
 							<h1 style="font-family: 'Century Gothic'">Going for a Trip?</h1>
 							<p style="font-family: 'Century Gothic'">
-								<a class="bg2 btn btn-lg btn-info" href="#">BOOK A SEAT !</a>
+								<a class="bg2 btn btn-lg btn-info" style="border-radius:40px 1px 40px 1px;"
+									href="#">BOOK A SEAT !</a>
 							</p>
 						</div>
 					</div>
@@ -89,7 +90,8 @@
 						<div class="carousel-caption">
 							<h1 style="font-family: 'Century Gothic'">Going for a Trip?</h1>
 							<p style="font-family: 'Century Gothic'">
-								<a class="bg2 btn btn-lg btn-info" href="#">BOOK A SEAT !</a>
+								<a class="bg2 btn btn-lg btn-info" style="border-radius:40px 1px 40px 1px;"
+									href="#">BOOK A SEAT !</a>
 							</p>
 						</div>
 					</div>
@@ -101,7 +103,8 @@
 						<div class="carousel-caption">
 							<h1 style="font-family: 'Century Gothic'">Going for a Trip ?</h1>
 							<p style="font-family: 'Century Gothic'">
-								<a class="bg2 btn btn-lg btn-info" href="#">BOOK A SEAT !</a>
+								<a class="bg2 btn btn-lg btn-info" style="border-radius:40px 1px 40px 1px;"
+									href="#">BOOK A SEAT !</a>
 							</p>
 						</div>
 					</div>
@@ -130,9 +133,10 @@
 					<img src="https://s1.rdbuz.com/Images/webplatform/rbdotcom/multiple_bus_service.svg" height="90">
 					<h2>Multiple Bus Service</h2>
 					<p>Choose from various bus available schedule</p>
-					<br>
+
 					<p>
-						<a class="btn btn-info" href="#">See the Schedule &raquo;</a>
+						<a class="btn btn-primary" href="#" style="background-color:#1C285C;
+    background-image: linear-gradient(10deg, #637ce6 0%, #1c285c 100%);">See the Schedule &raquo;</a>
 					</p>
 				</div>
 				<!-- /.col-lg-4 -->
@@ -141,7 +145,8 @@
 					<h2>Wide Area Coverage</h2>
 					<p>Get all your bus travel needs covered under one roof</p>
 					<p>
-						<a class="btn btn-info" href="#">Check the Route &raquo;</a>
+						<a class="btn btn-primary" href="#" style="background-color: #637ce6;
+    background-image: linear-gradient(10deg, #637ce6 0%, #1c285c 100%);">Check the Route &raquo;</a>
 					</p>
 				</div>
 				<!-- /.col-lg-4 -->
@@ -150,7 +155,8 @@
 					<h2>Realtime</h2>
 					<p>Realtime Booking and Tracking your location via Profile</p>
 					<p>
-						<a class="btn btn-info" href="#">Book now &raquo;</a>
+						<a class="btn btn-primary" href="#" style="background-color: #637ce6;
+    background-image: linear-gradient(10deg, #637ce6 0%, #1c285c 100%);">Book now &raquo;</a>
 					</p>
 				</div>
 				<!-- /.col-lg-4 -->
@@ -160,24 +166,22 @@
 			<!-- START THE FEATURETTES -->
 
 			<hr class="featurette-divider">
-
 			<div class="row featurette">
 				<div class="col-md-7">
-					<h2 class="featurette-heading">
-						First featurette heading. <span class="text-muted">It'll
-							blow your mind.</span>
+					<h2 class="featurette-heading" style=" color:#1C285C ">
+						1. Do your research <span class="text-muted"></span>
 					</h2>
-					<p class="lead">Some great placeholder content for the first
-						featurette here. Imagine some exciting prose here.</p>
+					<p class="lead">Ticket prices vary from one bus company to the next.
+						Be sure to do your research and compare companies and prices.
+						iWantTranseat can help you do that as we have collected all the info you need
+						and put it in one place, so comparing prices, schedules, and providers is a breeze.
+						You can sort the results by price, departure time, and ticket types and compare what
+						each bus company has to offer in a single search.</p>
 				</div>
 				<div class="col-md-5">
-					<svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-						height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
-						preserveAspectRatio="xMidYMid slice" focusable="false">
-						<title>Placeholder</title>
-						<rect width="100%" height="100%" fill="#eee" />
-						<text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
-					</svg>
+					<img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
+						height="500" src="${pageContext.request.contextPath}/assets/busresearch.jpg" role="img"
+						aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false">
 
 				</div>
 			</div>
@@ -186,46 +190,41 @@
 
 			<div class="row featurette">
 				<div class="col-md-7 order-md-2">
-					<h2 class="featurette-heading">
-						Oh yeah, it's that good. <span class="text-muted">See for
-							yourself.</span>
+					<h2 class="featurette-heading" style=" color:#1C285C ">
+						2. Travel during off-peak hours. <span class="text-muted"></span>
 					</h2>
-					<p class="lead">Another featurette? Of course. More placeholder
-						content here to give you an idea of how this layout would work with
-						some actual real-world content in place.</p>
+					<p class="lead">
+						There are often multiple daily departures, so if you can be flexible
+						with your travel dates or schedule, choosing an overnight bus or
+						traveling mid-week instead of the weekend will help you save on transportation costs..</p>
 				</div>
 				<div class="col-md-5 order-md-1">
-					<svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-						height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
-						preserveAspectRatio="xMidYMid slice" focusable="false">
-						<title>Placeholder</title>
-						<rect width="100%" height="100%" fill="#eee" />
-						<text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
-					</svg>
+					<img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
+						height="500" src="${pageContext.request.contextPath}/assets/busweather.jpg" role="img"
+						aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false">
+
 
 				</div>
 			</div>
 
 			<hr class="featurette-divider">
 
+
+
 			<div class="row featurette">
 				<div class="col-md-7">
-					<h2 class="featurette-heading">
-						And lastly, this one. <span class="text-muted">Checkmate.</span>
+					<h2 class="featurette-heading" style=" color:#1C285C ">
+						3. Book Early <span class="text-muted"></span>
 					</h2>
-					<p class="lead">And yes, this is the last block of
-						representative placeholder content. Again, not really intended to
-						be actually read, simply here to give you a better view of what
-						this would look like with some actual content. Your content.</p>
+					<p class="lead">You can find the best bus tickets prices
+						by booking in advance; the earlier you book your bus trip generally the cheaper your tickets
+						will be!.</p>
 				</div>
 				<div class="col-md-5">
-					<svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-						height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
-						preserveAspectRatio="xMidYMid slice" focusable="false">
-						<title>Placeholder</title>
-						<rect width="100%" height="100%" fill="#eee" />
-						<text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
-					</svg>
+					<img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
+						height="500" src="${pageContext.request.contextPath}/assets/book early.jpg" role="img"
+						aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false">
+
 
 				</div>
 			</div>
@@ -239,5 +238,7 @@
 	</main>
 
 	<jsp:include page="footer.jsp"></jsp:include>
+
+	<jsp:include page="terms-and-condition_modal.jsp"></jsp:include>
 
 	<script src="${pageContext.request.contextPath}/js/index.js"></script>
