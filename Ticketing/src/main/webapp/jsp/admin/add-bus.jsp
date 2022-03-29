@@ -9,28 +9,15 @@
 		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 		crossorigin="anonymous">
 </head>
+
+<jsp:include page="../sidebar.jsp"></jsp:include>
+
+
+
 <body>
-	<header>
-		<nav class="navbar navbar-expand-md navbar-dark"
-			style="background-color: #1e90ff; height: 6em;" >
-			<div>
-				<a href="https://www.google.com" class="navbar-brand"> iWantTranSeatPH</a>
-			</div>
-
-			<ul class="navbar-nav">
-				<li><a href="<%=request.getContextPath()%>/busList"
-					class="nav-link">BUS LIST</a></li>
-			</ul>
-
-			<ul class="navbar-nav navbar-collapse justify-content-end">
-				<li>ADMIN</li>
-				<li><a href="<%=request.getContextPath()%>/logout"
-					class="nav-link">LOG OUT</a></li>
-			</ul>
-		</nav>
-	</header>
 	<br><br>
-	<div class="container col-md-5">
+	<div class="col-md-3"></div>
+	<div class="container col-md-" style="margin: auto; width: 500; border: 3px solid #1C285C; padding: 10px;">	
 		<div class="card">
 			<div class="card-body">
 				<c:if test="${busDetails != null}">
@@ -110,11 +97,12 @@
 							class="form-control" name="plate_number"
 							minlength="8" maxlength="8" placeholder="Plate Number" required>
 				</fieldset>
-
+				<button type="back" class="btn btn-danger"><a href="<%=request.getContextPath()%>/busList" style="color:white;"><i class="fa-solid fa-arrow-left"></i> BACK</a></button>
 				<button type="submit" class="btn btn-success">SAVE</button>
 				</form>
 			</div>
 		</div>
 	</div>
+		<div class="col-md-3"></div>
 </body>
 </html>
