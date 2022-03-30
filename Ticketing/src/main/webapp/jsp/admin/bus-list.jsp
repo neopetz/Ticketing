@@ -17,12 +17,15 @@
 <link href="/css/datatable.min.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/datatable.min.css">
 
-<jsp:include page="../sidebar.jsp"></jsp:include>
-
-
 </head>
 <body>
 
+<c:if test='${sessionScope.account_type == "admin"}'>
+	<jsp:include page="../sidebar.jsp"></jsp:include>
+</c:if>
+<c:if test='${sessionScope.account_type == "operator"}'>
+	<jsp:include page="../sidebar_passenger.jsp"></jsp:include>
+</c:if>
 
 	<div class="maintab">
 		<!-- <div class="alert alert-success" *ngIf='message'>{{message}}</div> -->
@@ -31,11 +34,8 @@
 			<h3 class="text-center">List of Bus</h3>
 			
 			<hr>
-			<div class="container">
-
-				<a href="<%= request.getContextPath() %>/busDetails"
-					class="btn btn-success">Add Bus</a>
-			</div>
+			<a href="<%= request.getContextPath() %>/busDetails"
+					class="btn btn-success my-5">Add Bus</a>
 			<br>
 			<table class="table table-striped reponsive" id="myTable" style="overflow-x: auto;">
 				<thead>

@@ -16,7 +16,12 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/datatable.min.css">
 
 </head>
-<jsp:include page="../sidebar.jsp"></jsp:include>
+<c:if test='${sessionScope.account_type == "admin"}'>
+	<jsp:include page="../sidebar.jsp"></jsp:include>
+</c:if>
+<c:if test='${sessionScope.account_type == "operator"}'>
+	<jsp:include page="../sidebar_passenger.jsp"></jsp:include>
+</c:if>
 
 <body>
  
@@ -27,11 +32,8 @@
   <div class="container">
    <h3 class="text-center">List of Operator</h3>
    <hr>
-   <div class="container text-left">
-
-    <a href="<%=request.getContextPath()%>/newOperator"
-     class="btn btn-success">Add Operator</a>
-   </div>
+   <a href="<%=request.getContextPath()%>/newOperator"
+     class="btn btn-success my-5">Add Operator</a>
    <br>
 			<table class="table table-striped reponsive" id="myTable" style="overflow-x: auto;">
     <thead>
