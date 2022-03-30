@@ -67,6 +67,7 @@ public class LoginController extends HttpServlet {
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/travelBooking");
 				HttpSession session = request.getSession();
 				session.setAttribute("fullname", passenger.getPassengerLastname() + ", " + passenger.getPassengerFirstname());
+				session.setAttribute("user_id", passenger.getId());
 				session.setAttribute("email", email);
 				dispatcher.forward(request, response);
 			} else {

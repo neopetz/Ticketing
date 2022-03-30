@@ -99,6 +99,8 @@
 			  </div>
 			  <center>
 			  <button class="btn btn-warning" style="color:white;" onclick="window.print()"><li class="fa fa-print"></li> Print this page</button>
+			  <a class="btn btn-primary"
+						href="<%=request.getContextPath()%>/travelBooking">Book again</a>
 			  </div>
 	</div>
 	

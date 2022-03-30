@@ -6,6 +6,7 @@ import java.sql.Time;
 public class BookingModel {
 	int bookId;
 	int travelId;
+	int busId;
 	int user_id;
 
 	String travel_to;
@@ -49,7 +50,7 @@ public class BookingModel {
 	}
 
 	public BookingModel(int travelId, String travel_from, String travel_to, Date travel_date, Time departure, Time arrival, int fare,
-			String bus_name, String bus_type, int available_seats) {
+			int busId, String bus_name, String bus_type, int available_seats, String driver) {
 		this.travelId = travelId;
 		this.travel_from = travel_from;
 		this.travel_to = travel_to;
@@ -57,7 +58,23 @@ public class BookingModel {
 		this.departure = departure;
 		this.arrival = arrival;
 		this.fare = fare;
+		this.busId = busId;
 		this.bus_name = bus_name;
+		this.bus_type = bus_type;
+		this.available_seats = available_seats;
+		this.driver = driver;
+	}
+
+	public BookingModel(int travelId, int busId, int user_id) {
+		super();
+		this.travelId = travelId;
+		this.busId = busId;
+		this.user_id = user_id;
+	}
+
+	public BookingModel(int busId, int available_seats) {
+		super();
+		this.busId = busId;
 		this.available_seats = available_seats;
 	}
 
@@ -183,6 +200,14 @@ public class BookingModel {
 
 	public void setPassengerName(String passengerName) {
 		this.passengerName = passengerName;
+	}
+	
+	public int getBusId() {
+		return busId;
+	}
+
+	public void setBusId(int busId) {
+		this.busId = busId;
 	}
 
 }

@@ -181,6 +181,7 @@ public class PassengerController extends HttpServlet {
 		String new_password = hashMD5.getMd5(request.getParameter("new_password"));
 
 		if (passengerDAO.validateOldPassword(email, old_password)) {
+			System.out.println("true");
 			PassengerModel updatePassenger = new PassengerModel(email, new_password);
 			System.out.print(updatePassenger);
 			passengerDAO.changePassword(updatePassenger);
@@ -189,12 +190,12 @@ public class PassengerController extends HttpServlet {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/passenger/index_passenger.jsp");
 			dispatcher.forward(request, response);
 		} else {
+			
+			System.out.println("false");
 			request.setAttribute("NOTIFICATION", "Invalid old password!");
 			RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/passenger/index_passenger.jsp");
 			dispatcher.forward(request, response);
 		}
-		
-		
 	}
 
 }
