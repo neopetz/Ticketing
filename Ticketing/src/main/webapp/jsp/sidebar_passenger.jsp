@@ -27,7 +27,7 @@
 
 <style type="text/css">
 <%@
-includefile="/css/sidebar.css"
+includefile="/css/sidebar_passenger.css"
 %>
 </style>
 <body>
@@ -41,20 +41,16 @@ includefile="/css/sidebar.css"
 		</div>
 		<h5>
 			Hello
-			<%=session.getAttribute("username")%></h5>
+		Operator</h5>
 		<hr />
 		<a href="#news"><i class="fa-solid fa-house"></i> Dashboard</a> <a
-			href="<%=request.getContextPath()%>/busList"><i
+			href="#"><i
 			class="fa-solid fa-bus"></i> Bus</a> <a
-			href="<%=request.getContextPath()%>/listOfBusPersonnel"><i
-			class="fa-solid fa-user"></i> Bus Personnel</a> <a
-			href="<%=request.getContextPath()%>/listOperator"><i
-			class="fa-solid fa-user-group"></i> Operator</a> <a
-			href="<%=request.getContextPath()%>/listPassengers"><i
-			class="fa-solid fa-users"></i> Passengers</a> <a
-			href="<%=request.getContextPath()%>/listSchedule"><i
+			href="#"><i
+			class="fa-solid fa-user"></i> Bus Personnel</a><a
+			href="#"><i
 			class="fa-solid fa-calendar"></i> Schedules</a> <a href="#about"><i
-			class="fa-solid fa-file"></i> Generate Reports</a><a href="${pageContext.request.contextPath}/jsp/index.jsp"><i
+			class="fa-solid fa-file"></i> Generate Reports</a><a href="#"><i
 			class="fa-solid fa-power-off"></i> Log out</a>
 			
 			
