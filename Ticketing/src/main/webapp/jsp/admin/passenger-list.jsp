@@ -52,7 +52,7 @@
        <td><c:out value="${passenger.passengerBirthDate}" /></td>
        <td><c:out value="${passenger.passengerAge}" /></td>
 
-       <td><a href="deletePassenger?user_id=<c:out value='${passenger.id}' />">Delete</a></td>
+       <td><a href="deletePassenger?user_id=<c:out value='${passenger.id}' />"><i class="fa-solid fa-trash" style="color:black;"></a></td>
       </tr>
      </c:forEach>
      <!-- } -->
