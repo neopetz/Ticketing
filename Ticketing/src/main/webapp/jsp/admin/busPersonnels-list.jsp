@@ -50,9 +50,9 @@
 							<td><c:out value="${busPersonnel.status}" /></td>
 
 							<td><a
-								href="editBusPersonnel?id=<c:out value='${busPersonnel.busPersonnel_id}' />">Edit</a>
+								href="editBusPersonnel?id=<c:out value='${busPersonnel.busPersonnel_id}' />"><i class="fa-solid fa-pencil" style="color:black;"></i></a>
 								&nbsp;&nbsp;&nbsp;&nbsp; <a
-								href="deleteBusPersonnel?id=<c:out value='${busPersonnel.busPersonnel_id}' />">Delete</a></td>
+								href="deleteBusPersonnel?id=<c:out value='${busPersonnel.busPersonnel_id}' />"><i class="fa-solid fa-trash" style="color:black;"></i></a></td>
 						</tr>
 					</c:forEach>
 					<!-- } -->
