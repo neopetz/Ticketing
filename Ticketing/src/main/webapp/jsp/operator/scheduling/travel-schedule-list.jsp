@@ -12,7 +12,12 @@
 
 </head>
 <body>
-
+<c:if test='${sessionScope.account_type == "admin"}'>
+	<jsp:include page="../../sidebar.jsp"></jsp:include>
+</c:if>
+<c:if test='${sessionScope.account_type == "operator"}'>
+	<jsp:include page="../../sidebar_passenger.jsp"></jsp:include>
+</c:if>
 	<div class="row">
 
 		<div class="container">
@@ -20,7 +25,9 @@
 			<hr>
 			<div class="container text-left"></div>
 			<br>
-			<table class="table table-bordered">
+			<a href="<%=request.getContextPath()%>/createTravelSchedule"
+				class="btn btn-success my-5">Add Travel Schedule</a>
+			<table class="table table-bordered" id="myTable">
 				<thead>
 					<tr>
 						<th>Schedule</th>
@@ -50,8 +57,7 @@
 				</tbody>
 
 			</table>
-			<a href="<%=request.getContextPath()%>/createTravelSchedule"
-				class="btn btn-success">Add Travel Schedule</a>
+			
 		</div>
 	</div>
 

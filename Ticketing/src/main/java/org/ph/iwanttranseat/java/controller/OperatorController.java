@@ -2,8 +2,6 @@ package org.ph.iwanttranseat.java.controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -12,34 +10,34 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.ph.iwanttranseat.java.dao.OperatorDAO;
-import org.ph.iwanttranseat.java.dao.ScheduleDAO;
 import org.ph.iwanttranseat.java.model.OperatorModel;
-import org.ph.iwanttranseat.java.model.ScheduleModel;
 
-
-@WebServlet(urlPatterns = { "/newOperator", "/insertOperator", "/listOperator", "/deleteOperator", "/editOperator",
-"/updateOperator" })
+@WebServlet(urlPatterns = { "/newOperator", "/insertOperator", "/listOperator", 
+		"/deleteOperator", "/editOperator", "/updateOperator", "/logoutOperator" })
 public class OperatorController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	OperatorDAO operatorDAO;
 
-    public OperatorController() {
-        super();
+	public OperatorController() {
+		super();
 
-    }
-    
+	}
+
 	public void init() {
 		operatorDAO = new OperatorDAO();
 
 	}
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		doGet(request, response);
 	}
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		String action = request.getServletPath();
 		System.out.print(action);
 
@@ -65,6 +63,10 @@ public class OperatorController extends HttpServlet {
 				System.out.print("update");
 				updateOperator(request, response);
 				break;
+			case "/logoutOperator":
+				System.out.println("Logout Operator");
+				logoutOperator(request, response);
+				break;
 			case "/listOperator":
 				listOperator(request, response);
 				break;
@@ -81,7 +83,6 @@ public class OperatorController extends HttpServlet {
 		}
 	}
 
-	
 	private void updateOperator(HttpServletRequest req, HttpServletResponse resp)
 			throws SQLException, IOException, ServletException {
 		System.out.print("\n\nupdate sched");
@@ -93,7 +94,8 @@ public class OperatorController extends HttpServlet {
 		String operator_username = req.getParameter("operator_username");
 		String operator_password = req.getParameter("operator_password");
 
-		OperatorModel updateoperator = new OperatorModel(id, operator_firstname, operator_lastname, operator_username, operator_password);
+		OperatorModel updateoperator = new OperatorModel(id, operator_firstname, operator_lastname, operator_username,
+				operator_password);
 
 		System.out.print(updateoperator);
 		operatorDAO.updateOperator(updateoperator);
@@ -109,16 +111,17 @@ public class OperatorController extends HttpServlet {
 		dispatcher.forward(req, resp);
 
 	}
-	
-	private void deleteOperator(HttpServletRequest request, HttpServletResponse response) throws IOException, SQLException {
+
+	private void deleteOperator(HttpServletRequest request, HttpServletResponse response)
+			throws IOException, SQLException {
 		int id = Integer.parseInt(request.getParameter("id"));
-		Boolean isDeleted  = true;
-		
+		Boolean isDeleted = true;
+
 		OperatorModel deletedOperator = new OperatorModel(id, isDeleted);
-		
+
 		operatorDAO.deletedOperator(deletedOperator);
 		response.sendRedirect("listOperator");
-		
+
 	}
 
 	private void insertOperator(HttpServletRequest req, HttpServletResponse resp) throws SQLException, IOException {
@@ -128,7 +131,8 @@ public class OperatorController extends HttpServlet {
 		String operator_username = req.getParameter("operator_username");
 		String operator_password = req.getParameter("operator_password");
 
-		OperatorModel operatorModel = new OperatorModel(operator_firstname, operator_lastname, operator_username, operator_password);
+		OperatorModel operatorModel = new OperatorModel(operator_firstname, operator_lastname, operator_username,
+				operator_password);
 		operatorDAO.insertOperator(operatorModel);
 		resp.sendRedirect("listOperator");
 
@@ -149,6 +153,14 @@ public class OperatorController extends HttpServlet {
 		RequestDispatcher dispatcher = req.getRequestDispatcher("jsp/admin/operator-form.jsp");
 		req.setAttribute("operator", existingTodoOperator);
 		dispatcher.forward(req, resp);
+	}
+
+	private void logoutOperator(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+		HttpSession session = request.getSession();
+		session.invalidate();
+		RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/index.jsp");
+		dispatcher.forward(request, response);
+		return;
 	}
 
 }

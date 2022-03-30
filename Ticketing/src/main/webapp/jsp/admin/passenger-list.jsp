@@ -16,7 +16,12 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/datatable.min.css">
 
 </head>
-<jsp:include page="../sidebar.jsp"></jsp:include>
+<c:if test='${sessionScope.account_type == "admin"}'>
+	<jsp:include page="../sidebar.jsp"></jsp:include>
+</c:if>
+<c:if test='${sessionScope.account_type == "operator"}'>
+	<jsp:include page="../sidebar_passenger.jsp"></jsp:include>
+</c:if>
 
 <body>
  

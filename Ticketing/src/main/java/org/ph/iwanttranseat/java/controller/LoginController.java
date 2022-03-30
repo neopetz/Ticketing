@@ -50,15 +50,17 @@ public class LoginController extends HttpServlet {
 
 		try {
 			if (loginDao.validateAdmin(loginBean)) {
-				RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/sidebar.jsp");
+				RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/admin/index_admin.jsp");
 				HttpSession session = request.getSession();
 				session.setAttribute("username", email);
+				session.setAttribute("account_type", "admin");
 				dispatcher.forward(request, response);
 			}
 			else if (loginDao.validateOperator(loginBean)) {
 				RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/operator/index_operator.jsp");
 				HttpSession session = request.getSession();
-				session.setAttribute("email", email);
+				session.setAttribute("username", email);
+				session.setAttribute("account_type", "operator");
 				dispatcher.forward(request, response);
 			}
 			else if (loginDao.validate(loginBean)) {

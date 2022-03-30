@@ -13,9 +13,14 @@
 
 </head>
 <body>
-
-	<div class="container col-md-5">
-		<div class="card">
+<c:if test='${sessionScope.account_type == "admin"}'>
+	<jsp:include page="../../sidebar.jsp"></jsp:include>
+</c:if>
+<c:if test='${sessionScope.account_type == "operator"}'>
+	<jsp:include page="../../sidebar_passenger.jsp"></jsp:include>
+</c:if>
+	<div class="container d-flex justify-content-center mt-5">
+		<div class="card" style="margin: auto; width: 500; border: 3px solid #1C285C; padding: 10px;">
 			<div class="card-body">
 				<input type="hidden" name="id"
 					value="<c:out value='${travelSchedule.travelId}' />" />

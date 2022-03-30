@@ -19,7 +19,12 @@
 
 </head>
 
-<jsp:include page="../sidebar.jsp"></jsp:include>
+<c:if test='${sessionScope.account_type == "admin"}'>
+	<jsp:include page="../sidebar.jsp"></jsp:include>
+</c:if>
+<c:if test='${sessionScope.account_type == "operator"}'>
+	<jsp:include page="../sidebar_passenger.jsp"></jsp:include>
+</c:if>
 
 <body>
 
@@ -30,6 +35,9 @@
 			<hr>
 			<div class="container text-left"></div>
 			<br>
+			<a href="<%=request.getContextPath()%>/addBusPersonnel"
+				class="btn btn-success my-5">Add Bus Personnel</a>
+				
 			<table class="table table-striped reponsive" id="myTable" style="overflow-x: auto;">
 				<thead>
 					<tr>
@@ -59,8 +67,7 @@
 				</tbody>
 
 			</table>
-			<a href="<%=request.getContextPath()%>/addBusPersonnel"
-				class="btn btn-success">Add Bus Personnel</a>
+			
 		</div>
 	</div>
 	<!-- Fontawesome -->
