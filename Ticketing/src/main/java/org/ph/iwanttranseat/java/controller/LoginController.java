@@ -60,7 +60,7 @@ public class LoginController extends HttpServlet {
 				dispatcher.forward(request, response);
 			}
 			else if (loginDao.validate(loginBean)) {
-				RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/passenger/index_passenger.jsp");
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/travelBooking");
 				HttpSession session = request.getSession();
 				session.setAttribute("email", email);
 				dispatcher.forward(request, response);

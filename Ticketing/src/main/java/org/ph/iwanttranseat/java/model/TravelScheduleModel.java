@@ -14,8 +14,7 @@ public class TravelScheduleModel {
 	String conductor;
 	int fare;
 	
-	
-	
+
 	public TravelScheduleModel(int travelId, int schedule_id, int bus_id, int driver_id, int conductor_id) {
 		super();
 		this.travelId = travelId;
@@ -132,5 +131,5 @@ public class TravelScheduleModel {
 	public boolean isIs_deleted() {
 		return is_deleted;
 	}
-	
+
 }
