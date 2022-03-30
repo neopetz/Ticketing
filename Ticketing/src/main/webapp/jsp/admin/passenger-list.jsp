@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
-<title>Operator Management Application</title>
+<title>Passenger Management Application</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
 <meta name="description" content="Bootstrap.">  
@@ -25,38 +25,34 @@
   <!-- <div class="alert alert-success" *ngIf='message'>{{message}}</div> -->
 
   <div class="container">
-   <h3 class="text-center">List of Operator</h3>
+   <h3 class="text-center">List of Passengers</h3>
    <hr>
-   <div class="container text-left">
-
-    <a href="<%=request.getContextPath()%>/newOperator"
-     class="btn btn-success">Add Operator</a>
-   </div>
    <br>
-			<table class="table table-striped reponsive" id="myTable" style="overflow-x: auto;">
+<table class="table table-striped reponsive" id="myTable" style="overflow-x: auto;">
     <thead>
      <tr>
 	      <th>First Name</th>
 	      <th>Last Name</th>
-	      <th>User Name</th>
+	      <th>Email</th>
+	      <th>Phone Number</th>
+	      <th>Birth Date</th>
+	      <th>Age</th>
 	      <th>Actions</th>
      </tr>
     </thead>
     <tbody>
      <!--   for (employee employee: employees) {  -->
-     <c:forEach var="operator" items="${listOperator}">
+     <c:forEach var="passenger" items="${listPassenger}">
 
       <tr>
-       <td><c:out value="${operator.operator_firstname}" /></td>
-       <td><c:out value="${operator.operator_lastname}" /></td>
-       <td><c:out value="${operator.operator_username}" /></td>
+       <td><c:out value="${passenger.passengerFirstname}" /></td>
+       <td><c:out value="${passenger.passengerLastname}" /></td>
+       <td><c:out value="${passenger.passengerEmail}" /></td>
+       <td><c:out value="${passenger.passengerPhoneNumber}" /></td>
+       <td><c:out value="${passenger.passengerBirthDate}" /></td>
+       <td><c:out value="${passenger.passengerAge}" /></td>
 
-       <td><a href="editOperator?id=<c:out value='${operator.id}' />"><i class="fa-solid fa-pencil" style="color:black;"></i></a>
-        &nbsp;&nbsp;&nbsp;&nbsp; <a
-        href="deleteOperator?id=<c:out value='${operator.id}' />"><i class="fa-solid fa-trash" style="color:black;"></i></a></td>
-
-       <!--  <td><button (click)="updateemployee(employee.id)" class="btn btn-success">Update</button>
-                 <button (click)="deleteemployee(employee.id)" class="btn btn-warning">Delete</button></td> -->
+       <td><a href="deletePassenger?user_id=<c:out value='${passenger.id}' />"><i class="fa-solid fa-trash" style="color:black;"></a></td>
       </tr>
      </c:forEach>
      <!-- } -->

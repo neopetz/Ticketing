@@ -9,14 +9,14 @@
 			</div>
 
 			<div class="container shadow p-3 mb-5 bg-white rounded text-center" style="padding: 30px">
-				<form action="<%=request.getContextPath()%>/PassengerController" method="POST">
+				<form action="<%=request.getContextPath()%>/registerPassenger" method="POST">
 					<!-- Verify Field -->
 					<input type="text" name="verify" placeholder="Enter 6 digit verification code" class="input1">
 					<!-- Submit Button -->
 					<button type="submit" class="btn btn-outline-primary btn-sm ml-2">Verify</button>
-					<p class="text-muted">
+					<!-- <p class="text-muted">
 						Didn't Received the code ? <a href="#">Resend</a>
-					</p>
+					</p> -->
 				</form>
 			</div>
 		</div>
