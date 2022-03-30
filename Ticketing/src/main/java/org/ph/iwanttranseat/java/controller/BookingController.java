@@ -12,7 +12,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.ph.iwanttranseat.java.dao.BookingDAO;
+import org.ph.iwanttranseat.java.dao.BusDAO;
 import org.ph.iwanttranseat.java.model.BookingModel;
+import org.ph.iwanttranseat.java.model.BusModel;
 
 @WebServlet(urlPatterns = { "/travelBooking", "/bookSelectedSchedule" })
 public class BookingController extends HttpServlet {
@@ -81,6 +83,22 @@ public class BookingController extends HttpServlet {
 		System.out.println(passengerEmail);
 		BookingModel passenger = bookingDao.selectPassenger(passengerEmail);
 		request.setAttribute("passenger", passenger);
+	}
+	
+	private void insertBooking(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		int scheduleId = Integer.parseInt(request.getParameter("travelId"));
+		int busId = Integer.parseInt(request.getParameter("busId"));
+		int user_id = Integer.parseInt(request.getParameter("user_id"));
+		
+		BookingModel bookingModel = new BookingModel(scheduleId, busId, user_id);
+		bookingDao.insertTravelSchedule(bookingModel);
+	}
+	
+	private void updateAvailableSeats(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+		int busId = Integer.parseInt(request.getParameter("busId"));
+		int available_seats = Integer.parseInt(request.getParameter("bus_seat"));
+		BookingModel bookingModel = new BookingModel(busId, available_seats);
+		bookingDao.updateAvailableSeats(bookingModel);
 	}
 
 

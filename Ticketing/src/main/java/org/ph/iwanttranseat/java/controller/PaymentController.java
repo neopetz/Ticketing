@@ -10,7 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.ph.iwanttranseat.java.dao.BookingDAO;
 import org.ph.iwanttranseat.java.dao.PaymentDAO;
+import org.ph.iwanttranseat.java.model.BookingModel;
 import org.ph.iwanttranseat.java.model.PaymentModel;
 
 
@@ -59,6 +61,11 @@ public class PaymentController extends HttpServlet {
 		String price = request.getParameter("price");
 		//System.out.println(price + "tansaction ");
 		
+		
+		// For Booking
+		int travelId = Integer.parseInt(request.getParameter("travelId"));
+		int busId = Integer.parseInt(request.getParameter("busId"));
+		int user_id = Integer.parseInt(request.getParameter("user_id"));
 	    
 		
 		paymentModel.setTransaction_code(transaction);
@@ -81,6 +88,12 @@ public class PaymentController extends HttpServlet {
         try {
             int result = paymentDAO.payment(paymentModel);
             if (result == 1) {
+            	BookingModel insertBooking = new BookingModel(travelId, busId, user_id);
+            	BookingModel updateBooking = new BookingModel(busId, Integer.parseInt(bus_seat));
+            	BookingDAO bookingDAO = new BookingDAO();
+            	bookingDAO.insertTravelSchedule(insertBooking);
+            	bookingDAO.updateAvailableSeats(updateBooking);
+            	
                RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/passenger/tiket.jsp");
                dispatcher.forward(request, response);
             	System.out.println("success payment");

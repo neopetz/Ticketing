@@ -5,17 +5,20 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/index-style.css">
 
 	<div class="container">
-		<div class="row" style="align-items: left" ;>
-			<div class="col-md-4">
-				<div class="form-row">
-					<img src="${pageContext.request.contextPath}/assets/FULL_LOGO.jpg"
-						style="height: 110px; width: 830px;">
-				</div>
+		<div class="row">
+			<div class="col-md-12">
+			
+				<center>
+			
+					<img class="img-fluid" src="${pageContext.request.contextPath}/assets/FULL_LOGO.jpg"
+						style="height: 100px; width: 630px;margin-top:20px;">
+				</center>
+				
 			</div>
-
-			<div class="col-md-8" style="margin-top: 15px;">
-				<!-- Form -->
+			<!-- Form -->
 				<!-- <form action="">
+			<div class="col-md-4" style="margin-top: 15px;">
+				
 					<div class="form-row"
 						style="padding-top: 15px; padding-left: 8px; padding-right: 8px; border-radius: 50px;">
 						<div class="form-group col-md-3">
@@ -60,7 +63,9 @@
 				</form>  -->
 			</div>
 		</div>
-	</div>
+		<hr style="width:60%;">
+				
+
 
 	<main role="main">
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -78,7 +83,7 @@
 							<h1 style="font-family: 'Century Gothic'">Going for a Trip?</h1>
 							<p style="font-family: 'Century Gothic'">
 								<a class="bg2 btn btn-lg btn-info" style="border-radius:40px 1px 40px 1px;"
-									href="#">BOOK A SEAT !</a>
+									href="#" data-toggle="modal" data-target="#exampleModal">BOOK A SEAT !</a>
 							</p>
 						</div>
 					</div>
@@ -104,12 +109,13 @@
 							<h1 style="font-family: 'Century Gothic'">Going for a Trip ?</h1>
 							<p style="font-family: 'Century Gothic'">
 								<a class="bg2 btn btn-lg btn-info" style="border-radius:40px 1px 40px 1px;"
-									href="#">BOOK A SEAT !</a>
+									href="#" data-toggle="modal" data-target="#exampleModal">BOOK A SEAT !</a>
 							</p>
 						</div>
 					</div>
 				</div>
 			</div>
+			
 			<button class="carousel-control-prev" type="button" data-target="#myCarousel" data-slide="prev">
 				<span class="carousel-control-prev-icon" aria-hidden="true"></span> <span
 					class="sr-only">Previous</span>
