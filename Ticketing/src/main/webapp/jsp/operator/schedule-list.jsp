@@ -61,9 +61,9 @@
        <td><c:out value="${schedule.arrival}" /></td>
        <td><c:out value="${schedule.fare}" /></td>
 
-       <td><a href="editSchedule?id=<c:out value='${schedule.schedule_id}' />">Edit</a>
+       <td><a href="editSchedule?id=<c:out value='${schedule.schedule_id}' />"><i class="fa-solid fa-pencil" style="color:black;"></i></a>
         &nbsp;&nbsp;&nbsp;&nbsp; <a
-        href="deleteSchedule?id=<c:out value='${schedule.schedule_id}' />">Delete</a></td>
+        href="deleteSchedule?id=<c:out value='${schedule.schedule_id}' />"><i class="fa-solid fa-trash" style="color:black;"></i></a></td>
 
        <!--  <td><button (click)="updateemployee(employee.id)" class="btn btn-success">Update</button>
                  <button (click)="deleteemployee(employee.id)" class="btn btn-warning">Delete</button></td> -->
