@@ -42,7 +42,8 @@
 			<a href="<%=request.getContextPath()%>/listSchedule"><i class="fa-solid fa-calendar"></i> Schedules</a>
 			<a href="<%=request.getContextPath()%>/listOfTravelSchedules"><i class="fa-solid fa-calendar"></i> Travel
 				Schedules</a>
-			<a href="#about"><i class="fa-solid fa-file"></i> Generate Reports</a>
+			<a href="<%=request.getContextPath()%>/listTransaction"><i class="fa-solid fa-file"></i> Generate
+				Reports</a>
 			<a href="<%=request.getContextPath()%>/logoutAdmin"><i class="fa-solid fa-power-off"></i> Log out</a>
 		</div>
 
