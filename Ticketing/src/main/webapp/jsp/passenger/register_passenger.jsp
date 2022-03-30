@@ -1,16 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
 	<jsp:include page="../header.jsp"></jsp:include>
-	<jsp:include page="../navbar.jsp"></jsp:include>
+	
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/register_passenger-style.css">
 
-	<div class="container col-md-5 col-md-offset-3 mt-5" style="overflow: auto; margin-top: 5m;">
-		<div class="divheader shadow rounded text-center">
-			<h6 style="color: white; font-family: 'Century Gothic'">Passenger
-				Registration</h6>
-		</div>
-		<div class="container shadow p-3 mb-5 bg-white rounded" style="padding: 30px">
-
-			<form action="<%=request.getContextPath()%>/PassengerVerify" method="post">
+			
 
 				<input type="date" id="currentDate" hidden>
 
@@ -48,12 +41,16 @@
 				</div>
 				<div class="input-group input-group " id="floatingInput" style="margin-top: 3em">
 					<!-- Submit Button -->
-					<button type="submit" name="action" value="register"
-						class="btn btn-primary btn-l btn2  btn-block">SUBMIT</button>
+					
 				</div>
-			</form>
-		</div>
+		
+		<script
+	src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+	integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+	crossorigin="anonymous"></script>
+	<script>
+$('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})</script>
 
-	</div>
-	<jsp:include page="/jsp/footer.jsp"></jsp:include>
 	<script src="${pageContext.request.contextPath}/js/register_passenger.js"></script>
