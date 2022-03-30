@@ -42,133 +42,62 @@
 		</div>
 
 		<div class="container-fluid my-3">
-			<table id="bus-schedule-table" class="table table-hover display responsive nowrap" style="width:100%">
+			<table id="bus-schedule-table" class="table table-hover display responsive nowrap" style="width: 100%">
 				<thead style="background-color: #637CE6;" class="text-white">
 					<tr class="text-center text-lg-left">
-						<th scope="col">
-							<span>Bus</span>
-							<i class="fa-solid fa-bus"></i>
+						<th scope="col"><span>Date</span> <i class="fa-solid fa-calendar-days"></i></th>
+						<th scope="col"><span>From</span> <i class="fa-solid fa-location-pin"></i></th>
+						<th scope="col"><span>To</span> <i class="fa-solid fa-location-dot"></i></th>
+						<th scope="col"><span>Departure</span> <i class="fa-solid fa-clock"></i></th>
+						<th scope="col"><span>Arrival</span> <i class="fa-solid fa-clock"></i></th>
+						<th scope="col"><span>Bus</span> <i class="fa-solid fa-bus"></i>
 						</th>
-						<th scope="col">
-							<span>Driver</span>
-							<i class="fa-solid fa-user-tie"></i>
-						</th>
-						<th scope="col">
-							<span>Conductor</span>
-							<i class="fa-solid fa-user-ninja"></i>
-						</th>
-						<th scope="col">
-							<span>From</span>
-							<i class="fa-solid fa-location-pin"></i>
-						</th>
-						<th scope="col">
-							<span>To</span>
-							<i class="fa-solid fa-location-dot"></i>
-						</th>
-						<th scope="col">
-							<span>Departure</span>
-							<i class="fa-solid fa-clock"></i>
-						</th>
-						<th scope="col">
-							<span>Arrival</span>
-							<i class="fa-solid fa-clock"></i>
-						</th>
-						<th scope="col">
-							<span>Fare</span>
-							<i class="fa-solid fa-peso-sign"></i>
-						</th>
-						<th scope="col"></th>
+						<th scope="col"><span>Bus Type</span> <i class="fa-solid fa-bus"></i></th>
+						<th scope="col"><span>Driver</span> <i class="fa-solid fa-user-tie"></i></th>
+						<th scope="col"><span>Fare</span> <i class="fa-solid fa-peso-sign"></i></th>
+						<th scope="col">Action</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>bus 1</td>
-						<td>sample driver</td>
-						<td>sample conductor</td>
-						<td>philippines</td>
-						<td>japan</td>
-						<td>12:00 AM</td>
-						<td>12:00 PM</td>
-						<td>1000</td>
-						<td><button class="btn btn-primary">Book <i class="fa-solid fa-ticket"></i></button></td>
-					</tr>
-					<tr>
-						<td>bus 1</td>
-						<td>driver 1</td>
-						<td>conductor</td>
-						<td>philippines</td>
-						<td>japan</td>
-						<td>12:00 AM</td>
-						<td>12:00 PM</td>
-						<td>1000</td>
-						<td><button class="btn btn-primary">Book <i class="fa-solid fa-ticket"></i></button></td>
-					</tr>
-					<tr>
-						<td>bus 1</td>
-						<td>driver 1</td>
-						<td>conductor</td>
-						<td>philippines</td>
-						<td>japan</td>
-						<td>12:00 AM</td>
-						<td>12:00 PM</td>
-						<td>1000</td>
-						<td><button class="btn btn-primary">Book <i class="fa-solid fa-ticket"></i></button></td>
-					</tr>
-					<tr>
-						<td>bus 1</td>
-						<td>driver 1</td>
-						<td>conductor</td>
-						<td>philippines</td>
-						<td>japan</td>
-						<td>12:00 AM</td>
-						<td>12:00 PM</td>
-						<td>1000</td>
-						<td><button class="btn btn-primary">Book <i class="fa-solid fa-ticket"></i></button></td>
-					</tr>
-					<tr>
-						<td>bus 1</td>
-						<td>driver 1</td>
-						<td>conductor</td>
-						<td>philippines</td>
-						<td>japan</td>
-						<td>12:00 AM</td>
-						<td>12:00 PM</td>
-						<td>1000</td>
-						<td><button class="btn btn-primary">Book <i class="fa-solid fa-ticket"></i></button></td>
-					</tr>
-					<tr>
-						<td>bus 1</td>
-						<td>driver 1</td>
-						<td>conductor</td>
-						<td>philippines</td>
-						<td>japan</td>
-						<td>12:00 AM</td>
-						<td>12:00 PM</td>
-						<td>1000</td>
-						<td><button class="btn btn-primary">Book <i class="fa-solid fa-ticket"></i></button></td>
-					</tr>
-					<tr>
-						<td>bus 1</td>
-						<td>driver 1</td>
-						<td>conductor</td>
-						<td>philippines</td>
-						<td>japan</td>
-						<td>12:00 AM</td>
-						<td>12:00 PM</td>
-						<td>1000</td>
-						<td><button class="btn btn-primary">Book <i class="fa-solid fa-ticket"></i></button></td>
-					</tr>
-					<tr>
-						<td>bus 1</td>
-						<td>driver 1</td>
-						<td>conductor</td>
-						<td>philippines</td>
-						<td>japan</td>
-						<td>12:00 AM</td>
-						<td>12:00 PM</td>
-						<td>1000</td>
-						<td><button class="btn btn-primary">Book <i class="fa-solid fa-ticket"></i></button></td>
-					</tr>
+					<c:forEach var="availableSchedule" items="${listOfAvailableSchedule}">
+						<tr>
+							<td>
+								<c:out value="${availableSchedule.travel_date}" />
+							</td>
+							<td>
+								<c:out value="${availableSchedule.travel_from}" />
+							</td>
+							<td>
+								<c:out value="${availableSchedule.travel_to}" />
+							</td>
+							<td>
+								<c:out value="${availableSchedule.departure}" />
+							</td>
+							<td>
+								<c:out value="${availableSchedule.arrival}" />
+							</td>
+							<td>
+								<c:out value="${availableSchedule.bus_name}" />
+							</td>
+							<td>
+								<c:out value="${availableSchedule.bus_type}" />
+							</td>
+							<td>
+								<c:out value="${availableSchedule.driver}" />
+							</td>
+							<td>
+								<c:out value="${availableSchedule.fare}" />
+							</td>
+
+							<td><input type="hidden" name="passengerFullname"
+									value='<%= session.getAttribute("fullname") %>'><a
+									href="bookSelectedSchedule?travelId=<c:out value='${availableSchedule.travelId}' />"
+									class="btn btn-primary">Book <i class="fa-solid fa-ticket"></i>
+								</a><br> Available Seats :
+								<c:out value="${availableSchedule.available_seats}" />
+							</td>
+						</tr>
+					</c:forEach>
 				</tbody>
 			</table>
 		</div>
