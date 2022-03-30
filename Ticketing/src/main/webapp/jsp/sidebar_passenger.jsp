@@ -44,6 +44,7 @@
 				Schedules</a>
 			<a href="<%=request.getContextPath()%>/listTransaction"><i class="fa-solid fa-file"></i> Generate
 				Reports</a>
+			<a href="<%=request.getContextPath()%>/showChangePasswordOperator"><i class="fa-solid fa-lock"></i> Change Password</a>
 			<a href="<%=request.getContextPath()%>/logoutAdmin"><i class="fa-solid fa-power-off"></i> Log out</a>
 		</div>
 

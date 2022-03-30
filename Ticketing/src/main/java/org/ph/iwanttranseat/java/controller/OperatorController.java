@@ -12,14 +12,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.ph.iwanttranseat.java.API.HashMD5;
 import org.ph.iwanttranseat.java.dao.OperatorDAO;
 import org.ph.iwanttranseat.java.model.OperatorModel;
+import org.ph.iwanttranseat.java.model.PassengerModel;
 
 @WebServlet(urlPatterns = { "/newOperator", "/insertOperator", "/listOperator", 
-		"/deleteOperator", "/editOperator", "/updateOperator", "/logoutOperator" })
+		"/deleteOperator", "/editOperator", "/updateOperator", "/showChangePasswordOperator", "/changePasswordOperator", "/logoutOperator" })
 public class OperatorController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	OperatorDAO operatorDAO;
+	HashMD5 hashMD5;
 
 	public OperatorController() {
 		super();
@@ -28,6 +31,7 @@ public class OperatorController extends HttpServlet {
 
 	public void init() {
 		operatorDAO = new OperatorDAO();
+		hashMD5 = new HashMD5();
 
 	}
 
@@ -63,6 +67,12 @@ public class OperatorController extends HttpServlet {
 				System.out.print("update");
 				updateOperator(request, response);
 				break;
+			case "/showChangePasswordOperator":
+				showChangePasswordOperator(request, response);
+				break;
+			case "/changePasswordOperator":
+				changePasswordOperator(request, response);
+				break;
 			case "/logoutOperator":
 				System.out.println("Logout Operator");
 				logoutOperator(request, response);
@@ -92,7 +102,7 @@ public class OperatorController extends HttpServlet {
 		String operator_firstname = req.getParameter("operator_firstname");
 		String operator_lastname = req.getParameter("operator_lastname");
 		String operator_username = req.getParameter("operator_username");
-		String operator_password = req.getParameter("operator_password");
+		String operator_password = hashMD5.getMd5(req.getParameter("operator_password"));
 
 		OperatorModel updateoperator = new OperatorModel(id, operator_firstname, operator_lastname, operator_username,
 				operator_password);
@@ -129,7 +139,7 @@ public class OperatorController extends HttpServlet {
 		String operator_firstname = req.getParameter("operator_firstname");
 		String operator_lastname = req.getParameter("operator_lastname");
 		String operator_username = req.getParameter("operator_username");
-		String operator_password = req.getParameter("operator_password");
+		String operator_password = hashMD5.getMd5(req.getParameter("operator_password"));
 
 		OperatorModel operatorModel = new OperatorModel(operator_firstname, operator_lastname, operator_username,
 				operator_password);
@@ -161,6 +171,40 @@ public class OperatorController extends HttpServlet {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/index.jsp");
 		dispatcher.forward(request, response);
 		return;
+	}
+	
+	private void showChangePasswordOperator(HttpServletRequest request, HttpServletResponse response)
+			throws SQLException, IOException, ServletException {
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/operator/change_password_operator.jsp");
+		dispatcher.forward(request, response);
+	}
+	
+	private void changePasswordOperator(HttpServletRequest request, HttpServletResponse response)
+			throws SQLException, IOException, ServletException {
+		System.out.println("\n\nchange password");
+
+		String username = request.getParameter("username");
+
+		String old_password = hashMD5.getMd5(request.getParameter("old_password"));
+		String new_password = hashMD5.getMd5(request.getParameter("new_password"));
+
+		if (operatorDAO.validateOldPassword(username, old_password)) {
+			System.out.println("true");
+			OperatorModel updateOperator = new OperatorModel(username, new_password);
+			System.out.print(updateOperator);
+			operatorDAO.changePassword(updateOperator);
+			request.setAttribute("NOTIFICATION", "Password Changed!");
+			request.setAttribute("passwordChanged", "true");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/operator/change_password_operator.jsp");
+			dispatcher.forward(request, response);
+		} else {
+			
+			System.out.println("false");
+			request.setAttribute("NOTIFICATION", "Invalid old password!");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/operator/change_password_operator.jsp");
+			dispatcher.forward(request, response);
+		}
 	}
 
 }
