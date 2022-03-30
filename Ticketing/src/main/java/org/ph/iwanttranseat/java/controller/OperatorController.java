@@ -104,7 +104,7 @@ public class OperatorController extends HttpServlet {
 	private void listOperator(HttpServletRequest req, HttpServletResponse resp)
 			throws SQLException, IOException, ServletException {
 		List<OperatorModel> listOperator = operatorDAO.selectAllOperator();
-		req.setAttribute("listoperator", listOperator);
+		req.setAttribute("listOperator", listOperator);
 		RequestDispatcher dispatcher = req.getRequestDispatcher("jsp/admin/operator-list.jsp");
 		dispatcher.forward(req, resp);
 

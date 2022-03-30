@@ -51,9 +51,9 @@
        <td><c:out value="${operator.operator_lastname}" /></td>
        <td><c:out value="${operator.operator_username}" /></td>
 
-       <td><a href="editOperator?id=<c:out value='${operator.id}' />">Edit</a>
+       <td><a href="editOperator?id=<c:out value='${operator.id}' />"><i class="fa-solid fa-pencil" style="color:black;"></i></a>
         &nbsp;&nbsp;&nbsp;&nbsp; <a
-        href="deleteOperator?id=<c:out value='${operator.id}' />">Delete</a></td>
+        href="deleteOperator?id=<c:out value='${operator.id}' />"><i class="fa-solid fa-trash" style="color:black;"></i></a></td>
 
        <!--  <td><button (click)="updateemployee(employee.id)" class="btn btn-success">Update</button>
                  <button (click)="deleteemployee(employee.id)" class="btn btn-warning">Delete</button></td> -->
