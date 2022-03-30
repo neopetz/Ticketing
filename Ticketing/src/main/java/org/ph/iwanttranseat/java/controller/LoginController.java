@@ -12,7 +12,9 @@ import javax.servlet.http.HttpSession;
 
 import org.ph.iwanttranseat.java.API.HashMD5;
 import org.ph.iwanttranseat.java.dao.LoginDAO;
+import org.ph.iwanttranseat.java.dao.PassengerDAO;
 import org.ph.iwanttranseat.java.model.LoginBean;
+import org.ph.iwanttranseat.java.model.PassengerModel;
 
 @WebServlet("/LoginController")
 public class LoginController extends HttpServlet {
@@ -60,8 +62,11 @@ public class LoginController extends HttpServlet {
 				dispatcher.forward(request, response);
 			}
 			else if (loginDao.validate(loginBean)) {
+				PassengerDAO passengerDAO = new PassengerDAO();
+			    PassengerModel passenger = passengerDAO.selectPassenger(email);
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/travelBooking");
 				HttpSession session = request.getSession();
+				session.setAttribute("fullname", passenger.getPassengerLastname() + ", " + passenger.getPassengerFirstname());
 				session.setAttribute("email", email);
 				dispatcher.forward(request, response);
 			} else {
