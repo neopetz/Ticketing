@@ -60,7 +60,7 @@
     </fieldset>
 
     <fieldset class="form-group">
-     <label>User Name</label> <input type="text"
+     <label>Email</label> <input type="email"
       value="<c:out value='${operator.operator_username}' />" class="form-control"
       name="operator_username" required="required">
     </fieldset>

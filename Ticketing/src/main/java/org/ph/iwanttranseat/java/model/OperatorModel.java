@@ -39,6 +39,12 @@ public class OperatorModel {
 		this.operator_password = operator_password;
 	}
 	
+	public OperatorModel(String operator_username, String operator_password) {
+		super();
+		this.operator_username = operator_username;
+		this.operator_password = operator_password;
+	}
+
 	public int getId() {
 		return id;
 	}
