@@ -19,7 +19,7 @@ import org.ph.iwanttranseat.java.dao.PassengerDAO;
 import org.ph.iwanttranseat.java.model.PassengerModel;
 
 @WebServlet(urlPatterns = { "/listPassengers", "/registerPassenger", "/profilePassenger", "/updatePassenger",
-		"/changePassword", "/deletePassenger" })
+		"/changePassword", "/deletePassenger", "/logoutPassenger" })
 public class PassengerController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -61,13 +61,15 @@ public class PassengerController extends HttpServlet {
 			case "/changePassword":
 				changePassword(request, response);
 				break;
+			case "/logoutPassenger":
+				logoutPassenger(request, response);
+				break;
 			case "/deletePassenger":
 				deletePassenger(request, response);
 				break;
 			default:
 				listOfPassengers(request, response);
 				break;
-
 			}
 
 		} catch (SQLException ex) {
@@ -196,6 +198,14 @@ public class PassengerController extends HttpServlet {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/passenger/index_passenger.jsp");
 			dispatcher.forward(request, response);
 		}
+	}
+	
+	private void logoutPassenger(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+		HttpSession session = request.getSession();
+		session.invalidate();
+		RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/index.jsp");
+		dispatcher.forward(request, response);
+		return;
 	}
 
 }

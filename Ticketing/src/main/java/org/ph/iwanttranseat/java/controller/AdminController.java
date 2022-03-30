@@ -14,48 +14,24 @@ import org.ph.iwanttranseat.java.API.HashMD5;
 import org.ph.iwanttranseat.java.dao.AdminDAO;
 import org.ph.iwanttranseat.java.model.AdminModel;
 
-@WebServlet("/AdminController")
+@WebServlet("/logoutAdmin")
 public class AdminController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private AdminDAO adminDAO;
-	private HashMD5 hashMD5;
-
-    public void init() {
-    	adminDAO = new AdminDAO();
-    	hashMD5 = new HashMD5();
-    }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.sendRedirect("jsp/admin/login_admin.jsp");
+		logoutAdmin(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		authenticate(request, response);
+		doGet(request, response);
 	}
 	
-	private void authenticate(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-		
-		String username = request.getParameter("username");
-		String password = hashMD5.getMd5(request.getParameter("password"));
-		
-		AdminModel adminModel = new AdminModel();
-		adminModel.setUsername(username);
-		adminModel.setPassword(password);
-		
-		try {
-			if (adminDAO.validate(adminModel)) {
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/sidebar.jsp");
-				HttpSession session = request.getSession();
-				session.setAttribute("username", username);
-				dispatcher.forward(request, response);
-			} else {
-				request.setAttribute("NOTIFICATION", "Invalid Username or Password");
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/admin/login_admin.jsp");
-				dispatcher.forward(request, response);
-			}
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}
+	private void logoutAdmin(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+		HttpSession session = request.getSession();
+		session.invalidate();
+		RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/index.jsp");
+		dispatcher.forward(request, response);
+		return;
 	}
 
 }
