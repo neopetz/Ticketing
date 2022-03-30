@@ -12,11 +12,11 @@ import org.ph.iwanttranseat.java.model.BusModel;
 
 public class BusDAO {
 	
-	private static final String INSERT_BUS_DATA = "INSERT INTO `iwanttranseat_db`.`bus` (bus_name, bus_type, bus_seats, "
+	private static final String INSERT_BUS_DATA = "INSERT INTO `iwanttranseat_db`.`bus` (bus_name, bus_type, available_seats, "
 			+ "bus_number, plate_number, date_created, is_deleted) VALUES (?,?,?,?,?,?,?);";
 	private static final String SELECT_BUS = "SELECT * FROM `iwanttranseat_db`.`bus` WHERE `is_deleted` <> 1;";
 	private static final String VIEW_BUS = "SELECT * FROM `iwanttranseat_db`.`bus` WHERE `busId` = ?";
-	private static final String UPDATE_BUS = "UPDATE `iwanttranseat_db`.`bus` SET `bus_name` =?, `bus_type` =?, `bus_seats` =?, "
+	private static final String UPDATE_BUS = "UPDATE `iwanttranseat_db`.`bus` SET `bus_name` =?, `bus_type` =?, `available_seats` =?, "
 			+ "`bus_number` =?, `plate_number` =? WHERE `busId` = ?;";
 	private static final String DELETE_BUS = "UPDATE `iwanttranseat_db`.`bus` SET `is_deleted` = ? WHERE (`busId` = ?);";
 
@@ -54,7 +54,7 @@ public class BusDAO {
 	                int busId = rs.getInt("busId");
 	                String busName = rs.getString("bus_name");
 	                String busType = rs.getString("bus_type");
-	                String busSeats = rs.getString("bus_seats");
+	                String busSeats = rs.getString("available_seats");
 	                String busNumber = rs.getString("bus_number");
 	                String plateNumber = rs.getString("plate_number");
 	                LocalDate dateCreated = rs.getDate("date_created").toLocalDate();
@@ -78,7 +78,7 @@ public class BusDAO {
 					int busId = rs.getInt("busId");
 					String busName = rs.getString("bus_name");
 					String busType = rs.getString("bus_type");
-					String busSeats = rs.getString("bus_seats");
+					String busSeats = rs.getString("available_seats");
 					String busNumber = rs.getString("bus_number");
 					String plateNumber = rs.getString("plate_number");
 					LocalDate dateCreated = rs.getDate("date_created").toLocalDate();

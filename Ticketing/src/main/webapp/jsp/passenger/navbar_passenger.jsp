@@ -30,7 +30,7 @@
 						<a class="dropdown-item" data-toggle="modal" data-target="#changePasswordModal">Change
 							Password</a>
 						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="${pageContext.request.contextPath}/jsp/index.jsp">Logout</a>
+						<a class="dropdown-item" href="<%=request.getContextPath()%>/logoutPassenger">Logout</a>
 					</div>
 				</li>
 			</ul>
@@ -49,7 +49,7 @@
 							lock</span>
 					</a></li>
 				<li class="nav-item"><a class="nav-link d-flex align-items-center justify-content-end h5"
-						href="${pageContext.request.contextPath}/jsp/index.jsp">Logout
+						href="<%=request.getContextPath()%>/logoutPassenger">Logout
 						<span class="material-icons d-md-inline d-lg-none ml-4" style="font-size: 36px;"> logout</span>
 					</a></li>
 			</ul>

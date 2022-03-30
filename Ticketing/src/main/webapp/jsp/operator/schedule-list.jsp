@@ -17,7 +17,12 @@
 <link href="/css/datatable.min.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/datatable.min.css">
 
-<jsp:include page="../sidebar.jsp"></jsp:include>
+<c:if test='${sessionScope.account_type == "admin"}'>
+	<jsp:include page="../sidebar.jsp"></jsp:include>
+</c:if>
+<c:if test='${sessionScope.account_type == "operator"}'>
+	<jsp:include page="../sidebar_passenger.jsp"></jsp:include>
+</c:if>
 
 
 </head>
@@ -31,11 +36,8 @@
   <div class="container">
    <h3 class="text-center">List of Schedule</h3>
    <hr>
-   <div class="container text-left">
-
-    <a href="<%=request.getContextPath()%>/newSchedule"
-     class="btn btn-success">Add Schedule</a>
-   </div>
+   <a href="<%=request.getContextPath()%>/newSchedule"
+     class="btn btn-success my-5">Add Schedule</a>
    <br>
 			<table class="table table-striped reponsive" id="myTable" style="overflow-x: auto;">
     <thead>
