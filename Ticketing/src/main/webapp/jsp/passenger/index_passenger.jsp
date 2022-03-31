@@ -20,7 +20,7 @@
 				</div>
 			</c:if>
 		</c:if>
-		<div class="container my-3">
+		<!-- <div class="container my-3">
 			<form action="">
 				<div class="input-group mx-auto w-auto">
 					<div class="input-group-prepend">
@@ -39,7 +39,7 @@
 					</div>
 				</div>
 			</form>
-		</div>
+		</div> -->
 
 		<div class="container-fluid my-3">
 			<table id="bus-schedule-table" class="table table-hover display responsive nowrap" style="width: 100%">

@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<nav style="background-color: #637ce6;
-    background-image: linear-gradient(10deg, #637ce6 0%, #1c285c 100%);font-family:Century gothic;"
-	class="navbar navbar-expand-lg navbar-dark bg-light">
+<nav style="background-color: #151451;"	
+
+	class="navbar navbar-expand-lg navbar-light shadow ">
 	
 	<span></span>
 
@@ -15,14 +15,25 @@
 		<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 			<li class="nav-item"><a
 				class="nav-link d-flex align-items-center justify-content-end h5"
-				href="${pageContext.request.contextPath}/jsp/index.jsp">Home<span 
+				href="${pageContext.request.contextPath}/jsp/index.jsp"  style="color: #637ce6;font-size: 15px;font-family:quicksand,sans-serif;font-weight:700">Home<span 
 					class="material-icons d-md-inline d-lg-none ml-4"
 					style="font-size: 36px;"> home</span></a></li>
-		</ul>
-		<ul class="navbar-nav float-lg-right">
-			<li class="nav-item"><a
+					<!-- <li class="nav-item"><a
 				class="nav-link d-flex align-items-center justify-content-end h5"
-				href="#" data-toggle="modal" data-target="#exampleModal" style="font-size: 20px;">Login <span
+				href="${pageContext.request.contextPath}/jsp/index.jsp"  style="color: #637ce6;font-size: 15px;font-family:quicksand,sans-serif;font-weight:700">Schedule<span 
+					class="material-icons d-md-inline d-lg-none ml-4"
+					style="font-size: 36px;"> schedule</span></a></li>
+					<li class="nav-item"><a
+				class="nav-link d-flex align-items-center justify-content-end h5"
+				href="${pageContext.request.contextPath}/jsp/index.jsp"  style="color: #637ce6;font-size: 15px;font-family:quicksand,sans-serif;font-weight:700">Routes<span 
+					class="material-icons d-md-inline d-lg-none ml-4"
+					style="font-size: 36px;"> routes</span></a></li> -->
+		</ul>
+		
+		<ul class="navbar-nav float-lg-right">
+			<li class="nav-item" style="border-color:blue"><a
+				class="nav-link d-flex align-items-center justify-content-end h5"
+				href="#" data-toggle="modal" data-target="#exampleModal" style="color: #637ce6;font-size: 15px;border:10px;font-family:QuickSand,sans-serif;font-weight:700">Login or Signup<span
 					class="material-icons d-md-inline d-lg-none ml-4"
 					"> login</span>
 			</a></li>
@@ -31,10 +42,10 @@
 			<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			  <div class="modal-dialog">
 			
-			    <div class="modal-content" style="width:75%;margin-top:80px;margin-left:100px;border-radius: 30px 30px 20px 20px">
+			    <div class="modal-content" style="width:75%;margin-top:80px;margin-left:100px;border-radius: 20px 20px 12px 12px">
 			      <div class="modal-header" style=" background-color: #637ce6;
-			    background-image: linear-gradient(10deg, #637ce6 0%, #1c285c 100%);font-family:Century gothic;font-size:10px;border-radius: 20px 20px 0px 0px">
-			        <h5 class="modal-title mx-auto" id="exampleModalLabel" style="color:white;">Login</h5>
+			    background-image: linear-gradient(10deg, #637ce6 0%, #1c285c 100%);font-family:Century gothic;font-size:8px;border-radius: 12px 12px 0px 0px">
+			        <h6 class="modal-title" id="exampleModalLabel" style="color:white;margin-left:150px;">Login</h6>
 			      </div>
 			      <div class="modal-body">
 			      	<form action="<%=request.getContextPath()%>/LoginController" method="post">
@@ -42,7 +53,8 @@
  					<jsp:include page="/jsp/login.jsp"></jsp:include>
  					
 				    </div>
-	     			 <div class="modal-footer">
+	     			 <div class="modal-footer" style="font-family:quicksand,  sans-serif">
+	     			 <p>By proceeding, you agree to iWantTranSeat Privacy Policy,<a href="" data-toggle="modal" data-target="#myModal"> User Agreement and Terms of Service</a></p>
 			      	 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 			       	 <button type="submit" class="btn btn-primary">Login</button>
 			       	 	</form>
@@ -52,13 +64,7 @@
 			</div>
 <!-- MODAL -->	
 			
-			
-			<li class="nav-item"><a
-				class="nav-link d-flex align-items-center justify-content-end h5"
-				href="#" data-toggle="modal" data-target="#exampleModal2">Register
-					<span class="material-icons d-md-inline d-lg-none ml-4"
-					style="font-size: 36px;"> app_registration</span>
-			</a></li>
+		
 		</ul>
 		
 			
@@ -67,7 +73,7 @@
 			  <div class="modal-dialog">
 			
 			    <div class="modal-content" style="width:100%;margin-top:80px;">
-			      <div class="modal-header" style=" background-color: #06cfc1;font-family:Century gothic;font-size:10px;">
+			      <div class="modal-header" style=" background-color: #06cfc1;font-family:quicksand, sans-serif;font-weight:700;font-size:10px;">
 			        <h5 class="modal-title" id="exampleModalLabel" style="color:white;margin-left:90px;">Passenger Registration Here</h5>
 			      </div>
 			      <div class="modal-body">

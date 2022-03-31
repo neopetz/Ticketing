@@ -52,12 +52,11 @@
 					<div class="col-sm-2">
 						<h5>Total Amount</h5>
 						<p id="price"></p>
-
 					</div>
 				</div>
 			</div>
-
 		</div>
+		
 
 		<form action="<%=request.getContextPath()%>/PaymentController" method="POST">
 			<input id="transaction_code" type="hidden" name="transaction">
@@ -86,6 +85,9 @@
 					Receipt</button>
 			</center>
 		</form>
+		<div class="text-center my-3">
+			<button type="button" class="btn btn-secondary btn-lg" onclick="history.back()">Go Back</button>
+		</div>
 
 	</body>
 	<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>

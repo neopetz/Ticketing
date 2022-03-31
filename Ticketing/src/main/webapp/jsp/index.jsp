@@ -3,6 +3,13 @@
 	<jsp:include page="navbar.jsp"></jsp:include>
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/carousel.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/index-style.css">
+<style>
+
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap');
+
+
+
+</style>
 
 	<div class="container">
 		<div class="row">
@@ -10,8 +17,8 @@
 			
 				<center>
 			
-					<img class="img-fluid" src="${pageContext.request.contextPath}/assets/FULL_LOGO.jpg"
-						style="height: 100px; width: 630px;margin-top:20px;">
+					<img class="" src="${pageContext.request.contextPath}/assets/FULL_LOGO.jpg"
+						style="height: 80px; width: 530px;margin-top:20px;border-radius:70px;margin-left: 180px;">
 				</center>
 				
 			</div>
@@ -63,7 +70,7 @@
 				</form>  -->
 			</div>
 		</div>
-		<hr style="width:60%;">
+		
 				
 
 
@@ -76,14 +83,14 @@
 			</ol>
 			<div class="carousel-inner">
 				<div class="carousel-item active">
-					<img class="img-fluid vw-100" src="${pageContext.request.contextPath}/assets/beach2.jpg"
+					<img class="img-fluid vw-100" src="${pageContext.request.contextPath}/assets/cover8.jpg"
 						style="position: relative; width: 100% height:100%;">
 					<div class="container">
-						<div class="carousel-caption text-left">
-							<h1 style="font-family: 'Century Gothic'">Going for a Trip?</h1>
-							<p style="font-family: 'Century Gothic'">
+						<div class="carousel-caption text-right" style="top:5%;">
+							<h1 style="font-family: quicksand, Arial, sans-serif;color:black;">Going for a Trip?</h1>
+							<p style="font-family: quicksand,  sans-serif">
 								<a class="bg2 btn btn-lg btn-info" style="border-radius:40px 1px 40px 1px;"
-									href="#" data-toggle="modal" data-target="#exampleModal">BOOK A SEAT !</a>
+									href="#" data-toggle="modal" data-target="#exampleModal">Book a seat !</a>
 							</p>
 						</div>
 					</div>
@@ -92,24 +99,24 @@
 					<img class="img-fluid vw-100" src="${pageContext.request.contextPath}/assets/mountain.jpg"
 						style="position: relative;">
 					<div class="container">
-						<div class="carousel-caption">
-							<h1 style="font-family: 'Century Gothic'">Going for a Trip?</h1>
-							<p style="font-family: 'Century Gothic'">
+						<div class="carousel-caption text-right">
+							<h1 style="font-family: quicksand,  sans-serif">Going for a Trip?</h1>
+							<p style="font-family: quicksand,  sans-serif">
 								<a class="bg2 btn btn-lg btn-info" style="border-radius:40px 1px 40px 1px;"
-									href="#">BOOK A SEAT !</a>
+									href="#" data-toggle="modal" data-target="#exampleModal">Book a seat !</a>
 							</p>
 						</div>
 					</div>
 				</div>
 				<div class="carousel-item">
-					<img class="img-fluid vw-100" src="${pageContext.request.contextPath}/assets/van.jpg"
+					<img class="img-fluid vw-100" src="${pageContext.request.contextPath}/assets/cover5.jpg"
 						style="position: relative;">
 					<div class="container">
-						<div class="carousel-caption">
-							<h1 style="font-family: 'Century Gothic'">Going for a Trip ?</h1>
-							<p style="font-family: 'Century Gothic'">
+						<div class="carousel-caption text-left">
+							<h1 style="font-family: quicksand, sans-serif">Going for a Trip ?</h1>
+							<p style="font-family: quicksand, sans-serif">
 								<a class="bg2 btn btn-lg btn-info" style="border-radius:40px 1px 40px 1px;"
-									href="#" data-toggle="modal" data-target="#exampleModal">BOOK A SEAT !</a>
+									href="#" data-toggle="modal" data-target="#exampleModal">Book a seat !</a>
 							</p>
 						</div>
 					</div>
@@ -130,7 +137,7 @@
   ================================================== -->
 		<!-- Wrap the rest of the page in another container to center all the content. -->
 
-		<div class="container marketing mt-4">
+		<div class="container marketing mt-4" style="font-family:quicksand,  sans-serif">
 
 			<!-- Three columns of text below the carousel -->
 			<div class="row text-center">

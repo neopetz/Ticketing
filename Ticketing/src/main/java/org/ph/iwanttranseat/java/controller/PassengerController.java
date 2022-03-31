@@ -189,14 +189,12 @@ public class PassengerController extends HttpServlet {
 			passengerDAO.changePassword(updatePassenger);
 			request.setAttribute("NOTIFICATION", "Password Changed!");
 			request.setAttribute("passwordChanged", "true");
-			RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/passenger/index_passenger.jsp");
-			dispatcher.forward(request, response);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/travelBooking");
 		} else {
 			
 			System.out.println("false");
 			request.setAttribute("NOTIFICATION", "Invalid old password!");
-			RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/passenger/index_passenger.jsp");
-			dispatcher.forward(request, response);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/travelBooking");
 		}
 	}
 	
