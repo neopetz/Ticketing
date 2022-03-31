@@ -5,6 +5,7 @@ import java.time.LocalDate;
 public class PaymentModel {
 	
 	private int payment_id;
+	private int user_id;
 	private String transaction_code;
 	private String payer_name;
 	private String payer_email;
@@ -19,10 +20,11 @@ public class PaymentModel {
 
 	}
 
-	public PaymentModel(int payment_id, String transaction_code, String payer_name, String payer_email,
+	public PaymentModel(int payment_id,int user_id, String transaction_code, String payer_name, String payer_email,
 			String payment_status, LocalDate date_created) {
 		super();
 		this.payment_id = payment_id;
+		this.user_id = user_id;
 		this.transaction_code = transaction_code;
 		this.payer_name = payer_name;
 		this.payer_email = payer_email;
@@ -36,6 +38,16 @@ public class PaymentModel {
 	public void setPayment_id(int payment_id) {
 		this.payment_id = payment_id;
 	}
+	
+	
+	public int getUser_id() {
+		return user_id;
+	}
+
+	public void setUser_id(int user_id) {
+		this.user_id = user_id;
+	}
+
 	public String getTransaction_code() {
 		return transaction_code;
 	}

@@ -66,12 +66,13 @@ public class PaymentController extends HttpServlet {
 		int travelId = Integer.parseInt(request.getParameter("travelId"));
 		int busId = Integer.parseInt(request.getParameter("busId"));
 		int user_id = Integer.parseInt(request.getParameter("user_id"));
-	    
+		System.out.println(user_id + "  user_id ");
 		
 		paymentModel.setTransaction_code(transaction);
 		paymentModel.setPayer_name(payer_name);
 		paymentModel.setPayer_email(payer_email);
 		paymentModel.setPayment_status(status);
+		paymentModel.setUser_id(user_id);
 		request.setAttribute("transaction", transaction);
 		request.setAttribute("price", price);
 		request.setAttribute("departure_location", departure_location);
