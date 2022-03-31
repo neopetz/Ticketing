@@ -42,7 +42,7 @@
 			<a href="<%=request.getContextPath()%>/listSchedule"><i class="fa-solid fa-calendar"></i> Schedules</a>
 			<a href="<%=request.getContextPath()%>/listOfTravelSchedules"><i class="fa-solid fa-calendar"></i> Travel
 				Schedules</a>
-			<a href="${pageContext.request.contextPath}/jsp/operator/passenger-payment-list.jsp"><i class="fa-solid fa-qrcode"></i> Scan QR</a>
+			<a href="<%=request.getContextPath()%>/listOfPassengerPaymentDetails"><i class="fa-solid fa-qrcode"></i> Scan QR</a>
 			<a href="${pageContext.request.contextPath}/jsp/maintenance_page.jsp"><i class="fa-solid fa-file"></i> Generate
 				Reports</a>
 			<a href="<%=request.getContextPath()%>/showChangePasswordOperator"><i class="fa-solid fa-lock"></i> Change Password</a>
