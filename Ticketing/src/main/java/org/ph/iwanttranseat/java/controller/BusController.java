@@ -78,7 +78,7 @@ public class BusController extends HttpServlet {
 //	This should show the Edit / Update Form for Bus Details
 	private void showEditForm(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException {
-		int id = Integer.parseInt(request.getParameter("id"));
+		int id = Integer.parseInt(request.getParameter("busId"));
 		BusModel busUpdate = busDAO.selectBus(id);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/admin/add-bus.jsp");
 		request.setAttribute("busDetails", busUpdate);
@@ -115,7 +115,7 @@ public class BusController extends HttpServlet {
 
 	private void deleteBusDetails(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException {
-		int id = Integer.parseInt(request.getParameter("id"));
+		int id = Integer.parseInt(request.getParameter("busId"));
 		boolean isDeleted = true;
 		BusModel busModel = new BusModel(id, isDeleted);
 		busDAO.deleteBusDetails(busModel);
