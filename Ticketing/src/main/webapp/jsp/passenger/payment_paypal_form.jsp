@@ -61,8 +61,8 @@
 
 		<form action="<%=request.getContextPath()%>/PaymentController" method="POST">
 			<input id="transaction_code" type="hidden" name="transaction">
-			<input id="payer" type="hidden" name='<%=session.getAttribute("fullname") %>'>
-			<input id="payer_email" type="hidden" name='<%=session.getAttribute("email") %>'>
+			<input id="payer" type="hidden" name='payer_name' value='<%=session.getAttribute("fullname") %>'>
+			<input id="payer_email" type="hidden" name='payer_email' value='<%=session.getAttribute("email") %>'>
 			<input id="status" type="hidden" name="status">
 			<input type="hidden" name="bus_seat" value="${selectedSchedule.available_seats}">
 			<input id="totalPrice" type="hidden" name="price" value="631.00">

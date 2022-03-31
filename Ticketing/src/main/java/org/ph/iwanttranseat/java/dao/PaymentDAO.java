@@ -11,18 +11,19 @@ public class PaymentDAO {
 	
 	public int payment(PaymentModel payment) throws ClassNotFoundException {
         String INSERT_PAYMENT_SQL = "INSERT INTO payment" +
-            "  (transaction_code, payer_name, payer_email, payment_status, date_created) VALUES " +
-            " (?, ?, ?, ?, ?);";
+            "  (transaction_code, user_id, payer_name, payer_email, payment_status, date_created) VALUES " +
+            " (?, ?, ?, ?, ?, ?);";
 
         int result = 0;
         try (Connection connection = JDBCUtils.getConnection();
             // Step 2:Create a statement using connection object
             PreparedStatement preparedStatement = connection.prepareStatement(INSERT_PAYMENT_SQL)) {
             preparedStatement.setString(1, payment.getTransaction_code());
-            preparedStatement.setString(2, payment.getPayer_name());
-            preparedStatement.setString(3, payment.getPayer_email());
-            preparedStatement.setString(4, payment.getPayment_status());
-            preparedStatement.setDate(5, JDBCUtils.getSQLDate(LocalDate.now()));
+            preparedStatement.setInt(2, payment.getUser_id());
+            preparedStatement.setString(3, payment.getPayer_name());
+            preparedStatement.setString(4, payment.getPayer_email());
+            preparedStatement.setString(5, payment.getPayment_status());
+            preparedStatement.setDate(6, JDBCUtils.getSQLDate(LocalDate.now()));
     
 
             System.out.println(preparedStatement);

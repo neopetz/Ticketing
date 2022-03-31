@@ -116,6 +116,8 @@ CREATE TABLE `admin`(
 	`password` VARCHAR (40)
 );
 
+INSERT INTO `admin` (username, password) VALUES ('admin@gmail.com', '21232f297a57a5a743894a0e4a801fc3');
+
 
 /* BookDetails Table */
 CREATE TABLE booking (
@@ -125,7 +127,6 @@ busId int not null,
 user_id int not null
 );
 
-[11:33 AM] Valencia, Rhavee
 SELECT bookId,
 travel_date, bus_name, phone_number, email,
 Concat(passenger.firstname, ' ', passenger.lastname) AS fullname
@@ -135,5 +136,17 @@ INNER JOIN bus ON bus.busId = booking.busId
 INNER JOIN passenger ON passenger.user_id = booking.user_id;
 
 
+/* transactionDetails Table */
+CREATE TABLE `transaction`(
+	transactionId INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    bookId INT NOT NULL,
+    paymentId INT NOT NULL
+);
 
-INSERT INTO `admin` (username, password) VALUES ('admin@gmail.com', '21232f297a57a5a743894a0e4a801fc3');
+SELECT transactionId, transaction_code, Concat(passenger.firstname, ' ', passenger.lastname) AS fullname, 
+payer_name, payer_email, payment_status, payment.date_created
+FROM `transaction`
+INNER JOIN booking ON booking.bookId = transaction.bookId
+INNER JOIN payment ON payment.paymentId = transaction.paymentId
+INNER JOIN passenger ON passenger.user_id = booking.user_id;
+

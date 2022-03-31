@@ -133,8 +133,7 @@ public class BookingDAO {
 
 	}
 	
-	private static final String UPDATE_AVAILABLE_SEATS = "UPDATE bus SET available_seats =? "
-			+ "WHERE busId = ?;";
+	private static final String UPDATE_AVAILABLE_SEATS = "UPDATE bus SET available_seats = ? - 1 WHERE busId = ?;";
 	
 	public boolean updateAvailableSeats(BookingModel bookingModel) throws SQLException {
 		boolean rowUpdated;
