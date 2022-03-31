@@ -45,7 +45,7 @@
 			    <div class="modal-content" style="width:75%;margin-top:80px;margin-left:100px;border-radius: 20px 20px 12px 12px">
 			      <div class="modal-header" style=" background-color: #637ce6;
 			    background-image: linear-gradient(10deg, #637ce6 0%, #1c285c 100%);font-family:Century gothic;font-size:8px;border-radius: 12px 12px 0px 0px">
-			        <h6 class="modal-title" id="exampleModalLabel" style="color:white;margin-left:110px;">Passenger Login</h6>
+			        <h6 class="modal-title" id="exampleModalLabel" style="color:white;margin-left:150px;">Login</h6>
 			      </div>
 			      <div class="modal-body">
 			      	<form action="<%=request.getContextPath()%>/LoginController" method="post">
