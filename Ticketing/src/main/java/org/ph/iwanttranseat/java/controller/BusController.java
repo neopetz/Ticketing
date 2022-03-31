@@ -90,11 +90,12 @@ public class BusController extends HttpServlet {
 		String busName = request.getParameter("bus_name");
 		String busType = request.getParameter("bus_type");
 		String busSeats = request.getParameter("bus_seats");
+		int availableSeats = Integer.parseInt(request.getParameter("available_seats"));
 		String busNumber = request.getParameter("bus_number");
 		String plateNumber = request.getParameter("plate_number");
 		LocalDate dateCreated = LocalDate.now();
 		boolean isDeleted = Boolean.valueOf(request.getParameter("is_deleted"));
-		BusModel busModel = new BusModel(busName, busType, busSeats, busNumber, plateNumber, dateCreated, isDeleted);
+		BusModel busModel = new BusModel(busName, busType, busSeats, availableSeats, busNumber, plateNumber, dateCreated, isDeleted);
 		busDAO.insertBus(busModel);
 		response.sendRedirect("busList");
 
@@ -106,9 +107,10 @@ public class BusController extends HttpServlet {
 		String busName = request.getParameter("bus_name");
 		String busType = request.getParameter("bus_type");
 		String busSeats = request.getParameter("bus_seats");
+		int availableSeats = Integer.parseInt(request.getParameter("available_seats"));
 		String busNumber = request.getParameter("bus_number");
 		String plateNumber = request.getParameter("plate_number");
-		BusModel busModel = new BusModel(id, busName, busType, busSeats, busNumber, plateNumber);
+		BusModel busModel = new BusModel(id, busName, busType, busSeats, availableSeats, busNumber, plateNumber);
 		busDAO.updateBusDetails(busModel);
 		response.sendRedirect("busList");
 	}

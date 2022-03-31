@@ -8,6 +8,7 @@ public class BusModel {
 	private String busName;
 	private String busType;
 	private String busSeats;
+	private int availableSeats;
 	private String busNumber;
 	private String plateNumber;
 	private LocalDate dateCreated;
@@ -31,23 +32,25 @@ public class BusModel {
 	}
 
 //	Update Bus Details Constructor from Bus Controller
-	public BusModel(int busId, String busName, String busType, String busSeats, String busNumber, String plateNumber) {
+	public BusModel(int busId, String busName, String busType, String busSeats, int availableSeats, String busNumber, String plateNumber) {
 		super();
 		this.setBusId(busId);
 		this.busName = busName;
 		this.busType = busType;
 		this.busSeats = busSeats;
+		this.availableSeats = availableSeats;
 		this.busNumber = busNumber;
 		this.plateNumber = plateNumber;
 	}
 
 //	Insert Bus Details Constructor from Bus Controller
-	public BusModel(String busName, String busType, String busSeats, String busNumber, String plateNumber,
+	public BusModel(String busName, String busType, String busSeats, int availableSeats, String busNumber, String plateNumber,
 			LocalDate dateCreated, boolean isDeleted) {
 		super();
 		this.busName = busName;
 		this.busType = busType;
 		this.busSeats = busSeats;
+		this.availableSeats = availableSeats;
 		this.busNumber = busNumber;
 		this.plateNumber = plateNumber;
 		this.dateCreated = dateCreated;
@@ -55,13 +58,14 @@ public class BusModel {
 	}
 
 //	for Bus List Array in BusDAO
-	public BusModel(int busId, String busName, String busType, String busSeats, String busNumber, String plateNumber,
+	public BusModel(int busId, String busName, String busType, String busSeats, int availableSeats, String busNumber, String plateNumber,
 			LocalDate dateCreated) {
 		super();
 		this.setBusId(busId);
 		this.busName = busName;
 		this.busType = busType;
 		this.busSeats = busSeats;
+		this.availableSeats = availableSeats;
 		this.busNumber = busNumber;
 		this.plateNumber = plateNumber;
 		this.dateCreated = dateCreated;
@@ -90,6 +94,14 @@ public class BusModel {
 
 	public void setBusSeats(String busSeats) {
 		this.busSeats = busSeats;
+	}
+
+	public int getAvailableSeats() {
+		return availableSeats;
+	}
+
+	public void setAvailableSeats(int availableSeats) {
+		this.availableSeats = availableSeats;
 	}
 
 	public String getBusNumber() {

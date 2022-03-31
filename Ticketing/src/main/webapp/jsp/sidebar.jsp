@@ -35,7 +35,7 @@
 				<%=session.getAttribute("username")%>
 			</h5>
 			<hr />
-			<a href="#news"><i class="fa-solid fa-house"></i> Dashboard</a>
+			<!-- <a href="#news"><i class="fa-solid fa-house"></i> Dashboard</a> -->
 			<a href="<%=request.getContextPath()%>/busList"><i class="fa-solid fa-bus"></i> Bus</a>
 			<a href="<%=request.getContextPath()%>/listOfBusPersonnel"><i class="fa-solid fa-user"></i> Bus
 				Personnel</a> <a href="<%=request.getContextPath()%>/listOperator"><i
@@ -44,7 +44,7 @@
 			<a href="<%=request.getContextPath()%>/listSchedule"><i class="fa-solid fa-calendar"></i> Schedules</a>
 			<a href="<%=request.getContextPath()%>/listOfTravelSchedules"><i class="fa-solid fa-calendar"></i> Travel
 				Schedules</a>
-			<a href="<%=request.getContextPath()%>/listTransaction"><i class="fa-solid fa-file"></i> Generate
+			<a href="${pageContext.request.contextPath}/jsp/maintenance_page.jsp"><i class="fa-solid fa-file"></i> Generate
 				Reports</a>
 			<a href="<%=request.getContextPath()%>/logoutAdmin"><i class="fa-solid fa-power-off"></i> Log out</a>
 		</div>

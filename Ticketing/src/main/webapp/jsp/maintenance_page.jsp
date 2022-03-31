@@ -10,6 +10,9 @@
                 <br>
                 <h1 class="font-weight-light">Sorry for inconvience.</h1>
             </div>
+            <div class="justify-content-center">
+                <button class="btn btn-light" onclick="history.back()">Go back</button>
+            </div>
         </div>
     </body>
 
