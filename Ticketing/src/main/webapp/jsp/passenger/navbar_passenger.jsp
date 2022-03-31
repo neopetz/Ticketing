@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
-	<nav style="background-color: #637ce6;
-    background-image: linear-gradient(10deg, #637ce6 0%, #1c285c 100%);font-family:Century gothic;font-size:10px;" class="navbar navbar-expand-lg navbar-dark">
+	<nav style="background-color: #151451;" class="navbar navbar-expand-lg navbar-dark">
 
 		<span></span>
 
@@ -11,14 +10,14 @@
 
 
 		<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+			<ul style="color: #637ce6;font-size: 15px;font-family:quicksand,sans-serif;font-weight:700" class="navbar-nav mr-auto mt-2 mt-lg-0">
 				<li class="nav-item"><a class="nav-link d-flex align-items-center justify-content-end h5"
 						href="<%=request.getContextPath()%>/travelBooking"> Home<span
 							class="material-icons d-md-inline d-lg-none ml-4" style="font-size: 36px;"> home</span></a>
 				</li>
-				<li class="nav-item"><a class="nav-link d-flex align-items-center justify-content-end h5" href="#">
+				<!-- <li class="nav-item"><a class="nav-link d-flex align-items-center justify-content-end h5" href="#">
 						History<span class="material-icons d-md-inline d-lg-none ml-4" style="font-size: 36px;">
-							history</span></a></li>
+							history</span></a></li> -->
 			</ul>
 
 			<ul class="navbar-nav float-right d-none d-md-none d-lg-block">

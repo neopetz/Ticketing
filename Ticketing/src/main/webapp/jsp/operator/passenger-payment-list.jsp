@@ -23,6 +23,14 @@
 	
 </head>
 <body>
+
+<c:if test='${sessionScope.account_type == "admin"}'>
+	<jsp:include page="../sidebar.jsp"></jsp:include>
+</c:if>
+<c:if test='${sessionScope.account_type == "operator"}'>
+	<jsp:include page="../sidebar_passenger.jsp"></jsp:include>
+</c:if>
+
  <video id="preview" width="20%"></video> 
  <button type="button" class="btn btn-primary" onclick="ScanBtn()" id="scanBtn">SCAN</button>
  <button type="button" class="btn btn-danger" onclick="CloseBtn()" id="closeBtn">CLOSE</button>

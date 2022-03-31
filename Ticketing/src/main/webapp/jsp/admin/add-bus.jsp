@@ -75,9 +75,18 @@
 				<fieldset class="form-group">
 					<br>
 						<input type="text" 
-							value="<c:out value='${busDetails.busSeats}' />"
+							id="bus_seats"
+							value="<c:out value='${busDetails.busSeats}' />" onchange="changeAvailableSeats()"
 							class="form-control" name="bus_seats" pattern="\d*" 
 							minlength="2" maxlength="2" placeholder="Bus Seats" required>
+				</fieldset>
+				
+				<fieldset class="form-group">
+					<br>
+						<input type="text"  id="available_seats"
+							value="<c:out value='${busDetails.availableSeats}' />"
+							class="form-control" name="available_seats" readonly pattern="\d*" 
+							minlength="2" maxlength="2" placeholder="Available" required>
 				</fieldset>
 				
 				<fieldset class="form-group">
@@ -109,5 +118,11 @@
 		</div>
 	</div>
 		<div class="col-md-3"></div>
+	<script>
+		function changeAvailableSeats() {
+			var busSeats = document.getElementById('bus_seats').value;
+			document.getElementById('available_seats').value = busSeats;
+		}
+	</script>
 </body>
 </html>

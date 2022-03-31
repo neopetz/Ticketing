@@ -18,7 +18,7 @@
 				<center>
 			
 					<img class="" src="${pageContext.request.contextPath}/assets/FULL_LOGO.jpg"
-						style="height: 80px; width: 530px;margin-top:20px;border-radius:70px;margin-top:;">
+						style="height: 80px; width: 530px;margin-top:20px;border-radius:70px;margin-left: 180px;">
 				</center>
 				
 			</div>

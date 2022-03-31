@@ -18,7 +18,7 @@
 				href="${pageContext.request.contextPath}/jsp/index.jsp"  style="color: #637ce6;font-size: 15px;font-family:quicksand,sans-serif;font-weight:700">Home<span 
 					class="material-icons d-md-inline d-lg-none ml-4"
 					style="font-size: 36px;"> home</span></a></li>
-					<li class="nav-item"><a
+					<!-- <li class="nav-item"><a
 				class="nav-link d-flex align-items-center justify-content-end h5"
 				href="${pageContext.request.contextPath}/jsp/index.jsp"  style="color: #637ce6;font-size: 15px;font-family:quicksand,sans-serif;font-weight:700">Schedule<span 
 					class="material-icons d-md-inline d-lg-none ml-4"
@@ -27,7 +27,7 @@
 				class="nav-link d-flex align-items-center justify-content-end h5"
 				href="${pageContext.request.contextPath}/jsp/index.jsp"  style="color: #637ce6;font-size: 15px;font-family:quicksand,sans-serif;font-weight:700">Routes<span 
 					class="material-icons d-md-inline d-lg-none ml-4"
-					style="font-size: 36px;"> routes</span></a></li>
+					style="font-size: 36px;"> routes</span></a></li> -->
 		</ul>
 		
 		<ul class="navbar-nav float-lg-right">

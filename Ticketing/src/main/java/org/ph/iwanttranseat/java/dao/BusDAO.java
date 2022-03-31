@@ -12,12 +12,12 @@ import org.ph.iwanttranseat.java.model.BusModel;
 
 public class BusDAO {
 	
-	private static final String INSERT_BUS_DATA = "INSERT INTO `iwanttranseat_db`.`bus` (bus_name, bus_type, available_seats, "
-			+ "bus_number, plate_number, date_created, is_deleted) VALUES (?,?,?,?,?,?,?);";
+	private static final String INSERT_BUS_DATA = "INSERT INTO `iwanttranseat_db`.`bus` (bus_name, bus_type, bus_seats, available_seats, "
+			+ "bus_number, plate_number, date_created, is_deleted) VALUES (?,?,?,?,?,?,?,?);";
 	private static final String SELECT_BUS = "SELECT * FROM `iwanttranseat_db`.`bus` WHERE `is_deleted` <> 1;";
 	private static final String VIEW_BUS = "SELECT * FROM `iwanttranseat_db`.`bus` WHERE `busId` = ?";
-	private static final String UPDATE_BUS = "UPDATE `iwanttranseat_db`.`bus` SET `bus_name` =?, `bus_type` =?, `available_seats` =?, "
-			+ "`bus_number` =?, `plate_number` =? WHERE `busId` = ?;";
+	private static final String UPDATE_BUS = "UPDATE `iwanttranseat_db`.`bus` SET `bus_name` = ?, `bus_type` = ?, `bus_seats` = ?, "
+			+ "`available_seats` = ?, `bus_number` =?, `plate_number` =? WHERE `busId` = ?;";
 	private static final String DELETE_BUS = "UPDATE `iwanttranseat_db`.`bus` SET `is_deleted` = ? WHERE (`busId` = ?);";
 
 //	Adding BUS details:
@@ -27,10 +27,11 @@ public class BusDAO {
 			preparedStatement.setString(1, busModel.getBusName());
 			preparedStatement.setString(2, busModel.getBusType());
 			preparedStatement.setString(3, busModel.getBusSeats());
-			preparedStatement.setString(4, busModel.getBusNumber());
-			preparedStatement.setString(5, busModel.getPlateNumber());
-			preparedStatement.setDate(6, JDBCUtils.getSQLDate(busModel.getDateCreated()));
-			preparedStatement.setBoolean(7, busModel.isDeleted());
+			preparedStatement.setInt(4, busModel.getAvailableSeats());
+			preparedStatement.setString(5, busModel.getBusNumber());
+			preparedStatement.setString(6, busModel.getPlateNumber());
+			preparedStatement.setDate(7,JDBCUtils.getSQLDate(busModel.getDateCreated()));
+			preparedStatement.setBoolean(8, busModel.isDeleted());
 			System.out.println(preparedStatement);
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
@@ -54,12 +55,13 @@ public class BusDAO {
 	                int busId = rs.getInt("busId");
 	                String busName = rs.getString("bus_name");
 	                String busType = rs.getString("bus_type");
-	                String busSeats = rs.getString("available_seats");
+	                String busSeats = rs.getString("bus_seats");
+	                int availableSeats = rs.getInt("available_seats");
 	                String busNumber = rs.getString("bus_number");
 	                String plateNumber = rs.getString("plate_number");
 	                LocalDate dateCreated = rs.getDate("date_created").toLocalDate();
 	                System.out.println(busId+" "+busName +" "+busType+" "+ busSeats+" "+busNumber+" "+plateNumber+" "+dateCreated);
-	                busModel = new BusModel(busId, busName, busType, busSeats, busNumber, plateNumber, dateCreated);
+	                busModel = new BusModel(busId, busName, busType, busSeats, availableSeats, busNumber, plateNumber, dateCreated);
 	            }
 	        } catch (SQLException exception) {
 	        	JDBCUtils.printSQLException(exception);
@@ -78,11 +80,12 @@ public class BusDAO {
 					int busId = rs.getInt("busId");
 					String busName = rs.getString("bus_name");
 					String busType = rs.getString("bus_type");
-					String busSeats = rs.getString("available_seats");
+					String busSeats = rs.getString("bus_seats");
+					int availableSeats = rs.getInt("available_seats");
 					String busNumber = rs.getString("bus_number");
 					String plateNumber = rs.getString("plate_number");
 					LocalDate dateCreated = rs.getDate("date_created").toLocalDate();
-					busList.add(new BusModel(busId, busName, busType, busSeats, busNumber, plateNumber, dateCreated));
+					busList.add(new BusModel(busId, busName, busType, busSeats, availableSeats, busNumber, plateNumber, dateCreated));
 				}
 		   } catch (SQLException exception) {
 			   JDBCUtils.printSQLException(exception);
@@ -98,9 +101,10 @@ public class BusDAO {
 					statement.setString(1, busModel.getBusName());
 					statement.setString(2, busModel.getBusType());
 					statement.setString(3, busModel.getBusSeats());
-					statement.setString(4, busModel.getBusNumber());
-					statement.setString(5, busModel.getPlateNumber());
-					statement.setInt(6, busModel.getBusId());
+					statement.setInt(4, busModel.getAvailableSeats());
+					statement.setString(5, busModel.getBusNumber());
+					statement.setString(6, busModel.getPlateNumber());
+					statement.setInt(7, busModel.getBusId());
 					rowUpdated = statement.executeUpdate() > 0;
 				}
 				return rowUpdated;
@@ -120,7 +124,7 @@ public class BusDAO {
 	
 	
 	// populate "select bus"
-	private static final String SELECT_TRAVELBUS = "SELECT busId, CONCAT(bus_name, ' | ', bus_type, ' | Capacity:', bus_seats, ' seats | Plate no.: ', plate_number) "
+	private static final String SELECT_TRAVELBUS = "SELECT busId, CONCAT(bus_name, ' | ', bus_type, ' | Capacity:', bus_seats, ' seats | available_seats | Plate no.: ', plate_number) "
 			+ "AS travel_bus FROM bus WHERE is_deleted <> 1 ORDER BY busId;";
 
 	public static List<BusModel> selectTravelBus() {
