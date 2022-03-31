@@ -12,11 +12,11 @@
 				<input type="date" id="currentDate" hidden>
 				<!-- Email Field -->
 				<div class="input-group input-group " id="floatingInput" style="margin-bottom: 2em">
-					<input type="email" name="email" placeholder="Email Address" class="input1 form-control">
+					<input type="email" name="email" placeholder="Email Address" class="input1 form-control" style="font-family:quicksand, sans-serif;font-weight:;">
 				</div>
 				<!-- Password Field -->
 				<div class="input-group input-group" style="margin-bottom: 2em">
-					<input type="password" name="password" placeholder="Password" class="input1 form-control">
+					<input type="password" name="password" placeholder="Password" class="input1 form-control" style="font-family:quicksand, sans-serif;font-weight:;">
 				</div>
 				<c:if test="${NOTIFICATION != null }">
 					<div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -26,19 +26,20 @@
 						</button>
 					</div>
 				</c:if>
-				<div class="input-group input-group " id="floatingInput" style="margin-top: 3em">
+				<div class="input-group input-group " id="floatingInput" style="margin-top: 3em;font-family:quicksand, sans-serif;font-weight:;" >
 					<p style="font-family: 'Century Gothic'">
 						No account yet ?
-						<a href="${pageContext.request.contextPath}/jsp/passenger/register_passenger.jsp">Register
+						<a href="#" data-toggle="modal" data-target="#exampleModal2" style="font-family:quicksand, sans-serif;">Register
 							here!
 						</a>
-					</p>
+				
 				</div>
+				
+					
+			
 		
 <!-- For modal -->
-	<div class="container col-md-3 col-md-offset-3" style="overflow: auto; margin-top: 5em;">
-		
-	</div>
+	
 <script
 	src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
 	integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
