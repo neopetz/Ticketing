@@ -1,0 +1,6 @@
+busPersonnel_id,firstname,lastname,position,status,isDeleted
+1,"Driver 2",DKA123,Driver,Available,0
+2,"Driver 3",qwerty,Driver,Available,0
+3,"Sample Conductor","Sample ",Conductor,Available,0
+4,"Conductor 1",CONDUCTOR,Conductor,Resigned,0
+5,"John Rick",Diegor,Driver,Available,0

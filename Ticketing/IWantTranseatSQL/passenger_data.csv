@@ -1,0 +1,21 @@
+user_id,firstname,lastname,email,phone_number,age,password,birth_date,isDeleted,date_created
+1,Clay,sheesh,johnrick.diegor@fujitsu.com,0564-564-4565,1,5bacd9f25613659b2fbd2f3a58822e5c,2021-03-02,0,2022-03-23
+2,Angelo,Herrera,angelo.herrera@fujitsu.com,0897-646-5648,36,5bacd9f25613659b2fbd2f3a58822e5c,NULL,NULL,NULL
+3,Hello,World,passenger1@passenger.com,0897-646-5648,25,5bacd9f25613659b2fbd2f3a58822e5c,NULL,NULL,NULL
+4,Shoko,Komi,passenger2@passenger.com,0897-646-5648,45,5bacd9f25613659b2fbd2f3a58822e5c,NULL,NULL,NULL
+5,Hitohito,Tadano,passenger3@passenger.com,0897-646-5648,97,5bacd9f25613659b2fbd2f3a58822e5c,NULL,NULL,NULL
+6,Kushina,Uzumaki,passenger4@passenger.com,0897-646-5648,45,5bacd9f25613659b2fbd2f3a58822e5c,NULL,NULL,NULL
+7,Minato,Namikaze,passenger5@passenger.com,0897-646-5648,78,5bacd9f25613659b2fbd2f3a58822e5c,NULL,NULL,NULL
+8,Hinata,Hyuga,passenger6@passenger.com,0897-646-5648,45,5bacd9f25613659b2fbd2f3a58822e5c,NULL,NULL,NULL
+9,itachi,Uchiha,passenger7@passenger.com,0897-646-5648,36,5bacd9f25613659b2fbd2f3a58822e5c,NULL,NULL,NULL
+10,Sasuke,Uchiha,passenger8@passenger.com,0897-646-5648,23,5bacd9f25613659b2fbd2f3a58822e5c,NULL,NULL,NULL
+11,Himawari,Uzumaki,passenger9@passenger.com,0897-646-5648,12,5bacd9f25613659b2fbd2f3a58822e5c,NULL,NULL,NULL
+12,Kakashi,Hatake,passenger10@passenger.com,0897-646-5648,45,5bacd9f25613659b2fbd2f3a58822e5c,NULL,NULL,NULL
+13,Naruto,Uzumaki,passenger11@passenger.com,0897-646-5648,13,5bacd9f25613659b2fbd2f3a58822e5c,NULL,NULL,NULL
+14,Kaguya,Otsutsuki,passenger12@passenger.com,0897-646-5648,31,5bacd9f25613659b2fbd2f3a58822e5c,NULL,NULL,NULL
+15,Shikamaru,Nara,passenger13@passenger.com,0897-646-5648,31,5bacd9f25613659b2fbd2f3a58822e5c,NULL,NULL,NULL
+16,Ino,Yamanaka,passenger14@passenger.com,0897-646-5648,14,5bacd9f25613659b2fbd2f3a58822e5c,NULL,NULL,NULL
+17,Sakura,Haruno,passenger15@passenger.com,0897-646-5648,58,5bacd9f25613659b2fbd2f3a58822e5c,NULL,NULL,NULL
+18,Jabez,Bondoc,jabezjoshua.bondoc@fujitsu.com,0995-133-8454,16,25d55ad283aa400af464c76d713c07ad,2005-07-04,0,2022-03-28
+36,Jabez,Bondoc,it.jabez16@gmail.com,0995-133-8454,13,b26986ceee60f744534aaab928cc12df,2008-10-30,0,2022-03-29
+37,"Jabez Joshua",Bondoc,bondocjabez332@gmail.com,0995-133-8454,11,b26986ceee60f744534aaab928cc12df,2010-06-10,0,2022-03-29

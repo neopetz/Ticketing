@@ -1,0 +1,8 @@
+paymentId,transaction_code,user_id,payer_name,payer_email,payment_status,date_created,is_deleted
+1,1WB46755394391236,37,"JUAN DELA CRUZ",juan_delacruz@personal.example.com,COMPLETED,2022-03-30,0
+2,713246100L769582L,37,"JUAN DELA CRUZ",juan_delacruz@personal.example.com,COMPLETED,2022-03-30,0
+3,6SB954421F2813035,37,"JUAN DELA CRUZ",juan_delacruz@personal.example.com,COMPLETED,2022-03-30,0
+4,9MN44805R4181680V,37,"JUAN DELA CRUZ",juan_delacruz@personal.example.com,COMPLETED,2022-03-30,0
+5,2NJ47104H3529970A,37,"JUAN DELA CRUZ",juan_delacruz@personal.example.com,COMPLETED,2022-03-30,0
+6,5GM84978GG9811257,37,"JUAN DELA CRUZ",juan_delacruz@personal.example.com,COMPLETED,2022-03-30,0
+7,1RJ94995C53494121,37,"JUAN DELA CRUZ",juan_delacruz@personal.example.com,COMPLETED,2022-03-31,0
