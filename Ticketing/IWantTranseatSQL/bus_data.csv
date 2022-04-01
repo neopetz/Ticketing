@@ -1,0 +1,5 @@
+busId,bus_name,bus_type,bus_seats,bus_number,plate_number,date_created,date_modified,available_seats,is_deleted
+1,"Bus 2","Regular Air-Conditioned",40,123123,IDK12333,2022-03-27,NULL,38,1
+2,"Bus 1","Regular Air-Conditioned",50,123123,IDK12333,2022-03-30,NULL,49,0
+3,"Bus 2","Regular Air-Conditioned",40,123123,IDK12333,2022-03-30,NULL,40,1
+4,"Transeat Liner","Regular Air-Conditioned",50,123123,IDK12333,2022-03-30,NULL,49,0
